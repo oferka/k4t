@@ -1,28 +1,21 @@
-package com.example.application.views;
+package org.karp.k4t.ui.main;
 
 
-import com.example.application.views.empty.EmptyView;
-import com.example.application.views.helloworld.HelloWorldView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.NpmPackage;
-import com.vaadin.flow.component.html.Footer;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.Header;
-import com.vaadin.flow.component.html.ListItem;
-import com.vaadin.flow.component.html.Nav;
-import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.html.UnorderedList;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
+import org.karp.k4t.ui.views.empty.EmptyView;
+import org.karp.k4t.ui.views.helloworld.HelloWorldView;
 
-/**
- * The main view is a top-level placeholder for other views.
- */
 public class MainLayout extends AppLayout {
+
+    public static final String VIEW_ID_PREFIX = "main";
+    public static final String VIEW_ID_SUFFIX = "main-view";
 
     /**
      * A simple navigation item component, based on ListItem element.

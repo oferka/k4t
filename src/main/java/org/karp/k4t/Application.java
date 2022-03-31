@@ -1,4 +1,4 @@
-package com.example.application;
+package org.karp.k4t;
 
 import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.page.AppShellConfigurator;
@@ -8,21 +8,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-/**
- * The entry point of the Spring Boot application.
- *
- * Use the @PWA annotation make the application installable on phones, tablets
- * and some desktop browsers.
- *
- */
+import static org.karp.k4t.Application.*;
+
 @SpringBootApplication
-@Theme(value = "k4t")
-@PWA(name = "k4t", shortName = "k4t", offlineResources = {"images/logo.png"})
+@Theme(value = THEME_NAME)
+@PWA(name = APPLICATION_NAME, shortName = APPLICATION_SHORT_NAME, offlineResources = { APPLICATION_LOGO })
 @NpmPackage(value = "line-awesome", version = "1.3.0")
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
+
+    public static final String THEME_NAME = "k4t";
+    public static final String APPLICATION_NAME = "k4t";
+    public static final String APPLICATION_SHORT_NAME = "k4t";
+    public static final String APPLICATION_LOGO = "images/logo.png";
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
 }
