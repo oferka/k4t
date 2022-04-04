@@ -6,6 +6,8 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
+import org.karp.k4t.ui.feed.FeedView;
+import org.karp.k4t.ui.home.HomeView;
 
 import java.util.Optional;
 
@@ -28,8 +30,8 @@ public class MainLayoutTabs extends Tabs {
 
     private Component[] createTabs() {
         return new Component[] {
-//                new MainViewTab(HomeView.HOME_VIEW_ID, HomeView.HOME_VIEW_NAME, HomeView.class, HomeView.HOME_VIEW_ICON),
-//                new MainViewTab(FeedView.FEED_VIEW_ID, FeedView.FEED_VIEW_NAME, FeedView.class, FeedView.FEED_VIEW_ICON),
+                new MainLayoutTab(HomeView.HOME_VIEW_ID, HomeView.HOME_VIEW_NAME, HomeView.class, HomeView.HOME_VIEW_ICON),
+                new MainLayoutTab(FeedView.FEED_VIEW_ID, FeedView.FEED_VIEW_NAME, FeedView.class, FeedView.FEED_VIEW_ICON),
 //                new MainViewTab(EMPLOYEE)
         };
     }
