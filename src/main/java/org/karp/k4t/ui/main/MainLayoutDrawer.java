@@ -17,6 +17,7 @@ public class MainLayoutDrawer extends VerticalLayout {
 
     private final MainLayoutDrawerHeader mainLayoutDrawerHeader;
     private final MainLayoutTabs mainLayoutTabs;
+    private final MainLayoutDrawerFooter mainLayoutDrawerFooter;
 
     public MainLayoutDrawer() {
         setId(ID_SUFFIX);
@@ -27,10 +28,11 @@ public class MainLayoutDrawer extends VerticalLayout {
         setSpacing(false);
         setAlignItems(FlexComponent.Alignment.STRETCH);
 
-        mainLayoutTabs = new MainLayoutTabs();
         mainLayoutDrawerHeader = new MainLayoutDrawerHeader();
+        mainLayoutTabs = new MainLayoutTabs();
+        mainLayoutDrawerFooter = new MainLayoutDrawerFooter();
 
-        add(mainLayoutDrawerHeader, mainLayoutTabs);
+        add(mainLayoutDrawerHeader, mainLayoutTabs, mainLayoutDrawerFooter);
     }
 
     public void selectTab(Component content) {
