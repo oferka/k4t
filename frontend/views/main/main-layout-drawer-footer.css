@@ -1,8 +1,8 @@
 #main-layout-drawer-footer {
     align-items: center;
     display: flex;
-    margin-bottom: var(--lumo-space-s);
-    margin-top: var(--lumo-space-s);
+    margin-bottom: var(--lumo-space-xs);
+    margin-top: auto;
     padding-left: var(--lumo-space-m);
     padding-right: var(--lumo-space-m);
     padding-bottom: var(--lumo-space-xs);
