@@ -70,10 +70,6 @@
   width: 100%;
 }
 
-.view-toggle {
-  color: var(--lumo-secondary-text-color);
-}
-
 .app-name {
   align-items: center;
   display: flex;

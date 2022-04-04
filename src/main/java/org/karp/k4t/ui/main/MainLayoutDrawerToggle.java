@@ -1,6 +1,7 @@
 package org.karp.k4t.ui.main;
 
 import com.vaadin.flow.component.applayout.DrawerToggle;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.CssImport;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -15,5 +16,7 @@ public class MainLayoutDrawerToggle extends DrawerToggle {
 
     public MainLayoutDrawerToggle() {
         setId(ID_SUFFIX);
+        addThemeVariants(ButtonVariant.LUMO_CONTRAST);
+        getElement().setAttribute("aria-label", "Menu toggle");
     }
 }

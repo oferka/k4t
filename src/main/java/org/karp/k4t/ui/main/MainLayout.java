@@ -41,28 +41,6 @@ public class MainLayout extends AppLayout {
         return title == null ? "" : title.value();
     }
 
-//    private H1 viewTitle;
-//
-//    public MainLayout() {
-//        setPrimarySection(Section.DRAWER);
-//        addToNavbar(true, createHeaderContent());
-//        addToDrawer(createDrawerContent());
-//    }
-
-//    private Component createHeaderContent() {
-//        DrawerToggle toggle = new DrawerToggle();
-//        toggle.addClassNames("view-toggle");
-//        toggle.addThemeVariants(ButtonVariant.LUMO_CONTRAST);
-//        toggle.getElement().setAttribute("aria-label", "Menu toggle");
-//
-//        viewTitle = new H1();
-//        viewTitle.addClassNames("view-title");
-//
-//        Header header = new Header(toggle, viewTitle);
-//        header.addClassNames("view-header");
-//        return header;
-//    }
-
 //    private Component createDrawerContent() {
 //        H2 appName = new H2("k4t");
 //        appName.addClassNames("app-name");
