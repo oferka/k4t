@@ -1,0 +1,7 @@
+#main-layout-header {
+    height: var(--lumo-size-xl);
+}
+#main-layout-header h1 {
+    font-size: var(--lumo-font-size-l);
+    margin: 0;
+}
