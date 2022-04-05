@@ -8,6 +8,7 @@ import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
 import org.karp.k4t.ui.feed.FeedView;
 import org.karp.k4t.ui.home.HomeView;
+import org.karp.k4t.ui.users.UsersView;
 import org.karp.k4t.ui.views.empty.EmptyView;
 
 import java.util.Optional;
@@ -18,6 +19,7 @@ import static org.karp.k4t.ui.feed.FeedView.*;
 import static org.karp.k4t.ui.home.HomeView.*;
 import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
 import static org.karp.k4t.ui.main.MainLayoutTabs.ID_SUFFIX;
+import static org.karp.k4t.ui.users.UsersView.*;
 import static org.karp.k4t.ui.views.empty.EmptyView.*;
 
 @CssImport(VIEWS_FOLDER + ID_PREFIX + "/" + ID_SUFFIX + CSS_FILE_EXTENSION)
@@ -37,7 +39,7 @@ public class MainLayoutTabs extends Tabs {
                 new MainLayoutTab(HOME_VIEW_ID, HOME_VIEW_NAME, HomeView.class, HOME_VIEW_ICON),
                 new MainLayoutTab(FEED_VIEW_ID, FEED_VIEW_NAME, FeedView.class, FEED_VIEW_ICON),
                 new MainLayoutTab(EMPTY_VIEW_ID, EMPTY_VIEW_NAME, EmptyView.class, EMPTY_VIEW_ICON),
-//                new MainViewTab(EMPLOYEE)
+                new MainLayoutTab(USERS_VIEW_ID, USERS_VIEW_NAME, UsersView.class, USERS_VIEW_ICON)
         };
     }
 
