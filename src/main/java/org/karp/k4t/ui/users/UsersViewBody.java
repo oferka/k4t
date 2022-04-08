@@ -19,6 +19,7 @@ public class UsersViewBody extends HorizontalLayout {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
+        setSizeFull();
         setAlignItems(CENTER);
 
         add(new H1("Users View Body"));

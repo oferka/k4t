@@ -2,9 +2,9 @@ package org.karp.k4t.ui.main;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.STRETCH;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
@@ -26,7 +26,7 @@ public class MainLayoutDrawer extends VerticalLayout {
         setSizeFull();
         setPadding(false);
         setSpacing(false);
-        setAlignItems(FlexComponent.Alignment.STRETCH);
+        setAlignItems(STRETCH);
 
         mainLayoutDrawerHeader = new MainLayoutDrawerHeader();
         mainLayoutTabs = new MainLayoutTabs();

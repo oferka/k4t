@@ -1,7 +1,6 @@
 package org.karp.k4t.ui.users;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -15,12 +14,20 @@ public class UsersViewHeader extends HorizontalLayout {
 
     public static final String ID_SUFFIX = "users-view-header";
 
+    private final UsersViewHeaderInfo usersViewHeaderInfo;
+    private final UsersViewHeaderActions usersViewHeaderActions;
+
     public UsersViewHeader() {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
+        setWidthFull();
         setAlignItems(CENTER);
 
-        add(new H1("Users View Header"));
+        usersViewHeaderInfo = new UsersViewHeaderInfo();
+        add(usersViewHeaderInfo);
+
+        usersViewHeaderActions = new UsersViewHeaderActions();
+        add(usersViewHeaderActions);
     }
 }

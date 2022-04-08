@@ -19,6 +19,7 @@ public class UsersViewFooter extends HorizontalLayout {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
+        setWidthFull();
         setAlignItems(CENTER);
 
         add(new H1("Users View Footer"));
