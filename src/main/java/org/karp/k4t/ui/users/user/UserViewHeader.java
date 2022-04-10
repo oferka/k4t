@@ -15,7 +15,7 @@ public class UserViewHeader extends HorizontalLayout {
     public static final String ID_SUFFIX = "user-view-header";
 
     private final UserViewHeaderInfo userViewHeaderInfo;
-//    private final UserViewHeaderActions userViewHeaderActions;
+    private final UserViewHeaderActions userViewHeaderActions;
 
     public UserViewHeader(UsersDataProvider usersViewDataProvider) {
         setId(ID_SUFFIX);
@@ -27,12 +27,12 @@ public class UserViewHeader extends HorizontalLayout {
         userViewHeaderInfo = new UserViewHeaderInfo(usersViewDataProvider);
         add(userViewHeaderInfo);
 
-//        userViewHeaderActions = new UserViewHeaderActions(usersViewDataProvider);
-//        add(userViewHeaderActions);
+        userViewHeaderActions = new UserViewHeaderActions(usersViewDataProvider);
+        add(userViewHeaderActions);
     }
 
     public void selectedUserChanged(long selectedUserId) {
         userViewHeaderInfo.selectedUserChanged(selectedUserId);
-//        userViewHeaderActions.selectedUserChanged(selectedUserId);
+        userViewHeaderActions.selectedUserChanged(selectedUserId);
     }
 }
