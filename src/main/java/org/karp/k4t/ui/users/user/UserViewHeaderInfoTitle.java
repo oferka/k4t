@@ -28,6 +28,8 @@ public class UserViewHeaderInfoTitle extends HorizontalLayout {
 
         userViewHeaderInfoTitleText = new UserViewHeaderInfoTitleText(usersDataProvider);
         add(userViewHeaderInfoTitleText);
+
+        setVerticalComponentAlignment(CENTER, userViewHeaderInfoTitleIcon, userViewHeaderInfoTitleText);
     }
 
     public void selectedUserChanged(long selectedUserId) {

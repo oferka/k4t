@@ -1,5 +1,5 @@
 #main-layout-user-help {
     color: var(--lumo-header-text-color);
-    cursor: crosshair;
+    cursor: pointer;
     background: transparent;
 }

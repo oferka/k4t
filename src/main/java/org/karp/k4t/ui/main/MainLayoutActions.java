@@ -4,6 +4,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutActions.ID_SUFFIX;
@@ -26,6 +27,6 @@ public class MainLayoutActions extends HorizontalLayout {
         mainLayoutUserNotifications = new MainLayoutUserNotifications();
         mainLayoutUserAvatar = new MainLayoutUserAvatar();
         add(mainLayoutUserHelp, mainLayoutUserSettings, mainLayoutUserNotifications, mainLayoutUserAvatar);
-        setVerticalComponentAlignment(FlexComponent.Alignment.CENTER, mainLayoutUserHelp, mainLayoutUserSettings, mainLayoutUserNotifications, mainLayoutUserAvatar);
+        setVerticalComponentAlignment(CENTER, mainLayoutUserHelp, mainLayoutUserSettings, mainLayoutUserNotifications, mainLayoutUserAvatar);
     }
 }
