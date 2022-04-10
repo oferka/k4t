@@ -5,8 +5,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutDrawerHeader.ID_SUFFIX;
 

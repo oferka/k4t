@@ -7,8 +7,6 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.tabs.Tab;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 
 @CssImport(MAIN_FOLDER + MainLayoutTab.VIEW_ID_SUFFIX + CSS_FILE_EXTENSION)

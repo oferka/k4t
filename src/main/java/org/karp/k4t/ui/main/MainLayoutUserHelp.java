@@ -9,8 +9,6 @@ import com.vaadin.flow.component.notification.Notification;
 
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutUserHelp.ID_SUFFIX;
 

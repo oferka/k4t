@@ -14,10 +14,8 @@ import org.karp.k4t.ui.views.empty.EmptyView;
 import java.util.Optional;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.feed.FeedView.*;
 import static org.karp.k4t.ui.home.HomeView.*;
-import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutTabs.ID_SUFFIX;
 import static org.karp.k4t.ui.users.UsersView.*;

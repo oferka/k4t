@@ -5,8 +5,6 @@ import com.vaadin.flow.component.html.Footer;
 import com.vaadin.flow.component.html.H3;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutDrawerFooter.ID_SUFFIX;
 
