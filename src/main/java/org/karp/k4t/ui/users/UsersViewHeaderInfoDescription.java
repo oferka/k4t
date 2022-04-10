@@ -6,16 +6,15 @@ import com.vaadin.flow.component.html.Span;
 import javax.validation.constraints.NotNull;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.users.UsersView.USERS_ID_PREFIX;
+import static org.karp.k4t.ui.users.UsersView.USERS_FOLDER;
 import static org.karp.k4t.ui.users.UsersViewHeaderInfoDescription.ID_SUFFIX;
 
-@CssImport(VIEWS_FOLDER + USERS_ID_PREFIX + "/" + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(USERS_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
 public class UsersViewHeaderInfoDescription extends Span {
 
     public static final String ID_SUFFIX = "users-view-header-info-description";
 
-    public UsersViewHeaderInfoDescription() {
+    public UsersViewHeaderInfoDescription(UsersDataProvider usersViewDataProvider) {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 

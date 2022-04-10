@@ -14,11 +14,12 @@ import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 
 @Route(value = UsersView.USERS_ROUTE, layout = MainLayout.class)
 @PageTitle(UsersView.USERS_VIEW_NAME)
-@CssImport(VIEWS_FOLDER + UsersView.USERS_ROUTE + "/" + UsersView.USERS_VIEW_ID + CSS_FILE_EXTENSION)
+@CssImport(UsersView.USERS_FOLDER + UsersView.USERS_VIEW_ID + CSS_FILE_EXTENSION)
 public class UsersView extends VerticalLayout {
 
     public static final String USERS_ROUTE = "users";
     public static final String USERS_ID_PREFIX = "users";
+    public static final String USERS_FOLDER = VIEWS_FOLDER + USERS_ID_PREFIX + "/";
     public static final String USERS_ID_SUFFIX = "-view";
     public static final String USERS_VIEW_ID = USERS_ID_PREFIX + USERS_ID_SUFFIX;
     public static final String USERS_VIEW_NAME = "Users";
@@ -38,10 +39,10 @@ public class UsersView extends VerticalLayout {
         usersViewHeader = new UsersViewHeader(usersViewDataProvider);
         add(usersViewHeader);
 
-        usersViewBody = new UsersViewBody();
+        usersViewBody = new UsersViewBody(usersViewDataProvider);
         add(usersViewBody);
 
-        usersViewFooter = new UsersViewFooter();
+        usersViewFooter = new UsersViewFooter(usersViewDataProvider);
         add(usersViewFooter);
     }
 }

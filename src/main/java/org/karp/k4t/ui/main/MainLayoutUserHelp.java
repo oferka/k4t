@@ -11,9 +11,10 @@ import static com.vaadin.flow.component.notification.Notification.Position.MIDDL
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
+import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutUserHelp.ID_SUFFIX;
 
-@CssImport(VIEWS_FOLDER + ID_PREFIX + "/" + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
 public class MainLayoutUserHelp extends Button {
 
     public static final String ID_SUFFIX = "main-layout-user-help";

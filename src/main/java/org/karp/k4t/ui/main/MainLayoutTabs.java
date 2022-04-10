@@ -18,11 +18,12 @@ import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.feed.FeedView.*;
 import static org.karp.k4t.ui.home.HomeView.*;
 import static org.karp.k4t.ui.main.MainLayout.ID_PREFIX;
+import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutTabs.ID_SUFFIX;
 import static org.karp.k4t.ui.users.UsersView.*;
 import static org.karp.k4t.ui.views.empty.EmptyView.*;
 
-@CssImport(VIEWS_FOLDER + ID_PREFIX + "/" + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
 public class MainLayoutTabs extends Tabs {
 
     public static final String ID_SUFFIX = "main-layout-tabs";
