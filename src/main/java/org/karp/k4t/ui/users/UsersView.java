@@ -28,14 +28,14 @@ public class UsersView extends VerticalLayout {
     private final UsersViewBody usersViewBody;
     private final UsersViewFooter usersViewFooter;
 
-    public UsersView() {
+    public UsersView(UsersDataProvider usersViewDataProvider) {
         setId(USERS_VIEW_ID);
         addClassName(USERS_ID_PREFIX + USERS_ID_SUFFIX);
 
         setHeightFull();
         setAlignItems(CENTER);
 
-        usersViewHeader = new UsersViewHeader();
+        usersViewHeader = new UsersViewHeader(usersViewDataProvider);
         add(usersViewHeader);
 
         usersViewBody = new UsersViewBody();

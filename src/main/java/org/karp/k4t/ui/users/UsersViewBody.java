@@ -1,7 +1,6 @@
 package org.karp.k4t.ui.users;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -22,6 +21,9 @@ public class UsersViewBody extends HorizontalLayout {
         setSizeFull();
         setAlignItems(CENTER);
 
-        add(new H1("Users View Body"));
+//        List<User> users = usersDataProvider.getItems();
+//        for(User user : users) {
+//            add(new RouterLink(user.getId(), UserView.class, user.getId()));
+//        }
     }
 }

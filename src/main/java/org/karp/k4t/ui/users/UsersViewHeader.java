@@ -17,14 +17,14 @@ public class UsersViewHeader extends HorizontalLayout {
     private final UsersViewHeaderInfo usersViewHeaderInfo;
     private final UsersViewHeaderActions usersViewHeaderActions;
 
-    public UsersViewHeader() {
+    public UsersViewHeader(UsersDataProvider usersViewDataProvider) {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        usersViewHeaderInfo = new UsersViewHeaderInfo();
+        usersViewHeaderInfo = new UsersViewHeaderInfo(usersViewDataProvider);
         add(usersViewHeaderInfo);
 
         usersViewHeaderActions = new UsersViewHeaderActions();

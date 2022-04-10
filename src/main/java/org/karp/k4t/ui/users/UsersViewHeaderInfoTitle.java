@@ -18,7 +18,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
     private final UsersViewHeaderInfoTitleType usersViewHeaderInfoTitleType;
     private final UsersViewHeaderInfoTitleCount usersViewHeaderInfoTitleCount;
 
-    public UsersViewHeaderInfoTitle() {
+    public UsersViewHeaderInfoTitle(UsersDataProvider usersViewDataProvider) {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
@@ -30,7 +30,7 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
         usersViewHeaderInfoTitleType = new UsersViewHeaderInfoTitleType();
         add(usersViewHeaderInfoTitleType);
 
-        usersViewHeaderInfoTitleCount = new UsersViewHeaderInfoTitleCount();
+        usersViewHeaderInfoTitleCount = new UsersViewHeaderInfoTitleCount(usersViewDataProvider);
         add(usersViewHeaderInfoTitleCount);
     }
 }

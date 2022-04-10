@@ -4,9 +4,12 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
+import org.karp.k4t.data.content.loader.UserContentLoader;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 
 import static org.karp.k4t.Application.*;
 
@@ -23,5 +26,10 @@ public class Application extends SpringBootServletInitializer implements AppShel
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+    }
+
+    @Bean
+    CommandLineRunner ensureContentLoaded(UserContentLoader userContentLoader) {
+        return args -> userContentLoader.ensureContentLoaded();
     }
 }

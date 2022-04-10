@@ -14,12 +14,11 @@ public class UsersViewHeaderInfoTitleCount extends H2 {
 
     public static final String ID_SUFFIX = "users-view-header-info-title-count";
 
-    public UsersViewHeaderInfoTitleCount() {
+    public UsersViewHeaderInfoTitleCount(UsersDataProvider usersViewDataProvider) {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
-//        setTitleText(usersDataProvider.count());
-        setTitleText(91);
+        setTitleText(usersViewDataProvider.count());
     }
 
     public void setTitleText(long count) {
