@@ -1,7 +1,6 @@
 package org.karp.k4t.ui.users.user;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.karp.k4t.ui.users.UsersDataProvider;
 
@@ -15,7 +14,8 @@ public class UserViewHeader extends HorizontalLayout {
 
     public static final String ID_SUFFIX = "user-view-header";
 
-    private final H2 label;
+    private final UserViewHeaderInfo userViewHeaderInfo;
+//    private final UserViewHeaderActions userViewHeaderActions;
 
     public UserViewHeader(UsersDataProvider usersViewDataProvider) {
         setId(ID_SUFFIX);
@@ -24,11 +24,15 @@ public class UserViewHeader extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        label = new H2("say what again");
-        add(label);
+        userViewHeaderInfo = new UserViewHeaderInfo(usersViewDataProvider);
+        add(userViewHeaderInfo);
+
+//        userViewHeaderActions = new UserViewHeaderActions(usersViewDataProvider);
+//        add(userViewHeaderActions);
     }
 
     public void selectedUserChanged(long selectedUserId) {
-        label.setText("Selected User: " + selectedUserId);
+        userViewHeaderInfo.selectedUserChanged(selectedUserId);
+//        userViewHeaderActions.selectedUserChanged(selectedUserId);
     }
 }
