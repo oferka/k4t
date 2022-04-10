@@ -1,7 +1,6 @@
 package org.karp.k4t.ui.main;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;

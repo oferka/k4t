@@ -15,7 +15,7 @@ public class UserViewHeaderInfo extends VerticalLayout {
     public static final String ID_SUFFIX = "user-view-header-info";
 
     private final UserViewHeaderInfoTitle userViewHeaderInfoTitle;
-//    private final UserViewHeaderInfoDescription userViewHeaderInfoDescription;
+    private final UserViewHeaderInfoDescription userViewHeaderInfoDescription;
 
     public UserViewHeaderInfo(UsersDataProvider usersDataProvider) {
         setId(ID_SUFFIX);
@@ -26,12 +26,12 @@ public class UserViewHeaderInfo extends VerticalLayout {
         userViewHeaderInfoTitle = new UserViewHeaderInfoTitle(usersDataProvider);
         add(userViewHeaderInfoTitle);
 
-//        userViewHeaderInfoDescription = new UserViewHeaderInfoDescription(usersDataProvider);
-//        add(userViewHeaderInfoDescription);
+        userViewHeaderInfoDescription = new UserViewHeaderInfoDescription(usersDataProvider);
+        add(userViewHeaderInfoDescription);
     }
 
     public void selectedUserChanged(long selectedUserId) {
         userViewHeaderInfoTitle.selectedUserChanged(selectedUserId);
-//        userViewHeaderInfoDescription.selectedEntityChanged(selectedEntityId);
+        userViewHeaderInfoDescription.selectedUserChanged(selectedUserId);
     }
 }
