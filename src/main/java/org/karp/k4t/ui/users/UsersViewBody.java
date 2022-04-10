@@ -25,7 +25,7 @@ public class UsersViewBody extends VerticalLayout {
         setSizeFull();
         setAlignItems(CENTER);
 
-        List<User> users = usersDataProvider.getItems();
+        List<User> users = usersDataProvider.findAll();
         for(User user : users) {
             add(new RouterLink(user.getId().toString(), UserView.class, user.getId().toString()));
         }

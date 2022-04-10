@@ -4,6 +4,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.karp.k4t.ui.users.UsersDataProvider;
 
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
 import static org.karp.k4t.ui.users.user.UserViewHeaderInfo.ID_SUFFIX;
@@ -19,6 +20,8 @@ public class UserViewHeaderInfo extends VerticalLayout {
     public UserViewHeaderInfo(UsersDataProvider usersDataProvider) {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
+
+        setAlignItems(CENTER);
 
         userViewHeaderInfoTitle = new UserViewHeaderInfoTitle(usersDataProvider);
         add(userViewHeaderInfoTitle);

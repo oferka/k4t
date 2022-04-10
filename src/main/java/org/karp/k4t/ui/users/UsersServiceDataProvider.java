@@ -6,7 +6,9 @@ import org.karp.k4t.service.UserService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,7 +23,11 @@ public class UsersServiceDataProvider implements UsersDataProvider {
     }
 
     @Override
-    public List<User> getItems() {
+    public @NotNull List<User> findAll() {
         return userService.findAll();
+    }
+
+    public @NotNull Optional<User> findById(@NotNull Long id) {
+        return userService.findById(id);
     }
 }
