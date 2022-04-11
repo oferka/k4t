@@ -7,22 +7,20 @@ import com.vaadin.flow.router.RouterLink;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutTab.VIEW_ID_SUFFIX;
+import static org.karp.k4t.ui.main.MainLayoutTabRouterLink.ID;
 
-@CssImport(MAIN_FOLDER + VIEW_ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutTabRouterLink extends RouterLink {
 
-    public static final String VIEW_ID_SUFFIX = "main-view-tab-router-link";
-    public static String ID_SUFFIX = "-router-link";
+    public static final String ID = MainLayoutTab.ID + "-router-link";
 
     private final MainLayoutTabRouterLinkContent mainLayoutTabRouterLinkContent;
 
-    public MainLayoutTabRouterLink(String mainViewTabId, String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
-        String id = mainViewTabId + ID_SUFFIX;
-        setId(id);
+    public MainLayoutTabRouterLink(String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
+        addClassName(ID);
         setRoute(navigationTarget);
 
-        mainLayoutTabRouterLinkContent = new MainLayoutTabRouterLinkContent(id, text, vaadinIcon);
+        mainLayoutTabRouterLinkContent = new MainLayoutTabRouterLinkContent(text, vaadinIcon);
         add(mainLayoutTabRouterLinkContent);
     }
 }

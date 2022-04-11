@@ -7,15 +7,15 @@ import javax.validation.constraints.NotNull;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutTitle.ID_SUFFIX;
+import static org.karp.k4t.ui.main.MainLayoutTitle.ID;
 
-@CssImport(MAIN_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutTitle extends H1 {
 
-    public static final String ID_SUFFIX = "main-layout-title";
+    public static final String ID = MainLayout.ID + "-title";
 
     public MainLayoutTitle() {
-        setId(ID_SUFFIX);
+        addClassName(ID);
     }
 
     public void setTitleText(@NotNull String titleText) {

@@ -9,22 +9,22 @@ import com.vaadin.flow.router.Route;
 import org.karp.k4t.ui.main.MainLayout;
 import org.karp.k4t.ui.users.UsersDataProvider;
 
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.users.UsersView.USERS_ID_PREFIX;
-import static org.karp.k4t.ui.users.UsersView.USERS_ROUTE;
+import static org.karp.k4t.ui.users.UsersView.ID_PREFIX;
+import static org.karp.k4t.ui.users.UsersView.ROUTE;
+import static org.karp.k4t.ui.users.user.UserView.ID;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
 
-@Route(value = USERS_ROUTE, layout = MainLayout.class)
+@Route(value = ROUTE, layout = MainLayout.class)
 @PageTitle(UserView.USER_VIEW_NAME)
-@CssImport(USER_FOLDER + UserView.USER_VIEW_ID + CSS_FILE_EXTENSION)
+@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserView extends VerticalLayout implements HasUrlParameter<String> {
 
     public static final String USER_ID_PREFIX = "user";
-    public static final String USER_FOLDER = VIEWS_FOLDER + USERS_ID_PREFIX + "/" + USER_ID_PREFIX + "/";
+    public static final String USER_FOLDER = VIEWS_FOLDER + ID_PREFIX + "/" + USER_ID_PREFIX + "/";
     public static final String USER_ID_SUFFIX = "-view";
-    public static final String USER_VIEW_ID = USER_ID_PREFIX + USER_ID_SUFFIX;
+    public static final String ID = USER_ID_PREFIX + USER_ID_SUFFIX;
     public static final String USER_VIEW_NAME = "User";
 
     private final UserViewHeader userViewHeader;
@@ -32,8 +32,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<String> 
     private final UserViewFooter userViewFooter;
 
     public UserView(UsersDataProvider usersViewDataProvider) {
-        setId(USER_VIEW_ID);
-        addClassName(USER_VIEW_ID);
+        addClassName(ID);
 
         userViewHeader = new UserViewHeader(usersViewDataProvider);
         add(userViewHeader);

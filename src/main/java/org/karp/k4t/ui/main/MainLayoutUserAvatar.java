@@ -8,15 +8,15 @@ import com.vaadin.flow.dom.DomEvent;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutUserAvatar.ID_SUFFIX;
+import static org.karp.k4t.ui.main.MainLayoutUserAvatar.ID;
 
-@CssImport(MAIN_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutUserAvatar extends Avatar {
 
-    public static final String ID_SUFFIX = "main-layout-user-avatar";
+    public static final String ID = MainLayout.ID + "-user-avatar";
 
     public MainLayoutUserAvatar() {
-        setId(ID_SUFFIX);
+        addClassName(ID);
 
         setImage("images/Ofer Karp.png");
         setName("Ofer Karp");

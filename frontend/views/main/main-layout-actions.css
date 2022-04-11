@@ -1,8 +1,4 @@
-#main-layout-actions {
+.main-layout-actions {
     margin-left: auto;
     margin-right: var(--lumo-space-m);
-}
-vaadin-app-layout[dir='rtl'] #main-view-actions {
-    margin-left: var(--lumo-space-m);
-    margin-right: auto;
 }

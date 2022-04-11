@@ -12,19 +12,18 @@ import java.util.Optional;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
-import static org.karp.k4t.ui.users.user.UserViewHeaderInfoTitleAvatar.ID_SUFFIX;
+import static org.karp.k4t.ui.users.user.UserViewHeaderInfoTitleAvatar.ID;
 
-@CssImport(USER_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserViewHeaderInfoTitleAvatar extends Avatar {
 
-    public static final String ID_SUFFIX = "user-view-header-info-title-avatar";
+    public static final String ID = UserViewHeaderInfoTitle.ID + "-avatar";
 
     private final UsersDataProvider usersDataProvider;
 
     public UserViewHeaderInfoTitleAvatar(UsersDataProvider usersDataProvider) {
         this.usersDataProvider = usersDataProvider;
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         getElement().addEventListener("click", this::avatarClicked);
     }

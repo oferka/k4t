@@ -9,18 +9,18 @@ import com.vaadin.flow.router.PageTitle;
 import static org.karp.k4t.ui.Styles.*;
 
 @JsModule(SHARED_STYLES_FILE)
-@CssImport(MainLayout.MAIN_FOLDER + MainLayout.ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MainLayout.MAIN_FOLDER + MainLayout.ID + CSS_FILE_EXTENSION)
 public class MainLayout extends AppLayout {
 
     private final MainLayoutHeader mainLayoutHeader;
     private final MainLayoutDrawer mainLayoutDrawer;
 
     public static final String ID_PREFIX = "main";
-    public static final String ID_SUFFIX = "main-layout";
+    public static final String ID = ID_PREFIX + "-layout";
     public static final String MAIN_FOLDER = VIEWS_FOLDER + MainLayout.ID_PREFIX + "/";
 
     public MainLayout() {
-        setId(ID_SUFFIX);
+        setId(ID);
         setPrimarySection(Section.DRAWER);
 
         mainLayoutHeader = new MainLayoutHeader();

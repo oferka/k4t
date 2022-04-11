@@ -9,16 +9,16 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutTabRouterLinkContent.VIEW_ID_SUFFIX;
+import static org.karp.k4t.ui.main.MainLayoutTabRouterLinkContent.ID;
 
-@CssImport(MAIN_FOLDER + VIEW_ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutTabRouterLinkContent extends HorizontalLayout {
 
-    public static final String VIEW_ID_SUFFIX = "main-layout-tab-router-link-content";
+    public static final String ID = MainLayoutTabRouterLink.ID + "-content";
     public static String ID_SUFFIX = "-content";
 
-    public MainLayoutTabRouterLinkContent(String mainLayoutTabRouterLinkId, String text, VaadinIcon vaadinIcon) {
-        setId(mainLayoutTabRouterLinkId + ID_SUFFIX);
+    public MainLayoutTabRouterLinkContent(String text, VaadinIcon vaadinIcon) {
+        addClassName(ID);
 
         Span span = new Span(text);
         Icon icon = new Icon(vaadinIcon);

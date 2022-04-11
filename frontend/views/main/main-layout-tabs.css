@@ -1,4 +1,4 @@
-#main-layout-tabs {
+.main-layout-tabs {
     border-bottom: 1px solid;
     border-color: var(--lumo-contrast-10pct);
     flex-grow: 1;

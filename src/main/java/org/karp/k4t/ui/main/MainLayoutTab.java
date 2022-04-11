@@ -8,19 +8,18 @@ import com.vaadin.flow.component.tabs.Tab;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
+import static org.karp.k4t.ui.main.MainLayoutTab.ID;
 
-@CssImport(MAIN_FOLDER + MainLayoutTab.VIEW_ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutTab extends Tab {
 
-    public static final String VIEW_ID_SUFFIX = "main-layout-tab";
-    public static String ID_SUFFIX = "-tab";
+    public static final String ID = MainLayout.ID + "-tab";
 
     private final MainLayoutTabRouterLink mainLayoutTabRouterLink;
 
     public MainLayoutTab(String viewId, String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
-        String id = viewId + ID_SUFFIX;
-        setId(id);
-        mainLayoutTabRouterLink = new MainLayoutTabRouterLink(id, text, navigationTarget, vaadinIcon);
+        addClassName(ID);
+        mainLayoutTabRouterLink = new MainLayoutTabRouterLink(text, navigationTarget, vaadinIcon);
         add(mainLayoutTabRouterLink);
         ComponentUtil.setData(this, Class.class, navigationTarget);
     }

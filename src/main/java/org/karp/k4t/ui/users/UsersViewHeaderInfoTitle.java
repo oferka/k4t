@@ -5,28 +5,27 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersView.USERS_FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderInfoTitle.ID_SUFFIX;
+import static org.karp.k4t.ui.users.UsersView.FOLDER;
+import static org.karp.k4t.ui.users.UsersViewHeaderInfoTitle.ID;
 
-@CssImport(USERS_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UsersViewHeaderInfoTitle extends HorizontalLayout {
 
-    public static final String ID_SUFFIX = "users-view-header-info-title";
+    public static final String ID = UsersViewHeaderInfo.ID + "-title";
 
     private final UsersViewHeaderInfoTitleIcon usersViewHeaderInfoTitleIcon;
-    private final UsersViewHeaderInfoTitleType usersViewHeaderInfoTitleType;
+    private final UsersViewHeaderInfoTitleText usersViewHeaderInfoTitleType;
     private final UsersViewHeaderInfoTitleCount usersViewHeaderInfoTitleCount;
 
     public UsersViewHeaderInfoTitle(UsersDataProvider usersViewDataProvider) {
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         setAlignItems(CENTER);
 
         usersViewHeaderInfoTitleIcon = new UsersViewHeaderInfoTitleIcon(usersViewDataProvider);
         add(usersViewHeaderInfoTitleIcon);
 
-        usersViewHeaderInfoTitleType = new UsersViewHeaderInfoTitleType(usersViewDataProvider);
+        usersViewHeaderInfoTitleType = new UsersViewHeaderInfoTitleText(usersViewDataProvider);
         add(usersViewHeaderInfoTitleType);
 
         usersViewHeaderInfoTitleCount = new UsersViewHeaderInfoTitleCount(usersViewDataProvider);

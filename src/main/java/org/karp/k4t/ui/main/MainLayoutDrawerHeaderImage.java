@@ -5,15 +5,15 @@ import com.vaadin.flow.component.html.Image;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutDrawerHeaderImage.ID_SUFFIX;
+import static org.karp.k4t.ui.main.MainLayoutDrawerHeaderImage.ID;
 
-@CssImport(MAIN_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutDrawerHeaderImage extends Image {
 
-    public static final String ID_SUFFIX = "main-layout-drawer-header-image";
+    public static final String ID = MainLayoutDrawerHeader.ID + "-image";
 
     public MainLayoutDrawerHeaderImage() {
-        setId(ID_SUFFIX);
+        addClassName(ID);
 
         setSrc("images/logo.png");
         setAlt("K4T logo");

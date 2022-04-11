@@ -7,19 +7,19 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.STRETCH;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutDrawer.ID_SUFFIX;
+import static org.karp.k4t.ui.main.MainLayoutDrawer.ID;
 
-@CssImport(MAIN_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutDrawer extends VerticalLayout {
 
-    public static final String ID_SUFFIX = "main-layout-drawer";
+    public static final String ID = MainLayout.ID + "-drawer";
 
     private final MainLayoutDrawerHeader mainLayoutDrawerHeader;
     private final MainLayoutTabs mainLayoutTabs;
     private final MainLayoutDrawerFooter mainLayoutDrawerFooter;
 
     public MainLayoutDrawer() {
-        setId(ID_SUFFIX);
+        addClassName(ID);
 
         getThemeList().set("dark", true);
         setSizeFull();

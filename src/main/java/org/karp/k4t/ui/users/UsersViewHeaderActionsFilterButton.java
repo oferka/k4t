@@ -10,17 +10,16 @@ import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.icon.VaadinIcon.FILTER;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersView.USERS_FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderActionsFilterButton.ID_SUFFIX;
+import static org.karp.k4t.ui.users.UsersView.FOLDER;
+import static org.karp.k4t.ui.users.UsersViewHeaderActionsFilterButton.ID;
 
-@CssImport(USERS_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UsersViewHeaderActionsFilterButton extends Button {
 
-    public static final String ID_SUFFIX = "users-view-header-actions-filter-button";
+    public static final String ID = UsersViewHeaderActions.ID + "-filter-button";
 
     public UsersViewHeaderActionsFilterButton(UsersDataProvider usersViewDataProvider) {
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         setIcon(FILTER.create());
         setText("Filter");

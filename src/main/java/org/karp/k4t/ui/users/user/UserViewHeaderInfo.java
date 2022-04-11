@@ -7,19 +7,18 @@ import org.karp.k4t.ui.users.UsersDataProvider;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
-import static org.karp.k4t.ui.users.user.UserViewHeaderInfo.ID_SUFFIX;
+import static org.karp.k4t.ui.users.user.UserViewHeaderInfo.ID;
 
-@CssImport(USER_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserViewHeaderInfo extends VerticalLayout {
 
-    public static final String ID_SUFFIX = "user-view-header-info";
+    public static final String ID = UserViewHeader.ID + "-info";
 
     private final UserViewHeaderInfoTitle userViewHeaderInfoTitle;
     private final UserViewHeaderInfoDescription userViewHeaderInfoDescription;
 
     public UserViewHeaderInfo(UsersDataProvider usersDataProvider) {
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         setAlignItems(CENTER);
 

@@ -5,17 +5,16 @@ import com.vaadin.flow.component.html.H2;
 
 import static java.lang.String.format;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersView.USERS_FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderInfoTitleCount.ID_SUFFIX;
+import static org.karp.k4t.ui.users.UsersView.FOLDER;
+import static org.karp.k4t.ui.users.UsersViewHeaderInfoTitleCount.ID;
 
-@CssImport(USERS_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UsersViewHeaderInfoTitleCount extends H2 {
 
-    public static final String ID_SUFFIX = "users-view-header-info-title-count";
+    public static final String ID = UsersViewHeaderInfoTitle.ID + "-count";
 
     public UsersViewHeaderInfoTitleCount(UsersDataProvider usersViewDataProvider) {
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         setTitleText(usersViewDataProvider.count());
     }

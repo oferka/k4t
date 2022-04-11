@@ -1,4 +1,4 @@
-#users-view-footer {
+.users-view-footer {
     align-items: center;
     display: flex;
     margin-bottom: var(--lumo-space-xs);

@@ -15,20 +15,19 @@ import static com.vaadin.flow.component.icon.VaadinIcon.SHARE;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
-import static org.karp.k4t.ui.users.user.UserViewHeaderActionsShareButton.ID_SUFFIX;
+import static org.karp.k4t.ui.users.user.UserViewHeaderActionsShareButton.ID;
 
-@CssImport(USER_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserViewHeaderActionsShareButton extends Button {
 
-    public static final String ID_SUFFIX = "user-view-header-actions-share-button";
+    public static final String ID = UserViewHeaderActions.ID + "-share-button";
 
     private final UsersDataProvider usersDataProvider;
     private long selectedUserId;
 
     public UserViewHeaderActionsShareButton(UsersDataProvider usersDataProvider) {
         this.usersDataProvider = usersDataProvider;
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         setIcon(SHARE.create());
         setText("Share");

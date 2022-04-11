@@ -10,17 +10,16 @@ import java.util.List;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersView.USERS_FOLDER;
-import static org.karp.k4t.ui.users.UsersViewBody.ID_SUFFIX;
+import static org.karp.k4t.ui.users.UsersView.FOLDER;
+import static org.karp.k4t.ui.users.UsersViewBody.ID;
 
-@CssImport(USERS_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UsersViewBody extends VerticalLayout {
 
-    public static final String ID_SUFFIX = "users-view-body";
+    public static final String ID = UsersView.ID + "-body";
 
     public UsersViewBody(UsersDataProvider usersDataProvider) {
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         setWidthFull();
         setAlignItems(CENTER);

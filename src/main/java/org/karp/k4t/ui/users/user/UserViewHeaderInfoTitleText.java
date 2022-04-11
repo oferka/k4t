@@ -9,19 +9,18 @@ import java.util.Optional;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
-import static org.karp.k4t.ui.users.user.UserViewHeaderInfoTitleText.ID_SUFFIX;
+import static org.karp.k4t.ui.users.user.UserViewHeaderInfoTitleText.ID;
 
-@CssImport(USER_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserViewHeaderInfoTitleText extends H2 {
 
-    public static final String ID_SUFFIX = "user-view-header-info-title-text";
+    public static final String ID = UserViewHeaderInfoTitle.ID + "-text";
 
     private final UsersDataProvider usersDataProvider;
 
     public UserViewHeaderInfoTitleText(UsersDataProvider usersDataProvider) {
         this.usersDataProvider = usersDataProvider;
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
     }
 
     public void selectedUserChanged(long selectedUserId) {

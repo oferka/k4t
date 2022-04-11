@@ -10,15 +10,15 @@ import static com.vaadin.flow.component.icon.VaadinIcon.QUESTION_CIRCLE_O;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutUserHelp.ID_SUFFIX;
+import static org.karp.k4t.ui.main.MainLayoutUserHelp.ID;
 
-@CssImport(MAIN_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutUserHelp extends Button {
 
-    public static final String ID_SUFFIX = "main-layout-user-help";
+    public static final String ID = MainLayout.ID + "-user-help";
 
     public MainLayoutUserHelp() {
-        setId(ID_SUFFIX);
+        addClassName(ID);
 
         Icon helpIcon = QUESTION_CIRCLE_O.create();
         setIcon(helpIcon);

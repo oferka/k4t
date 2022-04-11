@@ -10,19 +10,18 @@ import org.karp.k4t.ui.users.UsersView;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
-import static org.karp.k4t.ui.users.user.UserViewBody.ID_SUFFIX;
+import static org.karp.k4t.ui.users.user.UserViewBody.ID;
 
-@CssImport(USER_FOLDER + ID_SUFFIX + CSS_FILE_EXTENSION)
+@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserViewBody extends VerticalLayout {
 
-    public static final String ID_SUFFIX = "user-view-body";
+    public static final String ID = UserView.ID + "-body";
 
     private final Label selectedIdLabel;
     private final RouterLink usersRouterLink;
 
     public UserViewBody(UsersDataProvider usersViewDataProvider) {
-        setId(ID_SUFFIX);
-        addClassName(ID_SUFFIX);
+        addClassName(ID);
 
         setWidthFull();
         setAlignItems(CENTER);
@@ -30,7 +29,7 @@ public class UserViewBody extends VerticalLayout {
         selectedIdLabel = new Label();
         add(selectedIdLabel);
 
-        usersRouterLink = new RouterLink(UsersView.USERS_VIEW_NAME, UsersView.class);
+        usersRouterLink = new RouterLink(UsersView.NAME, UsersView.class);
         add(usersRouterLink);
     }
 
