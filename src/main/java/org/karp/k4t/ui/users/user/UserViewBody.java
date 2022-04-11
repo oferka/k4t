@@ -2,12 +2,12 @@ package org.karp.k4t.ui.users.user;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouterLink;
 import org.karp.k4t.ui.users.UsersDataProvider;
 import org.karp.k4t.ui.users.UsersView;
 
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
 import static org.karp.k4t.ui.users.user.UserViewBody.ID_SUFFIX;
@@ -24,8 +24,8 @@ public class UserViewBody extends VerticalLayout {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
-        setHeightFull();
-        setAlignItems(FlexComponent.Alignment.CENTER);
+        setWidthFull();
+        setAlignItems(CENTER);
 
         selectedIdLabel = new Label();
         add(selectedIdLabel);

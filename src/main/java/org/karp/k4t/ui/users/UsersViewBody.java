@@ -22,7 +22,7 @@ public class UsersViewBody extends VerticalLayout {
         setId(ID_SUFFIX);
         addClassName(ID_SUFFIX);
 
-        setSizeFull();
+        setWidthFull();
         setAlignItems(CENTER);
 
         List<User> users = usersDataProvider.findAll();

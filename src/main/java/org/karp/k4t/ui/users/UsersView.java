@@ -8,7 +8,6 @@ import com.vaadin.flow.router.Route;
 import org.karp.k4t.ui.main.MainLayout;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 
@@ -32,9 +31,6 @@ public class UsersView extends VerticalLayout {
     public UsersView(UsersDataProvider usersViewDataProvider) {
         setId(USERS_VIEW_ID);
         addClassName(USERS_ID_PREFIX + USERS_ID_SUFFIX);
-
-        setHeightFull();
-        setAlignItems(CENTER);
 
         usersViewHeader = new UsersViewHeader(usersViewDataProvider);
         add(usersViewHeader);

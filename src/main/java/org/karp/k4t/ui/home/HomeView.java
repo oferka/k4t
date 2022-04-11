@@ -11,6 +11,7 @@ import com.vaadin.flow.router.RouteAlias;
 import org.karp.k4t.ui.main.MainLayout;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.HOME_O;
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.home.HomeView.HOME_ROUTE;
@@ -30,7 +31,7 @@ public class HomeView extends HorizontalLayout {
 
     public HomeView() {
         setId(HOME_VIEW_ID);
-        setAlignItems(FlexComponent.Alignment.CENTER);
+        setAlignItems(CENTER);
 
         Text text = new Text(HOME_VIEW_NAME);
         add(text);

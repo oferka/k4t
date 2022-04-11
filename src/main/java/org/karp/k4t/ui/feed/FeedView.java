@@ -10,6 +10,7 @@ import com.vaadin.flow.router.Route;
 import org.karp.k4t.ui.main.MainLayout;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.LINES_LIST;
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 
@@ -27,7 +28,7 @@ public class FeedView extends HorizontalLayout {
 
     public FeedView() {
         setId(FEED_VIEW_ID);
-        setAlignItems(FlexComponent.Alignment.CENTER);
+        setAlignItems(CENTER);
 
         Text text = new Text(FEED_VIEW_NAME);
         add(text);

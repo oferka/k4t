@@ -35,9 +35,6 @@ public class UserView extends VerticalLayout implements HasUrlParameter<String> 
         setId(USER_VIEW_ID);
         addClassName(USER_VIEW_ID);
 
-        setHeightFull();
-        setAlignItems(CENTER);
-
         userViewHeader = new UserViewHeader(usersViewDataProvider);
         add(userViewHeader);
 
