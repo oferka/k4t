@@ -13,26 +13,27 @@ import static com.vaadin.flow.component.icon.VaadinIcon.HOME_O;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.home.HomeView.HOME_ROUTE;
+import static org.karp.k4t.ui.home.HomeView.*;
 
-@Route(value = HOME_ROUTE, layout = MainLayout.class)
-@PageTitle(HomeView.HOME_VIEW_NAME)
-@CssImport(VIEWS_FOLDER + HomeView.HOME_ID_PREFIX + "/" + HomeView.HOME_VIEW_ID + CSS_FILE_EXTENSION)
+@Route(value = ROUTE, layout = MainLayout.class)
+@PageTitle(HomeView.NAME)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 @RouteAlias(value = "", layout = MainLayout.class)
 public class HomeView extends HorizontalLayout {
 
-    public static final String HOME_ROUTE = "home";
-    public static final String HOME_ID_PREFIX = "home";
-    public static final String HOME_ID_SUFFIX = "-view";
-    public static final String HOME_VIEW_ID = HOME_ID_PREFIX + HOME_ID_SUFFIX;
-    public static final String HOME_VIEW_NAME = "Home";
-    public static final VaadinIcon HOME_VIEW_ICON = HOME_O;
+    public static final String ROUTE = "home";
+    public static final String ID_PREFIX = "home";
+    public static final String ID_SUFFIX = "-view";
+    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String NAME = "Home";
+    public static final VaadinIcon ICON = HOME_O;
+    public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public HomeView() {
-        setId(HOME_VIEW_ID);
+        addClassName(ID);
         setAlignItems(CENTER);
 
-        Text text = new Text(HOME_VIEW_NAME);
+        Text text = new Text(NAME);
         add(text);
     }
 }

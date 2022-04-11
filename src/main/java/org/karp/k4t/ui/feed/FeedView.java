@@ -12,24 +12,27 @@ import static com.vaadin.flow.component.icon.VaadinIcon.LINES_LIST;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
+import static org.karp.k4t.ui.feed.FeedView.FOLDER;
+import static org.karp.k4t.ui.feed.FeedView.ID;
 
-@Route(value = FeedView.FEED_ROUTE, layout = MainLayout.class)
-@PageTitle(FeedView.FEED_VIEW_NAME)
-@CssImport(VIEWS_FOLDER + FeedView.FEED_ROUTE + "/" + FeedView.FEED_VIEW_ID + CSS_FILE_EXTENSION)
+@Route(value = FeedView.ROUTE, layout = MainLayout.class)
+@PageTitle(FeedView.NAME)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class FeedView extends HorizontalLayout {
 
-    public static final String FEED_ROUTE = "feed";
-    public static final String FEED_ID_PREFIX = "feed";
-    public static final String FEED_ID_SUFFIX = "-view";
-    public static final String FEED_VIEW_ID = FEED_ID_PREFIX + FEED_ID_SUFFIX;
-    public static final String FEED_VIEW_NAME = "Feed";
-    public static final VaadinIcon FEED_VIEW_ICON = LINES_LIST;
+    public static final String ROUTE = "feed";
+    public static final String ID_PREFIX = "feed";
+    public static final String ID_SUFFIX = "-view";
+    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String NAME = "Feed";
+    public static final VaadinIcon ICON = LINES_LIST;
+    public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public FeedView() {
-        setId(FEED_VIEW_ID);
+        addClassName(ID);
         setAlignItems(CENTER);
 
-        Text text = new Text(FEED_VIEW_NAME);
+        Text text = new Text(NAME);
         add(text);
     }
 }

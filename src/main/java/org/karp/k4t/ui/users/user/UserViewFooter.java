@@ -7,10 +7,10 @@ import org.karp.k4t.ui.users.UsersDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
+import static org.karp.k4t.ui.users.user.UserView.FOLDER;
 import static org.karp.k4t.ui.users.user.UserViewFooter.ID;
 
-@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserViewFooter extends HorizontalLayout {
 
     public static final String ID = UserView.ID + "-footer";

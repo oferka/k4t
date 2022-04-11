@@ -8,10 +8,10 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
+import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutTabRouterLinkContent.ID;
 
-@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutTabRouterLinkContent extends HorizontalLayout {
 
     public static final String ID = MainLayoutTabRouterLink.ID + "-content";

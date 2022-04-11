@@ -6,10 +6,10 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.RouterLink;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
+import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutTabRouterLink.ID;
 
-@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutTabRouterLink extends RouterLink {
 
     public static final String ID = MainLayoutTab.ID + "-router-link";

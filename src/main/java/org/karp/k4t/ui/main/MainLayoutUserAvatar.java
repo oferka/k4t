@@ -7,10 +7,10 @@ import com.vaadin.flow.dom.DomEvent;
 
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
+import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutUserAvatar.ID;
 
-@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutUserAvatar extends Avatar {
 
     public static final String ID = MainLayout.ID + "-user-avatar";

@@ -13,21 +13,24 @@ import org.karp.k4t.ui.main.MainLayout;
 import static com.vaadin.flow.component.icon.VaadinIcon.THIN_SQUARE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
+import static org.karp.k4t.ui.views.empty.EmptyView.FOLDER;
+import static org.karp.k4t.ui.views.empty.EmptyView.ID;
 
-@Route(value = EmptyView.EMPTY_ROUTE, layout = MainLayout.class)
-@PageTitle(EmptyView.EMPTY_VIEW_NAME)
-@CssImport(VIEWS_FOLDER + EmptyView.EMPTY_ROUTE + "/" + EmptyView.EMPTY_VIEW_ID + CSS_FILE_EXTENSION)
+@Route(value = EmptyView.ROUTE, layout = MainLayout.class)
+@PageTitle(EmptyView.NAME)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class EmptyView extends VerticalLayout {
 
-    public static final String EMPTY_ROUTE = "empty";
-    public static final String EMPTY_ID_PREFIX = "empty";
-    public static final String EMPTY_ID_SUFFIX = "-view";
-    public static final String EMPTY_VIEW_ID = EMPTY_ID_PREFIX + EMPTY_ID_SUFFIX;
-    public static final String EMPTY_VIEW_NAME = "Empty";
-    public static final VaadinIcon EMPTY_VIEW_ICON = THIN_SQUARE;
+    public static final String ROUTE = "empty";
+    public static final String ID_PREFIX = "empty";
+    public static final String ID_SUFFIX = "-view";
+    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String NAME = "Empty";
+    public static final VaadinIcon ICON = THIN_SQUARE;
+    public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public EmptyView() {
-        setId(EMPTY_VIEW_ID);
+        setId(ID);
 
         setSpacing(false);
 

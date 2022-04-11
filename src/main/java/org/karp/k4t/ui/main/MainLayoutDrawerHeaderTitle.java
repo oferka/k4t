@@ -5,10 +5,10 @@ import com.vaadin.flow.component.html.H1;
 import org.karp.k4t.Application;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
+import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutDrawerHeaderTitle.ID;
 
-@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutDrawerHeaderTitle extends H1 {
 
     public static final String ID = MainLayoutDrawerHeader.ID + "-title";

@@ -14,14 +14,10 @@ import org.karp.k4t.ui.views.empty.EmptyView;
 import java.util.Optional;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.feed.FeedView.*;
-import static org.karp.k4t.ui.home.HomeView.*;
-import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
+import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutTabs.ID;
-import static org.karp.k4t.ui.users.UsersView.*;
-import static org.karp.k4t.ui.views.empty.EmptyView.*;
 
-@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutTabs extends Tabs {
 
     public static final String ID = MainLayout.ID + "-tabs";
@@ -35,10 +31,10 @@ public class MainLayoutTabs extends Tabs {
 
     private Component[] createTabs() {
         return new Component[] {
-                new MainLayoutTab(HOME_VIEW_ID, HOME_VIEW_NAME, HomeView.class, HOME_VIEW_ICON),
-                new MainLayoutTab(FEED_VIEW_ID, FEED_VIEW_NAME, FeedView.class, FEED_VIEW_ICON),
-                new MainLayoutTab(EMPTY_VIEW_ID, EMPTY_VIEW_NAME, EmptyView.class, EMPTY_VIEW_ICON),
-                new MainLayoutTab(UsersView.ID, NAME, UsersView.class, ICON)
+                new MainLayoutTab(HomeView.ID, HomeView.NAME, HomeView.class, HomeView.ICON),
+                new MainLayoutTab(FeedView.ID, FeedView.NAME, FeedView.class, FeedView.ICON),
+                new MainLayoutTab(EmptyView.ID, EmptyView.NAME, EmptyView.class, EmptyView.ICON),
+                new MainLayoutTab(UsersView.ID, UsersView.NAME, UsersView.class, UsersView.ICON)
         };
     }
 

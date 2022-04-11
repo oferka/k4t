@@ -7,9 +7,11 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.router.PageTitle;
 
 import static org.karp.k4t.ui.Styles.*;
+import static org.karp.k4t.ui.main.MainLayout.FOLDER;
+import static org.karp.k4t.ui.main.MainLayout.ID;
 
 @JsModule(SHARED_STYLES_FILE)
-@CssImport(MainLayout.MAIN_FOLDER + MainLayout.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayout extends AppLayout {
 
     private final MainLayoutHeader mainLayoutHeader;
@@ -17,7 +19,7 @@ public class MainLayout extends AppLayout {
 
     public static final String ID_PREFIX = "main";
     public static final String ID = ID_PREFIX + "-layout";
-    public static final String MAIN_FOLDER = VIEWS_FOLDER + MainLayout.ID_PREFIX + "/";
+    public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public MainLayout() {
         setId(ID);

@@ -11,10 +11,10 @@ import java.util.Optional;
 
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.user.UserView.USER_FOLDER;
+import static org.karp.k4t.ui.users.user.UserView.FOLDER;
 import static org.karp.k4t.ui.users.user.UserViewHeaderInfoTitleAvatar.ID;
 
-@CssImport(USER_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UserViewHeaderInfoTitleAvatar extends Avatar {
 
     public static final String ID = UserViewHeaderInfoTitle.ID + "-avatar";

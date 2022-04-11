@@ -9,10 +9,10 @@ import com.vaadin.flow.component.notification.Notification;
 import static com.vaadin.flow.component.icon.VaadinIcon.BELL_O;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.main.MainLayout.MAIN_FOLDER;
+import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutUserNotifications.ID;
 
-@CssImport(MAIN_FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayoutUserNotifications extends Button {
 
     public static final String ID = MainLayout.ID + "-user-notifications";
