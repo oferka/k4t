@@ -18,7 +18,7 @@ import static org.karp.k4t.ui.users.user.UserView.ID;
 @Route(value = ROUTE, layout = MainLayout.class)
 @PageTitle(UserView.NAME)
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-public class UserView extends VerticalLayout implements HasUrlParameter<String> {
+public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
 
     public static final String ID_PREFIX = "user";
     public static final String ID_SUFFIX = "-view";
@@ -44,9 +44,8 @@ public class UserView extends VerticalLayout implements HasUrlParameter<String> 
     }
 
     @Override
-    public void setParameter(BeforeEvent event, String parameter) {
-        long selectedUserId = Long.parseLong(parameter);
-        selectedUserChanged(selectedUserId);
+    public void setParameter(BeforeEvent event, Long parameter) {
+        selectedUserChanged(parameter);
     }
 
     private void selectedUserChanged(long selectedUserId) {

@@ -29,7 +29,7 @@ public class UsersViewBodyCardPresentation extends VerticalLayout {
 
         List<User> users = usersDataProvider.findAll();
         for(User user : users) {
-            add(new RouterLink(user.getId().toString(), UserView.class, user.getId().toString()));
+            add(new RouterLink(user.getId().toString(), UserView.class, user.getId()));
         }
     }
 }
