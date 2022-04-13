@@ -13,7 +13,7 @@ public class UsersViewHeaderInfoTitleIcon extends Icon {
 
     public static final String ID = UsersViewHeaderInfoTitle.ID + "-icon";
 
-    public UsersViewHeaderInfoTitleIcon(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderInfoTitleIcon(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         super(ICON);
         setSize("60px");
         addClassName(ID);

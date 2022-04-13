@@ -19,7 +19,7 @@ public class UsersViewBodyCardPresentation extends VerticalLayout {
 
     public static final String ID = UsersViewBody.ID + "-card-presentation";
 
-    public UsersViewBodyCardPresentation(UsersDataProvider usersDataProvider) {
+    public UsersViewBodyCardPresentation(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setWidthFull();

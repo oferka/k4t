@@ -16,15 +16,15 @@ public class UsersViewHeaderInfo extends VerticalLayout {
     private final UsersViewHeaderInfoTitle usersViewHeaderInfoTitle;
     private final UsersViewHeaderInfoDescription usersViewHeaderInfoDescription;
 
-    public UsersViewHeaderInfo(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderInfo(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setAlignItems(FlexComponent.Alignment.CENTER);
 
-        usersViewHeaderInfoTitle = new UsersViewHeaderInfoTitle(usersViewDataProvider);
+        usersViewHeaderInfoTitle = new UsersViewHeaderInfoTitle(usersViewDataProvider, usersViewState);
         add(usersViewHeaderInfoTitle);
 
-        usersViewHeaderInfoDescription = new UsersViewHeaderInfoDescription(usersViewDataProvider);
+        usersViewHeaderInfoDescription = new UsersViewHeaderInfoDescription(usersViewDataProvider, usersViewState);
         add(usersViewHeaderInfoDescription);
     }
 }

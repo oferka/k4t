@@ -17,18 +17,18 @@ public class UsersViewHeaderInfoTitle extends HorizontalLayout {
     private final UsersViewHeaderInfoTitleText usersViewHeaderInfoTitleType;
     private final UsersViewHeaderInfoTitleCount usersViewHeaderInfoTitleCount;
 
-    public UsersViewHeaderInfoTitle(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderInfoTitle(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setAlignItems(CENTER);
 
-        usersViewHeaderInfoTitleIcon = new UsersViewHeaderInfoTitleIcon(usersViewDataProvider);
+        usersViewHeaderInfoTitleIcon = new UsersViewHeaderInfoTitleIcon(usersViewDataProvider, usersViewState);
         add(usersViewHeaderInfoTitleIcon);
 
-        usersViewHeaderInfoTitleType = new UsersViewHeaderInfoTitleText(usersViewDataProvider);
+        usersViewHeaderInfoTitleType = new UsersViewHeaderInfoTitleText(usersViewDataProvider, usersViewState);
         add(usersViewHeaderInfoTitleType);
 
-        usersViewHeaderInfoTitleCount = new UsersViewHeaderInfoTitleCount(usersViewDataProvider);
+        usersViewHeaderInfoTitleCount = new UsersViewHeaderInfoTitleCount(usersViewDataProvider, usersViewState);
         add(usersViewHeaderInfoTitleCount);
     }
 }

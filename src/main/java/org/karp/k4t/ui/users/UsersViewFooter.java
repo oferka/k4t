@@ -14,7 +14,7 @@ public class UsersViewFooter extends HorizontalLayout {
 
     public static final String ID = UsersView.ID + "-footer";
 
-    public UsersViewFooter(UsersDataProvider usersViewDataProvider) {
+    public UsersViewFooter(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setWidthFull();

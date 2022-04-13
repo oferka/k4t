@@ -18,7 +18,7 @@ public class UsersViewHeaderActionsFilterButton extends Button {
 
     public static final String ID = UsersViewHeaderActions.ID + "-filter-button";
 
-    public UsersViewHeaderActionsFilterButton(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderActionsFilterButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setIcon(FILTER.create());

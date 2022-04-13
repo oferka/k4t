@@ -15,7 +15,7 @@ public class UsersViewHeaderActionsTypeSelectorCardButton extends Button {
 
     public static final String ID = UsersViewHeaderActionsPresentationTypeSelector.ID + "-card-button";
 
-    public UsersViewHeaderActionsTypeSelectorCardButton(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderActionsTypeSelectorCardButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setIcon(LIST.create());

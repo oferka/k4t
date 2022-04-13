@@ -19,7 +19,7 @@ public class UsersViewHeaderActionsNewButton extends Button {
 
     public static final String ID = UsersViewHeaderActions.ID + "-new-button";
 
-    public UsersViewHeaderActionsNewButton(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderActionsNewButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setIcon(PLUS_CIRCLE.create());

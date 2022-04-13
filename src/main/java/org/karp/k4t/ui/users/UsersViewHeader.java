@@ -9,23 +9,30 @@ import static org.karp.k4t.ui.users.UsersView.FOLDER;
 import static org.karp.k4t.ui.users.UsersViewHeader.ID;
 
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-public class UsersViewHeader extends HorizontalLayout {
+public class UsersViewHeader extends HorizontalLayout implements UsersViewPresentationModeChangeListener {
 
     public static final String ID = UsersView.ID + "-header";
 
     private final UsersViewHeaderInfo usersViewHeaderInfo;
     private final UsersViewHeaderActions usersViewHeaderActions;
 
-    public UsersViewHeader(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeader(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        usersViewHeaderInfo = new UsersViewHeaderInfo(usersViewDataProvider);
+        usersViewHeaderInfo = new UsersViewHeaderInfo(usersViewDataProvider, usersViewState);
         add(usersViewHeaderInfo);
 
-        usersViewHeaderActions = new UsersViewHeaderActions(usersViewDataProvider);
+        usersViewHeaderActions = new UsersViewHeaderActions(usersViewDataProvider, usersViewState);
         add(usersViewHeaderActions);
+
+        usersViewState.addPresentationModeChangeListener(this);
+    }
+
+    @Override
+    public void presentationModeChanged(UsersViewPresentationModeChangeEvent event) {
+        System.out.println(event);
     }
 }

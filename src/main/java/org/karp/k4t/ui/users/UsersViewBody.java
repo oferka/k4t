@@ -16,16 +16,16 @@ public class UsersViewBody extends VerticalLayout {
     private final UsersViewBodyCardPresentation usersViewBodyCardPresentation;
     private final UsersViewBodyGridPresentation usersViewBodyGridPresentation;
 
-    public UsersViewBody(UsersDataProvider usersDataProvider) {
+    public UsersViewBody(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setWidthFull();
         setAlignItems(CENTER);
 
-        usersViewBodyCardPresentation = new UsersViewBodyCardPresentation(usersDataProvider);
+        usersViewBodyCardPresentation = new UsersViewBodyCardPresentation(usersDataProvider, usersViewState);
         add(usersViewBodyCardPresentation);
 
-        usersViewBodyGridPresentation = new UsersViewBodyGridPresentation(usersDataProvider);
+        usersViewBodyGridPresentation = new UsersViewBodyGridPresentation(usersDataProvider, usersViewState);
         add(usersViewBodyGridPresentation);
     }
 }

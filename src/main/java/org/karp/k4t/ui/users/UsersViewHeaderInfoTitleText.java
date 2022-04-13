@@ -15,7 +15,7 @@ public class UsersViewHeaderInfoTitleText extends H2 {
 
     public static final String ID = UsersViewHeaderInfoTitle.ID + "-text";
 
-    public UsersViewHeaderInfoTitleText(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderInfoTitleText(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setTitleText(NAME);

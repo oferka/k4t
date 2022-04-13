@@ -14,7 +14,7 @@ public class UsersViewHeaderInfoDescription extends Span {
 
     public static final String ID = UsersViewHeaderInfo.ID + "-description";
 
-    public UsersViewHeaderInfoDescription(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderInfoDescription(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setDescriptionText("Users view description");

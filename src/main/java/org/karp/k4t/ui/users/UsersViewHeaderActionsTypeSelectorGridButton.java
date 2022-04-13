@@ -15,7 +15,7 @@ public class UsersViewHeaderActionsTypeSelectorGridButton extends Button {
 
     public static final String ID = UsersViewHeaderActionsPresentationTypeSelector.ID + "-grid-button";
 
-    public UsersViewHeaderActionsTypeSelectorGridButton(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderActionsTypeSelectorGridButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setIcon(TABLE.create());

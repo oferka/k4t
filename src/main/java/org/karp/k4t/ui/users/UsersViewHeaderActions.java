@@ -16,16 +16,16 @@ public class UsersViewHeaderActions extends HorizontalLayout {
     private final UsersViewHeaderActionsFilterButton usersViewHeaderActionsFilterButton;
     private final UsersViewHeaderActionsNewButton usersViewHeaderActionsNewButton;
 
-    public UsersViewHeaderActions(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderActions(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
-        usersViewHeaderActionsPresentationTypeSelector = new UsersViewHeaderActionsPresentationTypeSelector(usersViewDataProvider);
+        usersViewHeaderActionsPresentationTypeSelector = new UsersViewHeaderActionsPresentationTypeSelector(usersViewDataProvider, usersViewState);
         add(usersViewHeaderActionsPresentationTypeSelector);
 
-        usersViewHeaderActionsFilterButton = new UsersViewHeaderActionsFilterButton(usersViewDataProvider);
+        usersViewHeaderActionsFilterButton = new UsersViewHeaderActionsFilterButton(usersViewDataProvider, usersViewState);
         add(usersViewHeaderActionsFilterButton);
 
-        usersViewHeaderActionsNewButton = new UsersViewHeaderActionsNewButton(usersViewDataProvider);
+        usersViewHeaderActionsNewButton = new UsersViewHeaderActionsNewButton(usersViewDataProvider, usersViewState);
         add(usersViewHeaderActionsNewButton);
     }
 }

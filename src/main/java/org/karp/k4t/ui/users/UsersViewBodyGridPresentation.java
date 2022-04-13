@@ -19,7 +19,7 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
 
     public static final String ID = UsersViewBody.ID + "-grid-presentation";
 
-    public UsersViewBodyGridPresentation(UsersDataProvider usersDataProvider) {
+    public UsersViewBodyGridPresentation(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setWidthFull();

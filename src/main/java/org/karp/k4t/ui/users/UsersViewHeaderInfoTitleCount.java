@@ -13,7 +13,7 @@ public class UsersViewHeaderInfoTitleCount extends H2 {
 
     public static final String ID = UsersViewHeaderInfoTitle.ID + "-count";
 
-    public UsersViewHeaderInfoTitleCount(UsersDataProvider usersViewDataProvider) {
+    public UsersViewHeaderInfoTitleCount(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
         setTitleText(usersViewDataProvider.count());
