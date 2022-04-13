@@ -1,7 +1,7 @@
 package org.karp.k4t.ui.users;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -20,6 +20,6 @@ public class UsersViewFooter extends HorizontalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        add(new H1("Users View Footer"));
+        add(new H2("Users View Footer"));
     }
 }
