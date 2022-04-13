@@ -37,7 +37,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
         add(userViewHeader);
 
         userViewBody = new UserViewBody(usersViewDataProvider);
-        add(userViewBody);
+        addAndExpand(userViewBody);
 
         userViewFooter = new UserViewFooter(usersViewDataProvider);
         add(userViewFooter);
@@ -45,10 +45,10 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
 
     @Override
     public void setParameter(BeforeEvent event, Long parameter) {
-        selectedUserChanged(parameter);
+        setUser(parameter);
     }
 
-    private void selectedUserChanged(long selectedUserId) {
+    private void setUser(long selectedUserId) {
         userViewHeader.selectedUserChanged(selectedUserId);
         userViewBody.selectedUserChanged(selectedUserId);
         userViewFooter.selectedUserChanged(selectedUserId);

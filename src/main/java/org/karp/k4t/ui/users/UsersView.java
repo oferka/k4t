@@ -37,7 +37,7 @@ public class UsersView extends VerticalLayout {
         add(usersViewHeader);
 
         usersViewBody = new UsersViewBody(usersViewDataProvider, usersViewState);
-        add(usersViewBody);
+        addAndExpand(usersViewBody);
 
         usersViewFooter = new UsersViewFooter(usersViewDataProvider, usersViewState);
         add(usersViewFooter);
