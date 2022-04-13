@@ -1,6 +1,7 @@
 package org.karp.k4t.ui.users;
 
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouterLink;
@@ -25,11 +26,18 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        add(new H3("Grid Presentation"));
+//        add(new H3("Grid Presentation"));
+//
+//        List<User> users = usersDataProvider.findAll();
+//        for(User user : users) {
+//            add(new RouterLink(user.getId().toString(), UserView.class, user.getId()));
+//        }
 
-        List<User> users = usersDataProvider.findAll();
-        for(User user : users) {
-            add(new RouterLink(user.getId().toString(), UserView.class, user.getId()));
-        }
+        Grid<User> usersGrid = new Grid<>();
+        usersGrid.addColumn(User::getId).setHeader("ID");
+        usersGrid.addColumn(User::getFirstName).setHeader("First Name");
+        usersGrid.addColumn(User::getLastName).setHeader("Last Name");
+        usersGrid.setItems(usersDataProvider.findAll());
+        add(usersGrid);
     }
 }
