@@ -9,7 +9,7 @@ import static org.karp.k4t.ui.users.UsersView.FOLDER;
 import static org.karp.k4t.ui.users.UsersViewHeader.ID;
 
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-public class UsersViewHeader extends HorizontalLayout implements UsersViewPresentationModeChangeListener {
+public class UsersViewHeader extends HorizontalLayout {
 
     public static final String ID = UsersView.ID + "-header";
 
@@ -27,12 +27,5 @@ public class UsersViewHeader extends HorizontalLayout implements UsersViewPresen
 
         usersViewHeaderActions = new UsersViewHeaderActions(usersViewDataProvider, usersViewState);
         add(usersViewHeaderActions);
-
-        usersViewState.addPresentationModeChangeListener(this);
-    }
-
-    @Override
-    public void presentationModeChanged(UsersViewPresentationModeChangeEvent event) {
-        System.out.println(event);
     }
 }

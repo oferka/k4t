@@ -27,5 +27,25 @@ public class UsersViewBody extends VerticalLayout {
 
         usersViewBodyGridPresentation = new UsersViewBodyGridPresentation(usersDataProvider, usersViewState);
         add(usersViewBodyGridPresentation);
+
+        setPresentationType(usersViewState.getPresentationMode());
+        usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
+    }
+
+    private void setPresentationType(UserViewPresentationMode presentationMode) {
+        switch (presentationMode) {
+            case GRID:
+                remove(usersViewBodyCardPresentation);
+                add(usersViewBodyGridPresentation);
+                break;
+            case CARD:
+                remove(usersViewBodyGridPresentation);
+                add(usersViewBodyCardPresentation);
+                break;
+        }
+    }
+
+    public void presentationModeChanged(UsersViewPresentationModeChangeEvent event) {
+        setPresentationType(event.getNewUserViewPresentationMode());
     }
 }
