@@ -25,7 +25,6 @@ public class UserViewHeaderInfoTitleText extends H2 {
 
     public void selectedUserChanged(long selectedUserId) {
         setText("Selected User: " + selectedUserId);
-
         Optional<User> user = usersDataProvider.findById(selectedUserId);
         user.ifPresent(value -> setText(value.getFirstName() + " " + value.getLastName()));
     }

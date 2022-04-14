@@ -18,9 +18,19 @@ public class UserAvatar extends Avatar {
 
     public UserAvatar(User user) {
         addClassName(ID);
-        setImage(user.getThumbnailPicture());
-        setName(user.getFirstName() + " " + user.getLastName());
         getElement().addEventListener("click", this::avatarClicked);
+        setUser(user);
+    }
+
+    public void selectedUserChanged(User user) {
+        setUser(user);
+    }
+
+    public void setUser(User user) {
+        if(user != null) {
+            setImage(user.getThumbnailPicture());
+            setName(user.getFirstName() + " " + user.getLastName());
+        }
     }
 
     private void avatarClicked(DomEvent event) {
