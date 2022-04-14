@@ -2,13 +2,11 @@ package org.karp.k4t.ui.users;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.RouterLink;
 import org.karp.k4t.model.User;
 import org.karp.k4t.ui.users.user.UserView;
-
-import java.util.List;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -26,18 +24,12 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-//        add(new H3("Grid Presentation"));
-//
-//        List<User> users = usersDataProvider.findAll();
-//        for(User user : users) {
-//            add(new RouterLink(user.getId().toString(), UserView.class, user.getId()));
-//        }
-
         Grid<User> usersGrid = new Grid<>();
         usersGrid.addColumn(User::getId).setHeader("ID");
         usersGrid.addColumn(User::getFirstName).setHeader("First Name");
         usersGrid.addColumn(User::getLastName).setHeader("Last Name");
+        usersGrid.addColumn(new ComponentRenderer<>(user -> new RouterLink(user.getId().toString(), UserView.class, user.getId()))).setHeader("Link");
         usersGrid.setItems(usersDataProvider.findAll());
-        add(usersGrid);
+        addAndExpand(usersGrid);
     }
 }
