@@ -13,7 +13,7 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
 
     public static final String ID = UsersViewBody.ID + "-grid-presentation";
 
-    private final UsersViewBodyGridPresentationGrid usersViewBodyGridPresentationGrid;
+    private final UsersGrid usersViewBodyGridPresentationGrid;
 
     public UsersViewBodyGridPresentation(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
@@ -21,7 +21,7 @@ public class UsersViewBodyGridPresentation extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        usersViewBodyGridPresentationGrid = new UsersViewBodyGridPresentationGrid(usersDataProvider, usersViewState);
+        usersViewBodyGridPresentationGrid = new UsersGrid(usersDataProvider, usersViewState);
         addAndExpand(usersViewBodyGridPresentationGrid);
     }
 }

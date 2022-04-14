@@ -35,8 +35,8 @@ public class UserViewHeaderInfoTitleAvatar extends Avatar {
     public void selectedUserChanged(long selectedUserId) {
         Optional<User> user = usersDataProvider.findById(selectedUserId);
         if(user.isPresent()) {
-            setImage("https://randomuser.me/api/portraits/thumb/men/40.jpg");
-            setName(user.get().getFirstName());
+            setImage(user.get().getThumbnailPicture());
+            setName(user.get().getFirstName() + " " + user.get().getLastName());
         }
     }
 }
