@@ -19,7 +19,7 @@ public class UsersGrid extends Grid<User> {
 
         setWidthFull();
         addColumn(User::getId).setHeader("ID");
-        addColumn(User::getId).setHeader("Picture");
+        addColumn(new ComponentRenderer<>(UserAvatar::new)).setHeader("Picture");
         addColumn(User::getFirstName).setHeader("First Name");
         addColumn(User::getLastName).setHeader("Last Name");
         addColumn(new ComponentRenderer<>(UserRouterLink::new)).setHeader("Link");
