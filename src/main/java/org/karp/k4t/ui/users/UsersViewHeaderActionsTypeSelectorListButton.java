@@ -8,9 +8,9 @@ import static com.vaadin.flow.component.Key.KEY_C;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.icon.VaadinIcon.BULLETS;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersViewPresentationMode.LIST;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 import static org.karp.k4t.ui.users.UsersViewHeaderActionsTypeSelectorListButton.ID;
+import static org.karp.k4t.ui.users.UsersViewPresentationMode.LIST;
 
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UsersViewHeaderActionsTypeSelectorListButton extends Button {
