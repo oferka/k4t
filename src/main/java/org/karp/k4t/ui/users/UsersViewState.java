@@ -6,7 +6,7 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.karp.k4t.ui.users.UserViewPresentationMode.GRID;
+import static org.karp.k4t.ui.users.UsersViewPresentationMode.GRID;
 
 @SpringComponent
 @UIScope
@@ -14,7 +14,7 @@ public class UsersViewState {
 
     private List<UsersViewPresentationModeChangeListener> usersViewPresentationModeChangeListeners = new ArrayList<>();
 
-    private UserViewPresentationMode presentationMode = GRID;
+    private UsersViewPresentationMode presentationMode = GRID;
 
     public void addPresentationModeChangeListener(UsersViewPresentationModeChangeListener listener) {
         usersViewPresentationModeChangeListeners.add(listener);
@@ -24,11 +24,11 @@ public class UsersViewState {
         usersViewPresentationModeChangeListeners.remove(listener);
     }
 
-    public UserViewPresentationMode getPresentationMode() {
+    public UsersViewPresentationMode getPresentationMode() {
         return presentationMode;
     }
 
-    public void setPresentationMode(UserViewPresentationMode presentationMode) {
+    public void setPresentationMode(UsersViewPresentationMode presentationMode) {
         if(presentationMode != this.presentationMode) {
             fireUsersViewPresentationModeChangeEvent(new UsersViewPresentationModeChangeEvent(this.presentationMode, presentationMode));
         }

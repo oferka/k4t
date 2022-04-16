@@ -30,7 +30,7 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
         usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
     }
 
-    private void setPresentationType(UserViewPresentationMode presentationMode) {
+    private void setPresentationType(UsersViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID:
                 gridButton.setEnabled(false);

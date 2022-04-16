@@ -32,7 +32,7 @@ public class UsersViewBody extends VerticalLayout {
         usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
     }
 
-    private void setPresentationType(UserViewPresentationMode presentationMode) {
+    private void setPresentationType(UsersViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID:
                 remove(usersViewBodyCardPresentation);

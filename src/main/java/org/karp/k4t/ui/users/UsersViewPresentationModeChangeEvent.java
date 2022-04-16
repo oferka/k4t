@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UsersViewPresentationModeChangeEvent {
 
-    private UserViewPresentationMode oldUserViewPresentationMode;
+    private UsersViewPresentationMode oldUserViewPresentationMode;
 
-    private UserViewPresentationMode newUserViewPresentationMode;
+    private UsersViewPresentationMode newUserViewPresentationMode;
 }

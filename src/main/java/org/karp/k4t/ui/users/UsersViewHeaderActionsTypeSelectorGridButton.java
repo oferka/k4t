@@ -8,7 +8,7 @@ import static com.vaadin.flow.component.Key.KEY_G;
 import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.icon.VaadinIcon.TABLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UserViewPresentationMode.GRID;
+import static org.karp.k4t.ui.users.UsersViewPresentationMode.GRID;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 import static org.karp.k4t.ui.users.UsersViewHeaderActionsTypeSelectorGridButton.ID;
 

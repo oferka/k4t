@@ -29,12 +29,12 @@ public class UsersList extends Div {
         setSizeFull();
         grid.setHeightFull();
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
-        grid.addComponentColumn(user -> createCard(user));
+        grid.addComponentColumn(user -> createListItem(user));
         grid.setItems(usersDataProvider.findAll());
         add(grid);
     }
 
-    private HorizontalLayout createCard(User user) {
+    private HorizontalLayout createListItem(User user) {
         HorizontalLayout card = new HorizontalLayout();
         card.addClassName("user-card");
         card.setSpacing(false);
