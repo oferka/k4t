@@ -18,6 +18,7 @@ public class UserListItemInfo extends VerticalLayout {
     public static final String ID = "user-list-item-info";
 
     private final UserListItemInfoHeader header;
+    private final UserListItemInfoSummary summary;
 
     public UserListItemInfo(User user) {
         addClassName(ID);
@@ -27,8 +28,8 @@ public class UserListItemInfo extends VerticalLayout {
         header = new UserListItemInfoHeader(user);
         add(header);
 
-        Span summary = new Span(user.getSummary());
-        summary.addClassName("user-card-header-summary");
+        summary = new UserListItemInfoSummary(user);
+        add(summary);
 
         HorizontalLayout actions = new HorizontalLayout();
         actions.addClassName("user-card-actions");
