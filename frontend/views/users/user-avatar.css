@@ -1,4 +1,4 @@
 .user-avatar {
     cursor: pointer;
-    border: 2px solid var(--lumo-header-text-color);
+    border: 1px solid var(--lumo-secondary-text-color);
 }

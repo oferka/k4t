@@ -1,7 +1,7 @@
 .users-list {
 }
 
-.users-list-grid {
-    background-color: var(--lumo-contrast-10pct);
+.users-list-grid vaadin-grid-cell-content {
+    background-color: var(--lumo-primary-color-10pct);
     line-height: var(--lumo-line-height-m);
 }
