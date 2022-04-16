@@ -30,6 +30,6 @@ public class UsersList extends Div {
     }
 
     private HorizontalLayout createListItem(User user) {
-        return new UserListItem(user);
+        return new UsersListItem(user);
     }
 }

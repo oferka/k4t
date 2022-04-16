@@ -5,26 +5,26 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.karp.k4t.model.User;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UserListItem.ID;
+import static org.karp.k4t.ui.users.UsersListItem.ID;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-public class UserListItem extends HorizontalLayout {
+public class UsersListItem extends HorizontalLayout {
 
-    public static final String ID = "user-list-item";
+    public static final String ID = UsersList.ID + "-item";
 
-    private final UserListItemAvatar userListItemAvatar;
-    private final UserListItemInfo userListItemInfo;
+    private final UsersListItemAvatar userListItemAvatar;
+    private final UsersListItemInfo userListItemInfo;
 
-    public UserListItem(User user) {
+    public UsersListItem(User user) {
         addClassName(ID);
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        userListItemAvatar = new UserListItemAvatar(user);
+        userListItemAvatar = new UsersListItemAvatar(user);
         add(userListItemAvatar);
 
-        userListItemInfo = new UserListItemInfo(user);
+        userListItemInfo = new UsersListItemInfo(user);
         add(userListItemInfo);
     }
 }
