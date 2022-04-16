@@ -18,10 +18,13 @@ public class UserComments extends HorizontalLayout {
 
     public UserComments(User user) {
         addClassName(ID);
+
         Icon commentsIcon = COMMENT_O.create();
-        commentsIcon.addClassName("user-card-comments-icon");
+        commentsIcon.addClassName("user-comments-icon");
+        add(commentsIcon);
+
         Span commentsText = new Span(user.getComments().toString());
-        commentsText.addClassName("user-card-comments-text");
-        add(commentsIcon, commentsText);
+        commentsText.addClassName("user-comments-text");
+        add(commentsText);
     }
 }

@@ -18,10 +18,13 @@ public class UserLikes extends HorizontalLayout {
 
     public UserLikes(User user) {
         addClassName(ID);
+
         Icon likesIcon = HEART_O.create();
-        likesIcon.addClassName("user-card-likes-icon");
+        likesIcon.addClassName("user-likes-icon");
+        add(likesIcon);
+        
         Span likesText = new Span(user.getLikes().toString());
-        likesText.addClassName("user-card-likes-text");
-        add(likesIcon, likesText);
+        likesText.addClassName("user-likes-text");
+        add(likesText);
     }
 }

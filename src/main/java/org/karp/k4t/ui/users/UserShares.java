@@ -18,10 +18,13 @@ public class UserShares extends HorizontalLayout {
 
     public UserShares(User user) {
         addClassName(ID);
+
         Icon sharesIcon = CONNECT_O.create();
-        sharesIcon.addClassName("user-card-shares-icon");
+        sharesIcon.addClassName("user-shares-icon");
+        add(sharesIcon);
+
         Span sharesText = new Span(user.getShares().toString());
-        sharesText.addClassName("user-card-shares-text");
-        add(sharesIcon, sharesText);
+        sharesText.addClassName("user-shares-text");
+        add(sharesText);
     }
 }
