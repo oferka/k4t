@@ -15,11 +15,9 @@ import static org.karp.k4t.ui.main.MainLayoutTabRouterLinkContent.ID;
 public class MainLayoutTabRouterLinkContent extends HorizontalLayout {
 
     public static final String ID = MainLayoutTabRouterLink.ID + "-content";
-    public static String ID_SUFFIX = "-content";
 
     public MainLayoutTabRouterLinkContent(String text, VaadinIcon vaadinIcon) {
         addClassName(ID);
-
         Span span = new Span(text);
         Icon icon = new Icon(vaadinIcon);
         add(icon, span);

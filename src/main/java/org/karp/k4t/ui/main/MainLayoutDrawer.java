@@ -20,17 +20,14 @@ public class MainLayoutDrawer extends VerticalLayout {
 
     public MainLayoutDrawer() {
         addClassName(ID);
-
         getThemeList().set("dark", true);
         setSizeFull();
         setPadding(false);
         setSpacing(false);
         setAlignItems(STRETCH);
-
         mainLayoutDrawerHeader = new MainLayoutDrawerHeader();
         mainLayoutTabs = new MainLayoutTabs();
         mainLayoutDrawerFooter = new MainLayoutDrawerFooter();
-
         add(mainLayoutDrawerHeader, mainLayoutTabs, mainLayoutDrawerFooter);
     }
 

@@ -31,7 +31,6 @@ public class FeedView extends HorizontalLayout {
     public FeedView() {
         addClassName(ID);
         setAlignItems(CENTER);
-
         Text text = new Text(NAME);
         add(text);
     }

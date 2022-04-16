@@ -19,7 +19,6 @@ public class MainLayoutUserSettings extends Button {
 
     public MainLayoutUserSettings() {
         addClassName(ID);
-
         Icon settingsIcon = COG_O.create();
         setIcon(settingsIcon);
         addClickListener(this::settingsClicked);

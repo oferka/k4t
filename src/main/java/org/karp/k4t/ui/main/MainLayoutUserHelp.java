@@ -19,7 +19,6 @@ public class MainLayoutUserHelp extends Button {
 
     public MainLayoutUserHelp() {
         addClassName(ID);
-
         Icon helpIcon = QUESTION_CIRCLE_O.create();
         setIcon(helpIcon);
         addClickListener(this::helpClicked);

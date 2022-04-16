@@ -24,10 +24,8 @@ public class MainLayout extends AppLayout {
     public MainLayout() {
         setId(ID);
         setPrimarySection(Section.DRAWER);
-
         mainLayoutHeader = new MainLayoutHeader();
         addToNavbar(true, mainLayoutHeader);
-
         mainLayoutDrawer = new MainLayoutDrawer();
         addToDrawer(mainLayoutDrawer);
     }

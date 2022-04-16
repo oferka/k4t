@@ -14,7 +14,6 @@ public class MainLayoutDrawerHeaderImage extends Image {
 
     public MainLayoutDrawerHeaderImage() {
         addClassName(ID);
-
         setSrc("images/logo.png");
         setAlt("K4T logo");
     }

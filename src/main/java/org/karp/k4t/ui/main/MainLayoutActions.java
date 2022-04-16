@@ -20,7 +20,6 @@ public class MainLayoutActions extends HorizontalLayout {
 
     public MainLayoutActions() {
         addClassName(ID);
-
         mainLayoutUserHelp = new MainLayoutUserHelp();
         mainLayoutUserSettings = new MainLayoutUserSettings();
         mainLayoutUserNotifications = new MainLayoutUserNotifications();

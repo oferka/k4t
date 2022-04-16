@@ -24,13 +24,10 @@ public class MainLayoutHeader extends HorizontalLayout {
         setWidthFull();
         setSpacing(false);
         setAlignItems(FlexComponent.Alignment.CENTER);
-
         mainLayoutDrawerToggle = new MainLayoutDrawerToggle();
         add(mainLayoutDrawerToggle);
-
         mainLayoutTitle = new MainLayoutTitle();
         add(mainLayoutTitle);
-
         mainLayoutActions = new MainLayoutActions();
         add(mainLayoutActions);
     }

@@ -32,7 +32,6 @@ public class HomeView extends HorizontalLayout {
     public HomeView() {
         addClassName(ID);
         setAlignItems(CENTER);
-
         Text text = new Text(NAME);
         add(text);
     }

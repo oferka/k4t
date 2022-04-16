@@ -19,7 +19,6 @@ public class MainLayoutTabRouterLink extends RouterLink {
     public MainLayoutTabRouterLink(String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
         addClassName(ID);
         setRoute(navigationTarget);
-
         mainLayoutTabRouterLinkContent = new MainLayoutTabRouterLinkContent(text, vaadinIcon);
         add(mainLayoutTabRouterLinkContent);
     }

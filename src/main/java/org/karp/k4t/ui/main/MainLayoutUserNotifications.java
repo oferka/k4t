@@ -19,7 +19,6 @@ public class MainLayoutUserNotifications extends Button {
 
     public MainLayoutUserNotifications() {
         addClassName(ID);
-
         Icon notificationsIcon = BELL_O.create();
         setIcon(notificationsIcon);
         addClickListener(this::notificationsClicked);

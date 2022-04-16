@@ -17,10 +17,8 @@ public class MainLayoutUserAvatar extends Avatar {
 
     public MainLayoutUserAvatar() {
         addClassName(ID);
-
         setImage("images/Ofer Karp.png");
         setName("Ofer Karp");
-
         getElement().addEventListener("click", this::avatarClicked);
     }
 
