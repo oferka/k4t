@@ -16,7 +16,6 @@ public class UsersGrid extends Grid<User> {
 
     public UsersGrid(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
-
         setWidthFull();
         addColumn(User::getId).setHeader("ID");
         addColumn(new ComponentRenderer<>(UserAvatar::new)).setHeader("Picture");

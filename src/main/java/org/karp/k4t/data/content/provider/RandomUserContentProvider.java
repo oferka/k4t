@@ -19,6 +19,11 @@ public class RandomUserContentProvider implements UserContentProvider {
     private final UserFirstNameProvider userFirstNameProvider;
     private final UserLastNameProvider userLastNameProvider;
     private final UserThumbnailPictureProvider thumbnailPictureProvider;
+    private final UserDateOfRegistrationProvider userDateOfRegistrationProvider;
+    private final UserSummaryProvider userSummaryProvider;
+    private final UserLikesProvider userLikesProvider;
+    private final UserCommentsProvider userCommentsProvider;
+    private final UserSharesProvider userSharesProvider;
 
     @Override
     public @NotNull User get() {
@@ -39,7 +44,12 @@ public class RandomUserContentProvider implements UserContentProvider {
         return new User(
                 userFirstNameProvider.get(),
                 userLastNameProvider.get(),
-                thumbnailPictureProvider.get()
+                thumbnailPictureProvider.get(),
+                userDateOfRegistrationProvider.get(),
+                userSummaryProvider.get(),
+                userLikesProvider.get(),
+                userCommentsProvider.get(),
+                userSharesProvider.get()
         );
     }
 }
