@@ -26,6 +26,7 @@ public class UsersList extends Div {
         addClassName(ID);
         setWidthFull();
         Grid<User> grid = new Grid<>();
+        grid.addClassName("users-list-grid");
         setSizeFull();
         grid.setHeightFull();
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS);
@@ -35,10 +36,10 @@ public class UsersList extends Div {
     }
 
     private HorizontalLayout createListItem(User user) {
-        HorizontalLayout card = new HorizontalLayout();
-        card.addClassName("user-card");
-        card.setSpacing(false);
-        card.getThemeList().add("spacing-s");
+        HorizontalLayout usersListItem = new HorizontalLayout();
+        usersListItem.addClassName("users-list-item");
+        usersListItem.setSpacing(false);
+        usersListItem.getThemeList().add("spacing-s");
 
         UserAvatar avatar = new UserAvatar(user);
         VerticalLayout description = new VerticalLayout();
@@ -81,7 +82,7 @@ public class UsersList extends Div {
         actions.add(likesIcon, likesText, commentsIcon, commentsText, sharesIcon, sharesText);
 
         description.add(header, summary, actions);
-        card.add(avatar, description);
-        return card;
+        usersListItem.add(avatar, description);
+        return usersListItem;
     }
 }
