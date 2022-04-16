@@ -1,10 +1,6 @@
 package org.karp.k4t.ui.users;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.karp.k4t.model.User;
 
@@ -19,6 +15,7 @@ public class UserListItemInfo extends VerticalLayout {
 
     private final UserListItemInfoHeader header;
     private final UserListItemInfoSummary summary;
+    private final UserListItemInfoActions actions;
 
     public UserListItemInfo(User user) {
         addClassName(ID);
@@ -31,26 +28,7 @@ public class UserListItemInfo extends VerticalLayout {
         summary = new UserListItemInfoSummary(user);
         add(summary);
 
-        HorizontalLayout actions = new HorizontalLayout();
-        actions.addClassName("user-card-actions");
-        actions.setSpacing(false);
-        actions.getThemeList().add("spacing-s");
-
-        Icon likesIcon = VaadinIcon.HEART_O.create();
-        likesIcon.addClassName("user-card-likes-icon");
-        Span likesText = new Span(user.getLikes().toString());
-        likesText.addClassName("user-card-likes-text");
-        Icon commentsIcon = VaadinIcon.COMMENT_O.create();
-        commentsIcon.addClassName("user-card-comments-icon");
-        Span commentsText = new Span(user.getComments().toString());
-        commentsText.addClassName("user-card-comments-text");
-        Icon sharesIcon = VaadinIcon.CONNECT_O.create();
-        sharesIcon.addClassName("user-card-shares-icon");
-        Span sharesText = new Span(user.getShares().toString());
-        sharesText.addClassName("user-card-shares-text");
-
-        actions.add(likesIcon, likesText, commentsIcon, commentsText, sharesIcon, sharesText);
-
-        add(summary, actions);
+        actions = new UserListItemInfoActions(user);
+        add(actions);
     }
 }
