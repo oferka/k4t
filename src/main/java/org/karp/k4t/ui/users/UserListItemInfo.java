@@ -17,15 +17,15 @@ public class UserListItemInfo extends VerticalLayout {
 
     public static final String ID = "user-list-item-info";
 
-    private final UserListItemInfoHeader userListItemInfoHeader;
+    private final UserListItemInfoHeader header;
 
     public UserListItemInfo(User user) {
         addClassName(ID);
         setSpacing(false);
         setPadding(false);
 
-        userListItemInfoHeader = new UserListItemInfoHeader(user);
-        add(userListItemInfoHeader);
+        header = new UserListItemInfoHeader(user);
+        add(header);
 
         Span summary = new Span(user.getSummary());
         summary.addClassName("user-card-header-summary");

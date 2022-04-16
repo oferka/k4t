@@ -1,7 +1,6 @@
 package org.karp.k4t.ui.users;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.karp.k4t.model.User;
 
@@ -14,18 +13,18 @@ public class UserListItemInfoHeader extends HorizontalLayout {
 
     public static final String ID = "user-list-item-info-header";
 
-    private final UserListItemInfoHeaderName userListItemInfoHeaderName;
+    private final UserListItemInfoHeaderName name;
+    private final UserListItemInfoHeaderDateOfRegistration dateOfRegistration;
 
     public UserListItemInfoHeader(User user) {
         addClassName(ID);
         setSpacing(false);
         getThemeList().add("spacing-s");
 
-        userListItemInfoHeaderName = new UserListItemInfoHeaderName(user);
-        add(userListItemInfoHeaderName);
+        name = new UserListItemInfoHeaderName(user);
+        add(name);
 
-        Span date = new Span(user.getDateOfRegistration().toString());
-        date.addClassName("user-card-header-date");
-        add(date);
+        dateOfRegistration = new UserListItemInfoHeaderDateOfRegistration(user);
+        add(dateOfRegistration);
     }
 }

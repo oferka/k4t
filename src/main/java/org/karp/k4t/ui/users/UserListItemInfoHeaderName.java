@@ -13,11 +13,11 @@ public class UserListItemInfoHeaderName extends Div {
 
     public static final String ID = "user-list-item-info-header-name";
 
-    private final UserRouterLink userRouterLink;
+    private final UserRouterLink link;
 
     public UserListItemInfoHeaderName(User user) {
         addClassName(ID);
-        userRouterLink = new UserRouterLink(user);
-        add(userRouterLink);
+        link = new UserRouterLink(user);
+        add(link);
     }
 }
