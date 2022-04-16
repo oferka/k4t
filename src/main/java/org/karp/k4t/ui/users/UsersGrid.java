@@ -22,6 +22,7 @@ public class UsersGrid extends Grid<User> {
         addColumn(User::getFirstName).setHeader("First Name");
         addColumn(User::getLastName).setHeader("Last Name");
         addColumn(new ComponentRenderer<>(UserRouterLink::new)).setHeader("Link");
+        addColumn(new ComponentRenderer<>(UserDateOfRegistration::new)).setHeader("Registered");
         setItems(usersDataProvider.findAll());
     }
 }
