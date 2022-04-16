@@ -13,7 +13,7 @@ public class UsersViewBody extends VerticalLayout {
 
     public static final String ID = UsersView.ID + "-body";
 
-    private final UsersViewBodyCardPresentation usersViewBodyCardPresentation;
+    private final UsersViewBodyListPresentation usersViewBodyCardPresentation;
     private final UsersViewBodyGridPresentation usersViewBodyGridPresentation;
 
     public UsersViewBody(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
@@ -22,7 +22,7 @@ public class UsersViewBody extends VerticalLayout {
         setWidthFull();
         setAlignItems(CENTER);
 
-        usersViewBodyCardPresentation = new UsersViewBodyCardPresentation(usersDataProvider, usersViewState);
+        usersViewBodyCardPresentation = new UsersViewBodyListPresentation(usersDataProvider, usersViewState);
         add(usersViewBodyCardPresentation);
 
         usersViewBodyGridPresentation = new UsersViewBodyGridPresentation(usersDataProvider, usersViewState);
@@ -38,7 +38,7 @@ public class UsersViewBody extends VerticalLayout {
                 remove(usersViewBodyCardPresentation);
                 add(usersViewBodyGridPresentation);
                 break;
-            case CARD:
+            case LIST:
                 remove(usersViewBodyGridPresentation);
                 add(usersViewBodyCardPresentation);
                 break;

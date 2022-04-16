@@ -14,15 +14,15 @@ import org.karp.k4t.model.User;
 import org.karp.k4t.ui.users.user.UserView;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersCards.ID;
+import static org.karp.k4t.ui.users.UsersList.ID;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-public class UsersCards extends Div {
+public class UsersList extends Div {
 
-    public static final String ID = "users-cards";
+    public static final String ID = "users-list";
 
-    public UsersCards(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
+    public UsersList(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
         setWidthFull();
         Grid<User> grid = new Grid<>();

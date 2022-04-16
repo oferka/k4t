@@ -12,22 +12,19 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
 
     public static final String ID = UsersViewHeaderActions.ID + "-presentation-type-selector";
 
-    private final UsersViewHeaderActionsTypeSelectorGridButton usersViewHeaderActionsTypeSelectorGridButton;
-    private final UsersViewHeaderActionsTypeSelectorCardButton usersViewHeaderActionsTypeSelectorCardButton;
-
-    private final UsersViewState usersViewState;
+    private final UsersViewHeaderActionsTypeSelectorGridButton gridButton;
+    private final UsersViewHeaderActionsTypeSelectorListButton listButton;
 
     public UsersViewHeaderActionsPresentationTypeSelector(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
-        this.usersViewState = usersViewState;
         addClassName(ID);
 
         setSpacing(false);
 
-        usersViewHeaderActionsTypeSelectorGridButton = new UsersViewHeaderActionsTypeSelectorGridButton(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderActionsTypeSelectorGridButton);
+        gridButton = new UsersViewHeaderActionsTypeSelectorGridButton(usersViewDataProvider, usersViewState);
+        add(gridButton);
 
-        usersViewHeaderActionsTypeSelectorCardButton = new UsersViewHeaderActionsTypeSelectorCardButton(usersViewDataProvider, usersViewState);
-        add(usersViewHeaderActionsTypeSelectorCardButton);
+        listButton = new UsersViewHeaderActionsTypeSelectorListButton(usersViewDataProvider, usersViewState);
+        add(listButton);
 
         setPresentationType(usersViewState.getPresentationMode());
         usersViewState.addPresentationModeChangeListener(this::presentationModeChanged);
@@ -36,12 +33,12 @@ public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLa
     private void setPresentationType(UserViewPresentationMode presentationMode) {
         switch (presentationMode) {
             case GRID:
-                usersViewHeaderActionsTypeSelectorGridButton.setEnabled(false);
-                usersViewHeaderActionsTypeSelectorCardButton.setEnabled(true);
+                gridButton.setEnabled(false);
+                listButton.setEnabled(true);
                 break;
-            case CARD:
-                usersViewHeaderActionsTypeSelectorGridButton.setEnabled(true);
-                usersViewHeaderActionsTypeSelectorCardButton.setEnabled(false);
+            case LIST:
+                gridButton.setEnabled(true);
+                listButton.setEnabled(false);
                 break;
         }
     }
