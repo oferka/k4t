@@ -19,21 +19,15 @@ public class UserListItemInfo extends VerticalLayout {
 
     public static final String ID = "user-list-item-info";
 
+    private final UserListItemInfoHeader userListItemInfoHeader;
+
     public UserListItemInfo(User user) {
         addClassName(ID);
         setSpacing(false);
         setPadding(false);
 
-        HorizontalLayout header = new HorizontalLayout();
-        header.addClassName("user-card-header");
-        header.setSpacing(false);
-        header.getThemeList().add("spacing-s");
-
-        RouterLink name = new RouterLink(user.getFirstName() + " " + user.getLastName(), UserView.class, user.getId());
-        name.addClassName("user-card-header-name");
-        Span date = new Span(user.getDateOfRegistration().toString());
-        date.addClassName("user-card-header-date");
-        header.add(name, date);
+        userListItemInfoHeader = new UserListItemInfoHeader(user);
+        add(userListItemInfoHeader);
 
         Span summary = new Span(user.getSummary());
         summary.addClassName("user-card-header-summary");
@@ -58,6 +52,6 @@ public class UserListItemInfo extends VerticalLayout {
 
         actions.add(likesIcon, likesText, commentsIcon, commentsText, sharesIcon, sharesText);
 
-        add(header, summary, actions);
+        add(summary, actions);
     }
 }
