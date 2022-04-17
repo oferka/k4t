@@ -6,7 +6,6 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouteAlias;
 import org.karp.k4t.ui.main.MainLayout;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.HOME_O;
@@ -18,7 +17,7 @@ import static org.karp.k4t.ui.home.HomeView.*;
 @Route(value = ROUTE, layout = MainLayout.class)
 @PageTitle(HomeView.NAME)
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-@RouteAlias(value = "", layout = MainLayout.class)
+//@RouteAlias(value = "", layout = MainLayout.class)
 public class HomeView extends HorizontalLayout {
 
     public static final String ROUTE = "home";
