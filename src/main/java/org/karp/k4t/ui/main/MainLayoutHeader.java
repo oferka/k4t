@@ -5,7 +5,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import javax.validation.constraints.NotNull;
 
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.BETWEEN;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutHeader.ID;
@@ -15,24 +15,23 @@ public class MainLayoutHeader extends HorizontalLayout {
 
     public static final String ID = MainLayout.ID + "-header";
 
-    private final MainLayoutHeaderDrawerToggle drawerToggle;
-    private final MainLayoutHeaderTitle title;
+    private final MainLayoutHeaderContent content;
     private final MainLayoutHeaderActions actions;
 
     public MainLayoutHeader() {
         addClassName(ID);
         setWidthFull();
-        setSpacing(false);
-        setAlignItems(CENTER);
-        drawerToggle = new MainLayoutHeaderDrawerToggle();
-        add(drawerToggle);
-        title = new MainLayoutHeaderTitle();
-        add(title);
+        setPadding(true);
+        setJustifyContentMode(BETWEEN);
+
+        content = new MainLayoutHeaderContent();
+        add(content);
+
         actions = new MainLayoutHeaderActions();
         add(actions);
     }
 
     public void setTitleText(@NotNull String titleText) {
-        title.setTitleText(titleText);
+        content.setTitleText(titleText);
     }
 }

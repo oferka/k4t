@@ -6,14 +6,14 @@ import com.vaadin.flow.component.dependency.CssImport;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutHeaderDrawerToggle.ID;
+import static org.karp.k4t.ui.main.MainLayoutHeaderContentDrawerToggle.ID;
 
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-public class MainLayoutHeaderDrawerToggle extends DrawerToggle {
+public class MainLayoutHeaderContentDrawerToggle extends DrawerToggle {
 
-    public static final String ID = MainLayoutHeader.ID + "-drawer-toggle";
+    public static final String ID = MainLayoutHeaderContent.ID + "-drawer-toggle";
 
-    public MainLayoutHeaderDrawerToggle() {
+    public MainLayoutHeaderContentDrawerToggle() {
         addClassName(ID);
         addThemeVariants(ButtonVariant.LUMO_CONTRAST);
         getElement().setAttribute("aria-label", "Menu toggle");
