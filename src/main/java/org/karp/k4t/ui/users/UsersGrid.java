@@ -17,15 +17,15 @@ public class UsersGrid extends Grid<User> {
     public UsersGrid(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
         setWidthFull();
-        addColumn(User::getId).setHeader("ID");
-        addColumn(new ComponentRenderer<>(UserAvatar::new)).setHeader("Picture");
-        addColumn(User::getFirstName).setHeader("First Name");
-        addColumn(User::getLastName).setHeader("Last Name");
-        addColumn(new ComponentRenderer<>(UserRouterLink::new)).setHeader("Link");
-        addColumn(new ComponentRenderer<>(UserDateOfRegistration::new)).setHeader("Registered");
-        addColumn(new ComponentRenderer<>(UserLikes::new)).setHeader("Likes");
-        addColumn(new ComponentRenderer<>(UserComments::new)).setHeader("Comments");
-        addColumn(new ComponentRenderer<>(UserShares::new)).setHeader("Shares");
+        addColumn(User::getId).setHeader("ID").setSortable(true);
+        addColumn(new ComponentRenderer<>(UserAvatar::new)).setHeader("Picture").setComparator(User::getFirstName);
+        addColumn(User::getFirstName).setHeader("First Name").setSortable(true);
+        addColumn(User::getLastName).setHeader("Last Name").setSortable(true);
+        addColumn(new ComponentRenderer<>(UserRouterLink::new)).setHeader("Link").setComparator(User::getFirstName);
+        addColumn(new ComponentRenderer<>(UserDateOfRegistration::new)).setHeader("Registered").setComparator(User::getDateOfRegistration);
+        addColumn(new ComponentRenderer<>(UserLikes::new)).setHeader("Likes").setComparator(User::getLikes);
+        addColumn(new ComponentRenderer<>(UserComments::new)).setHeader("Comments").setComparator(User::getComments);
+        addColumn(new ComponentRenderer<>(UserShares::new)).setHeader("Shares").setComparator(User::getShares);
         setItems(usersDataProvider.findAll());
     }
 }
