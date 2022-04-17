@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.validation.constraints.*;
 import java.time.ZonedDateTime;
 
+import static java.lang.String.format;
+
 @Entity
 @NoArgsConstructor
 public class User extends BaseEntity {
@@ -84,5 +86,9 @@ public class User extends BaseEntity {
                 long comments,
                 long shares) {
         this(null, firstName, lastName, thumbnailPicture, dateOfRegistration, summary, likes, comments, shares);
+    }
+
+    public @NotNull String getName() {
+        return format("%s %s", firstName, lastName);
     }
 }

@@ -36,12 +36,12 @@ public class UserViewHeaderActionsShareButton extends Button {
     }
 
     private void shareClicked(ClickEvent<Button> event) {
-        String firstName = null;
+        String name = null;
         Optional<User> user = usersDataProvider.findById(selectedUserId);
         if(user.isPresent()) {
-            firstName = user.get().getFirstName();
+            name = user.get().getFirstName();
         }
-        Notification.show("Share clicked. Selected user first name is: " + firstName, 3000, MIDDLE);
+        Notification.show("Share clicked. Selected user name is: " + name, 3000, MIDDLE);
     }
 
     public void selectedUserChanged(long selectedUserId) {

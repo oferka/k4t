@@ -25,6 +25,6 @@ public class UserViewHeaderInfoDescription extends Span {
 
     public void selectedUserChanged(long selectedUserId) {
         Optional<User> user = usersDataProvider.findById(selectedUserId);
-        user.ifPresent(value -> setText("Selected User First Name: " + value.getFirstName()));
+        user.ifPresent(value -> setText("Selected User Name: " + value.getName()));
     }
 }

@@ -38,12 +38,12 @@ public class UserViewHeaderActionsExportButton extends Button {
     }
 
     private void exportClicked(ClickEvent<Button> event) {
-        String firstName = null;
+        String name = null;
         Optional<User> user = usersDataProvider.findById(selectedUserId);
         if(user.isPresent()) {
-            firstName = user.get().getFirstName();
+            name = user.get().getFirstName();
         }
-        Notification.show("Export clicked. Selected user first name is: " + firstName, 3000, MIDDLE);
+        Notification.show("Export clicked. Selected user name is: " + name, 3000, MIDDLE);
     }
 
     public void selectedUserChanged(long selectedUserId) {

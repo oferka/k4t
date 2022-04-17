@@ -15,7 +15,7 @@ public class UserRouterLink extends RouterLink {
     public static final String ID = "user-router-link";
 
     public UserRouterLink(User user) {
-        super(user.getFirstName() + " " + user.getLastName(), UserView.class, user.getId());
+        super(user.getName(), UserView.class, user.getId());
         addClassName(ID);
     }
 }

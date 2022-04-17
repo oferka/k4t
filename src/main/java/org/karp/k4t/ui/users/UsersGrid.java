@@ -18,10 +18,10 @@ public class UsersGrid extends Grid<User> {
         addClassName(ID);
         setWidthFull();
         addColumn(User::getId).setHeader("ID").setSortable(true);
-        addColumn(new ComponentRenderer<>(UserAvatar::new)).setHeader("Picture").setComparator(User::getFirstName);
+        addColumn(new ComponentRenderer<>(UserAvatar::new)).setHeader("Picture").setComparator(User::getName);
         addColumn(User::getFirstName).setHeader("First Name").setSortable(true);
         addColumn(User::getLastName).setHeader("Last Name").setSortable(true);
-        addColumn(new ComponentRenderer<>(UserRouterLink::new)).setHeader("Link").setComparator(User::getFirstName);
+        addColumn(new ComponentRenderer<>(UserRouterLink::new)).setHeader("Link").setComparator(User::getName);
         addColumn(new ComponentRenderer<>(UserDateOfRegistration::new)).setHeader("Registered").setComparator(User::getDateOfRegistration);
         addColumn(new ComponentRenderer<>(UserLikes::new)).setHeader("Likes").setComparator(User::getLikes);
         addColumn(new ComponentRenderer<>(UserComments::new)).setHeader("Comments").setComparator(User::getComments);

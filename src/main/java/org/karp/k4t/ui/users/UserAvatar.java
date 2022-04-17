@@ -29,7 +29,7 @@ public class UserAvatar extends Avatar {
     public void setUser(User user) {
         if(user != null) {
             setImage(user.getThumbnailPicture());
-            setName(user.getFirstName() + " " + user.getLastName());
+            setName(user.getName());
         }
     }
 
