@@ -7,14 +7,14 @@ import javax.validation.constraints.NotNull;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutTitle.ID;
+import static org.karp.k4t.ui.main.MainLayoutHeaderTitle.ID;
 
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
-public class MainLayoutTitle extends H1 {
+public class MainLayoutHeaderTitle extends H1 {
 
-    public static final String ID = MainLayout.ID + "-title";
+    public static final String ID = MainLayoutHeader.ID + "-title";
 
-    public MainLayoutTitle() {
+    public MainLayoutHeaderTitle() {
         addClassName(ID);
     }
 

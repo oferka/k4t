@@ -14,8 +14,8 @@ import static org.karp.k4t.ui.main.MainLayout.ID;
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class MainLayout extends AppLayout {
 
-    private final MainLayoutHeader mainLayoutHeader;
-    private final MainLayoutDrawer mainLayoutDrawer;
+    private final MainLayoutHeader header;
+    private final MainLayoutDrawer drawer;
 
     public static final String ID_PREFIX = "main";
     public static final String ID = ID_PREFIX + "-layout";
@@ -24,17 +24,17 @@ public class MainLayout extends AppLayout {
     public MainLayout() {
         setId(ID);
         setPrimarySection(Section.DRAWER);
-        mainLayoutHeader = new MainLayoutHeader();
-        addToNavbar(true, mainLayoutHeader);
-        mainLayoutDrawer = new MainLayoutDrawer();
-        addToDrawer(mainLayoutDrawer);
+        header = new MainLayoutHeader();
+        addToNavbar(true, header);
+        drawer = new MainLayoutDrawer();
+        addToDrawer(drawer);
     }
 
     @Override
     protected void afterNavigation() {
         super.afterNavigation();
-        mainLayoutDrawer.selectTab(getContent());
-        mainLayoutHeader.setTitleText(getCurrentPageTitle());
+        drawer.selectTab(getContent());
+        header.setTitleText(getCurrentPageTitle());
     }
 
     private String getCurrentPageTitle() {
