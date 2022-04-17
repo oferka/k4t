@@ -26,20 +26,20 @@ public class UsersView extends VerticalLayout {
     public static final String NAME = "Users";
     public static final VaadinIcon ICON = USERS;
 
-    private final UsersViewHeader usersViewHeader;
-    private final UsersViewBody usersViewBody;
-    private final UsersViewFooter usersViewFooter;
+    private final UsersViewHeader header;
+    private final UsersViewBody body;
+    private final UsersViewFooter footer;
 
     public UsersView(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         addClassName(ID);
 
-        usersViewHeader = new UsersViewHeader(usersViewDataProvider, usersViewState);
-        add(usersViewHeader);
+        header = new UsersViewHeader(usersViewDataProvider, usersViewState);
+        add(header);
 
-        usersViewBody = new UsersViewBody(usersViewDataProvider, usersViewState);
-        addAndExpand(usersViewBody);
+        body = new UsersViewBody(usersViewDataProvider, usersViewState);
+        addAndExpand(body);
 
-        usersViewFooter = new UsersViewFooter(usersViewDataProvider, usersViewState);
-        add(usersViewFooter);
+        footer = new UsersViewFooter(usersViewDataProvider, usersViewState);
+        add(footer);
     }
 }
