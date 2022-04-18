@@ -17,7 +17,7 @@ import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 import static org.karp.k4t.ui.home.HomeView.ROUTE;
 
 @Route(value = ROUTE, layout = HomeLayout.class)
-@RouteAlias(value = EMPTY)
+@RouteAlias(value = EMPTY, layout = HomeLayout.class)
 @PageTitle(HomeView.NAME)
 @CssImport(FOLDER + HomeView.ID + CSS_FILE_EXTENSION)
 public class HomeView extends HorizontalLayout {
