@@ -1,3 +1,4 @@
 .application-image {
     height: calc(var(--lumo-size-l) * 1.2);
+    cursor: pointer;
 }
