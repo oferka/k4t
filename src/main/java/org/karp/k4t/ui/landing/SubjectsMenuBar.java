@@ -11,7 +11,7 @@ import static com.vaadin.flow.component.notification.Notification.Position.MIDDL
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
 
-@CssImport(FOLDER + LandingViewHeaderMenu.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingViewHeaderNavigation.ID + CSS_FILE_EXTENSION)
 public class SubjectsMenuBar extends MenuBar {
 
     public static final String ID = "subjects-menu-bar";

@@ -5,7 +5,6 @@ import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
-import com.vaadin.flow.component.tabs.TabsVariant;
 import org.karp.k4t.ui.feed.FeedView;
 import org.karp.k4t.ui.home.HomeView;
 import org.karp.k4t.ui.users.UsersView;
@@ -13,6 +12,8 @@ import org.karp.k4t.ui.views.empty.EmptyView;
 
 import java.util.Optional;
 
+import static com.vaadin.flow.component.tabs.Tabs.Orientation.VERTICAL;
+import static com.vaadin.flow.component.tabs.TabsVariant.LUMO_MINIMAL;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 import static org.karp.k4t.ui.main.MainLayoutTabs.ID;
@@ -24,8 +25,8 @@ public class MainLayoutTabs extends Tabs {
 
     public MainLayoutTabs() {
         addClassName(ID);
-        setOrientation(Tabs.Orientation.VERTICAL);
-        addThemeVariants(TabsVariant.LUMO_MINIMAL);
+        setOrientation(VERTICAL);
+        addThemeVariants(LUMO_MINIMAL);
         add(createTabs());
     }
 

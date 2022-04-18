@@ -14,7 +14,7 @@ public class LandingViewHeader extends HorizontalLayout {
 
     public static final String ID = LandingView.ID + "-header";
 
-    private final LandingViewHeaderMenu menu;
+    private final LandingViewHeaderNavigation menu;
     private final LandingViewHeaderSearch search;
     private final LandingViewHeaderActions actions;
 
@@ -24,7 +24,7 @@ public class LandingViewHeader extends HorizontalLayout {
         setAlignItems(CENTER);
         setJustifyContentMode(BETWEEN);
 
-        menu = new LandingViewHeaderMenu();
+        menu = new LandingViewHeaderNavigation();
         add(menu);
 
         search = new LandingViewHeaderSearch();

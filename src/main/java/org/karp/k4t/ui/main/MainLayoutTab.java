@@ -17,7 +17,7 @@ public class MainLayoutTab extends Tab {
 
     private final MainLayoutTabRouterLink mainLayoutTabRouterLink;
 
-    public MainLayoutTab(String viewId, String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
+    public  MainLayoutTab(String viewId, String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
         addClassName(ID);
         mainLayoutTabRouterLink = new MainLayoutTabRouterLink(text, navigationTarget, vaadinIcon);
         add(mainLayoutTabRouterLink);
