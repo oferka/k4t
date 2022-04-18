@@ -1,2 +1,3 @@
 .questions-menu-bar {
+    cursor: var(--lumo-clickable-cursor);
 }
