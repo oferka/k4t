@@ -20,8 +20,10 @@ public class MainLayoutDrawerHeader extends HorizontalLayout {
     public MainLayoutDrawerHeader() {
         addClassName(ID);
         setAlignItems(CENTER);
+
         image = new ApplicationImage();
         add(image);
+
         title = new MainLayoutDrawerHeaderTitle();
         add(title);
     }
