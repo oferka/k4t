@@ -12,7 +12,6 @@ public class LandingViewHeaderMenu extends Div {
 
     public static final String ID = LandingViewHeader.ID + "-menu";
 
-    private final LogoMenuBar logoMenuBar;
     private final HomeMenuBar homeMenuBar;
     private final SubjectsMenuBar subjectsMenuBar;
     private final QuestionsMenuBar questionsMenuBar;
@@ -23,7 +22,6 @@ public class LandingViewHeaderMenu extends Div {
     public LandingViewHeaderMenu() {
         addClassName(ID);
 
-        logoMenuBar = new LogoMenuBar();
         homeMenuBar = new HomeMenuBar();
         subjectsMenuBar = new SubjectsMenuBar();
         questionsMenuBar = new QuestionsMenuBar();
@@ -31,7 +29,6 @@ public class LandingViewHeaderMenu extends Div {
         playMenuBar = new PlayMenuBar();
         createMenuBar = new CreateMenuBar();
 
-        setInlineBlock(logoMenuBar);
         setInlineBlock(homeMenuBar);
         setInlineBlock(subjectsMenuBar);
         setInlineBlock(questionsMenuBar);
@@ -39,7 +36,7 @@ public class LandingViewHeaderMenu extends Div {
         setInlineBlock(playMenuBar);
         setInlineBlock(createMenuBar);
 
-        add(logoMenuBar, homeMenuBar, subjectsMenuBar, questionsMenuBar, quizzesMenuBar, playMenuBar, createMenuBar);
+        add(homeMenuBar, subjectsMenuBar, questionsMenuBar, quizzesMenuBar, playMenuBar, createMenuBar);
     }
 
     private void setInlineBlock(MenuBar menuBar) {
