@@ -2,7 +2,6 @@ package org.karp.k4t.ui.landing;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.tabs.Tabs;
-import org.karp.k4t.ui.home.HomeTab;
 import org.karp.k4t.ui.subjects.SubjectsTab;
 
 import static com.vaadin.flow.component.tabs.Tabs.Orientation.HORIZONTAL;
@@ -15,16 +14,12 @@ public class LandingViewHeaderNavigationTabs extends Tabs {
 
     public static final String ID = LandingViewHeaderNavigation.ID + "-tabs";
 
-    private final HomeTab homeTab;
     private final SubjectsTab subjectsTab;
 
     public LandingViewHeaderNavigationTabs() {
         addClassName(ID);
         setOrientation(HORIZONTAL);
         addThemeVariants(LUMO_MINIMAL);
-
-        homeTab = new HomeTab();
-        add(homeTab);
 
         subjectsTab = new SubjectsTab();
         add(subjectsTab);
