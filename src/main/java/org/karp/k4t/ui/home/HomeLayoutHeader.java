@@ -13,22 +13,22 @@ public class HomeLayoutHeader extends HorizontalLayout {
 
     public static final String ID = HomeLayout.ID + "-header";
 
-    private final HomeLayoutTitle title;
+    private final HomeLayoutTitleBar titleBar;
     private final HomeLayoutTabs tabs;
 
     public HomeLayoutHeader() {
         addClassName(ID);
         setAlignItems(CENTER);
 
-        title = new HomeLayoutTitle();
-        add(title);
+        titleBar = new HomeLayoutTitleBar();
+        add(titleBar);
 
         tabs = new HomeLayoutTabs();
         add(tabs);
     }
 
     public void setTitleText(String titleText) {
-        title.setTitleText(titleText);
+        titleBar.setTitleText(titleText);
     }
 
     public void selectTab(Component content) {
