@@ -15,6 +15,7 @@ public class HomeLayoutHeader extends HorizontalLayout {
 
     private final HomeLayoutTitleBar titleBar;
     private final HomeLayoutTabs tabs;
+    private final HomeLayoutActionsBar actionsBar;
 
     public HomeLayoutHeader() {
         addClassName(ID);
@@ -24,7 +25,10 @@ public class HomeLayoutHeader extends HorizontalLayout {
         add(titleBar);
 
         tabs = new HomeLayoutTabs();
-        add(tabs);
+        addAndExpand(tabs);
+
+        actionsBar = new HomeLayoutActionsBar();
+        add(actionsBar);
     }
 
     public void setTitleText(String titleText) {

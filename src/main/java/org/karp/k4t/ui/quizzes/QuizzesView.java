@@ -3,13 +3,12 @@ package org.karp.k4t.ui.quizzes;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.karp.k4t.ui.home.HomeLayout;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.LINES_LIST;
-import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.quizzes.QuizzesView.FOLDER;
@@ -18,7 +17,7 @@ import static org.karp.k4t.ui.quizzes.QuizzesView.ROUTE;
 @Route(value = ROUTE, layout = HomeLayout.class)
 @PageTitle(QuizzesView.NAME)
 @CssImport(FOLDER + QuizzesView.ID + CSS_FILE_EXTENSION)
-public class QuizzesView extends HorizontalLayout {
+public class QuizzesView extends VerticalLayout {
 
     public static final String ROUTE = "quizzes";
     public static final String ID_PREFIX = "quizzes";
@@ -30,7 +29,12 @@ public class QuizzesView extends HorizontalLayout {
 
     public QuizzesView() {
         addClassName(ID);
-        setAlignItems(CENTER);
+        setSizeFull();
+        setJustifyContentMode(JustifyContentMode.CENTER);
+        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
+        getStyle().set("text-align", "center");
+        getStyle().set("padding", "2em");
+
         Text text = new Text(NAME);
         add(text);
     }
