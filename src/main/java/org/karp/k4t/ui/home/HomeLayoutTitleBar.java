@@ -3,8 +3,6 @@ package org.karp.k4t.ui.home;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
-import javax.validation.constraints.NotNull;
-
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
@@ -26,9 +24,5 @@ public class HomeLayoutTitleBar extends HorizontalLayout {
 
         text = new HomeLayoutTitleText();
         add(text);
-    }
-
-    public void setTitleText(@NotNull String titleText) {
-        text.setTitleText(titleText);
     }
 }

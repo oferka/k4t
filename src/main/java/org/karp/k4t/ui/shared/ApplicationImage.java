@@ -3,6 +3,8 @@ package org.karp.k4t.ui.shared;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Image;
 
+import static org.karp.k4t.Application.APPLICATION_LOGO;
+import static org.karp.k4t.Application.APPLICATION_NAME;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
@@ -13,7 +15,7 @@ public class ApplicationImage extends Image {
 
     public ApplicationImage() {
         addClassName(ID);
-        setSrc("images/logo.png");
-        setAlt("K4T logo");
+        setSrc(APPLICATION_LOGO);
+        setAlt(APPLICATION_NAME);
     }
 }

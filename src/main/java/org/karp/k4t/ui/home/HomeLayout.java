@@ -3,11 +3,14 @@ package org.karp.k4t.ui.home;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.router.PageTitle;
+import lombok.extern.slf4j.Slf4j;
 
+import static java.lang.String.format;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
+@Slf4j
 @CssImport(FOLDER + HomeLayout.ID + CSS_FILE_EXTENSION)
 public class HomeLayout extends AppLayout {
 
@@ -27,8 +30,8 @@ public class HomeLayout extends AppLayout {
     @Override
     protected void afterNavigation() {
         super.afterNavigation();
+        log.info(format("Selected view page title: %s", getCurrentPageTitle()));
         header.selectTab(getContent());
-        header.setTitleText(getCurrentPageTitle());
     }
 
     private String getCurrentPageTitle() {

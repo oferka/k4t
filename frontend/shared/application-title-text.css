@@ -1,0 +1,5 @@
+.application-title-text {
+    font-size: var(--lumo-font-size-l);
+    font-weight: 600;
+    margin: var(--lumo-space-m) var(--lumo-space-l)
+}

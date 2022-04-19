@@ -35,10 +35,6 @@ public class HomeLayoutHeader extends HorizontalLayout {
         setVerticalComponentAlignment(CENTER, titleBar, tabs, actionsBar);
     }
 
-    public void setTitleText(String titleText) {
-        titleBar.setTitleText(titleText);
-    }
-
     public void selectTab(Component content) {
         tabs.selectTab(content);
     }
