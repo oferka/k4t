@@ -1,3 +1,5 @@
 .home-layout-title-text {
-
+    font-size: var(--lumo-font-size-xl);
+    font-weight: 600;
+    margin: 0 var(--lumo-space-s);
 }

@@ -8,7 +8,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.karp.k4t.ui.home.HomeLayout;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.LINES_LIST;
+import static com.vaadin.flow.component.icon.VaadinIcon.CLIPBOARD_PULSE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 import static org.karp.k4t.ui.quizzes.QuizzesView.FOLDER;
@@ -24,7 +24,7 @@ public class QuizzesView extends VerticalLayout {
     public static final String ID_SUFFIX = "-view";
     public static final String ID = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Quizzes";
-    public static final VaadinIcon ICON = LINES_LIST;
+    public static final VaadinIcon ICON = CLIPBOARD_PULSE;
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public QuizzesView() {

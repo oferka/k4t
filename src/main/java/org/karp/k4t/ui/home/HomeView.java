@@ -8,7 +8,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 
-import static com.vaadin.flow.component.icon.VaadinIcon.LINES_LIST;
+import static com.vaadin.flow.component.icon.VaadinIcon.HOME_O;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
@@ -26,7 +26,7 @@ public class HomeView extends VerticalLayout {
     public static final String ID_SUFFIX = "-view";
     public static final String ID = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Home";
-    public static final VaadinIcon ICON = LINES_LIST;
+    public static final VaadinIcon ICON = HOME_O;
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public HomeView() {
