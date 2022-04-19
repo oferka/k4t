@@ -11,6 +11,7 @@ import org.karp.k4t.ui.quizzes.QuizzesView;
 import java.util.Optional;
 
 import static com.vaadin.flow.component.tabs.Tabs.Orientation.HORIZONTAL;
+import static com.vaadin.flow.component.tabs.TabsVariant.LUMO_CENTERED;
 import static com.vaadin.flow.component.tabs.TabsVariant.LUMO_MINIMAL;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
@@ -23,7 +24,7 @@ public class HomeLayoutTabs extends Tabs {
     public HomeLayoutTabs() {
         addClassName(ID);
         setOrientation(HORIZONTAL);
-        addThemeVariants(LUMO_MINIMAL);
+        addThemeVariants(LUMO_CENTERED, LUMO_MINIMAL);
         add(createTabs());
     }
 

@@ -5,6 +5,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.BETWEEN;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
@@ -19,7 +20,8 @@ public class HomeLayoutHeader extends HorizontalLayout {
 
     public HomeLayoutHeader() {
         addClassName(ID);
-        setAlignItems(CENTER);
+        setPadding(true);
+        setJustifyContentMode(BETWEEN);
 
         titleBar = new HomeLayoutTitleBar();
         add(titleBar);
@@ -29,6 +31,8 @@ public class HomeLayoutHeader extends HorizontalLayout {
 
         actionsBar = new HomeLayoutActionsBar();
         add(actionsBar);
+
+        setVerticalComponentAlignment(CENTER, titleBar, tabs, actionsBar);
     }
 
     public void setTitleText(String titleText) {
