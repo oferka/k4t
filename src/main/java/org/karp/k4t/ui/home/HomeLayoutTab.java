@@ -16,9 +16,9 @@ public class HomeLayoutTab extends Tab {
 
     private final HomeLayoutTabRouterLink homeLayoutTabRouterLink;
 
-    public  HomeLayoutTab(String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
+    public  HomeLayoutTab(String text, Class<? extends Component> navigationTarget, VaadinIcon icon) {
         addClassName(ID);
-        homeLayoutTabRouterLink = new HomeLayoutTabRouterLink(text, navigationTarget, vaadinIcon);
+        homeLayoutTabRouterLink = new HomeLayoutTabRouterLink(text, navigationTarget, icon);
         add(homeLayoutTabRouterLink);
         ComponentUtil.setData(this, Class.class, navigationTarget);
     }

@@ -15,10 +15,10 @@ public class HomeLayoutTabRouterLink extends RouterLink {
 
     private final HomeLayoutTabRouterLinkContent homeLayoutTabRouterLinkContent;
 
-    public HomeLayoutTabRouterLink(String text, Class<? extends Component> navigationTarget, VaadinIcon vaadinIcon) {
+    public HomeLayoutTabRouterLink(String text, Class<? extends Component> navigationTarget, VaadinIcon icon) {
         addClassName(ID);
         setRoute(navigationTarget);
-        homeLayoutTabRouterLinkContent = new HomeLayoutTabRouterLinkContent(text, vaadinIcon);
+        homeLayoutTabRouterLinkContent = new HomeLayoutTabRouterLinkContent(text, icon);
         add(homeLayoutTabRouterLinkContent);
     }
 }
