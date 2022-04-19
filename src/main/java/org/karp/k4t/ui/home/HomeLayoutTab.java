@@ -3,7 +3,6 @@ package org.karp.k4t.ui.home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.router.RouterLink;
 
@@ -15,7 +14,7 @@ public class HomeLayoutTab extends Tab {
 
     public static final String ID = HomeLayout.ID + "-tab";
 
-    public  HomeLayoutTab(String text, Class<? extends Component> navigationTarget, VaadinIcon icon) {
+    public  HomeLayoutTab(String text, Class<? extends Component> navigationTarget) {
         addClassName(ID);
         add(new RouterLink(text, navigationTarget));
         ComponentUtil.setData(this, Class.class, navigationTarget);

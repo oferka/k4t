@@ -30,9 +30,9 @@ public class HomeLayoutTabs extends Tabs {
 
     private Component[] createTabs() {
         return new Component[] {
-                new HomeLayoutTab(HomeView.NAME, HomeView.class, HomeView.ICON),
-                new HomeLayoutTab(QuestionsView.NAME, QuestionsView.class, QuestionsView.ICON),
-                new HomeLayoutTab(QuizzesView.NAME, QuizzesView.class, QuizzesView.ICON)
+                new HomeLayoutTab(HomeView.NAME, HomeView.class),
+                new HomeLayoutTab(QuestionsView.NAME, QuestionsView.class),
+                new HomeLayoutTab(QuizzesView.NAME, QuizzesView.class)
         };
     }
 
