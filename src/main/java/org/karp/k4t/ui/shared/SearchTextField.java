@@ -1,9 +1,9 @@
 package org.karp.k4t.ui.shared;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
 
+import static com.vaadin.flow.component.icon.VaadinIcon.SEARCH;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
@@ -18,6 +18,6 @@ public class SearchTextField extends TextField {
         getElement().setAttribute("aria-label", "search");
         setPlaceholder("Search");
         setClearButtonVisible(true);
-        setPrefixComponent(VaadinIcon.SEARCH.create());
+        setPrefixComponent(SEARCH.create());
     }
 }
