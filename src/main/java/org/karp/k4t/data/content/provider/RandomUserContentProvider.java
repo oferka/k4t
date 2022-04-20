@@ -41,15 +41,15 @@ public class RandomUserContentProvider implements UserContentProvider {
     }
 
     private @NotNull User getUser() {
-        return new User(
-                userFirstNameProvider.get(),
-                userLastNameProvider.get(),
-                thumbnailPictureProvider.get(),
-                userDateOfRegistrationProvider.get(),
-                userSummaryProvider.get(),
-                userLikesProvider.get(),
-                userCommentsProvider.get(),
-                userSharesProvider.get()
-        );
+        User user = new User();
+        user.setFirstName(userFirstNameProvider.get(user));
+        user.setLastName(userLastNameProvider.get(user));
+        user.setThumbnailPicture(thumbnailPictureProvider.get(user));
+        user.setDateOfRegistration(userDateOfRegistrationProvider.get(user));
+        user.setSummary(userSummaryProvider.get(user));
+        user.setLikes(userLikesProvider.get(user));
+        user.setComments(userCommentsProvider.get(user));
+        user.setShares(userSharesProvider.get(user));
+        return user;
     }
 }
