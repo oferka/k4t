@@ -5,7 +5,7 @@ spring:
   application:
     name: "k4t"
   profiles:
-    active: "random-user-content-provider,users-service-data-provider"
+    active: "random-user-content-provider,users-service-data-provider,random-search-term-content-provider,search-terms-service-data-provider"
   datasource:
     url: jdbc:h2:mem:k4t
     username: sa
