@@ -77,15 +77,15 @@ public class User extends BaseEntity {
         this.shares = shares;
     }
 
-    public User(String firstName,
-                String lastName,
-                String thumbnailPicture,
-                ZonedDateTime dateOfRegistration,
-                String summary,
-                long likes,
-                long comments,
-                long shares) {
-        this(null, firstName, lastName, thumbnailPicture, dateOfRegistration, summary, likes, comments, shares);
+    public User(String firstName, String lastName, String thumbnailPicture, ZonedDateTime dateOfRegistration, String summary, Long likes, Long comments, Long shares) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.thumbnailPicture = thumbnailPicture;
+        this.dateOfRegistration = dateOfRegistration;
+        this.summary = summary;
+        this.likes = likes;
+        this.comments = comments;
+        this.shares = shares;
     }
 
     public @NotNull String getName() {
