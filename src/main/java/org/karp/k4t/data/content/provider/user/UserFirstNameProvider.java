@@ -1,4 +1,4 @@
-package org.karp.k4t.data.content.provider;
+package org.karp.k4t.data.content.provider.user;
 
 import com.github.javafaker.Faker;
 import org.karp.k4t.model.User;

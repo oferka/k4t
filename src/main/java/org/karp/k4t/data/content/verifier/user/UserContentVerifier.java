@@ -1,4 +1,4 @@
-package org.karp.k4t.data.content.verifier;
+package org.karp.k4t.data.content.verifier.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

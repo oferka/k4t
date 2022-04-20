@@ -1,10 +1,10 @@
-package org.karp.k4t.data.content.loader;
+package org.karp.k4t.data.content.loader.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.IterableUtils;
-import org.karp.k4t.data.content.provider.UserContentProvider;
-import org.karp.k4t.data.content.verifier.UserContentVerifier;
+import org.karp.k4t.data.content.provider.user.UserContentProvider;
+import org.karp.k4t.data.content.verifier.user.UserContentVerifier;
 import org.karp.k4t.model.User;
 import org.karp.k4t.service.UserService;
 import org.springframework.stereotype.Service;

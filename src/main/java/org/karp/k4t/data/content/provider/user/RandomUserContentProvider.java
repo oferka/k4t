@@ -1,4 +1,4 @@
-package org.karp.k4t.data.content.provider;
+package org.karp.k4t.data.content.provider.user;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package org.karp.k4t.data.content.provider;
+package org.karp.k4t.data.content.provider.user;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.karp.k4t.model.User;

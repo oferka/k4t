@@ -1,4 +1,4 @@
-package org.karp.k4t.data.content.loader;
+package org.karp.k4t.data.content.loader.user;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

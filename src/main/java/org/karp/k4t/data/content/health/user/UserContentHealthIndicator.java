@@ -1,4 +1,4 @@
-package org.karp.k4t.data.content.health;
+package org.karp.k4t.data.content.health.user;
 
 import lombok.RequiredArgsConstructor;
 import org.karp.k4t.service.UserService;
