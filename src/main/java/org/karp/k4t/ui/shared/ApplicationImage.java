@@ -4,6 +4,7 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
+import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.Key.KEY_K;
 import static com.vaadin.flow.component.KeyModifier.ALT;
@@ -18,7 +19,7 @@ public class ApplicationImage extends Image {
 
     public static final String ID = "application-image";
 
-    public ApplicationImage() {
+    public ApplicationImage(DataProvider dataProvider) {
         addClassName(ID);
         setSrc(APPLICATION_LOGO);
         setAlt(APPLICATION_NAME);

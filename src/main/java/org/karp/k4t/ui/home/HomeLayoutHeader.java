@@ -3,6 +3,7 @@ package org.karp.k4t.ui.home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.BETWEEN;
@@ -19,21 +20,21 @@ public class HomeLayoutHeader extends HorizontalLayout {
     private final HomeLayoutSearchBar searchBar;
     private final HomeLayoutActionsBar actionsBar;
 
-    public HomeLayoutHeader() {
+    public HomeLayoutHeader(DataProvider dataProvider) {
         addClassName(ID);
         setPadding(true);
         setJustifyContentMode(BETWEEN);
 
-        titleBar = new HomeLayoutTitleBar();
+        titleBar = new HomeLayoutTitleBar(dataProvider);
         add(titleBar);
 
-        tabs = new HomeLayoutTabs();
+        tabs = new HomeLayoutTabs(dataProvider);
         addAndExpand(tabs);
 
-        searchBar = new HomeLayoutSearchBar();
+        searchBar = new HomeLayoutSearchBar(dataProvider);
         add(searchBar);
 
-        actionsBar = new HomeLayoutActionsBar();
+        actionsBar = new HomeLayoutActionsBar(dataProvider);
         add(actionsBar);
 
         setVerticalComponentAlignment(CENTER, titleBar, tabs, actionsBar);

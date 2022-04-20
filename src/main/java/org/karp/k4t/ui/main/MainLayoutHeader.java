@@ -2,6 +2,7 @@ package org.karp.k4t.ui.main;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.karp.k4t.ui.DataProvider;
 
 import javax.validation.constraints.NotNull;
 
@@ -18,16 +19,16 @@ public class MainLayoutHeader extends HorizontalLayout {
     private final MainLayoutHeaderContent content;
     private final MainLayoutHeaderActions actions;
 
-    public MainLayoutHeader() {
+    public MainLayoutHeader(DataProvider dataProvider) {
         addClassName(ID);
         setWidthFull();
         setPadding(true);
         setJustifyContentMode(BETWEEN);
 
-        content = new MainLayoutHeaderContent();
+        content = new MainLayoutHeaderContent(dataProvider);
         add(content);
 
-        actions = new MainLayoutHeaderActions();
+        actions = new MainLayoutHeaderActions(dataProvider);
         add(actions);
     }
 

@@ -3,6 +3,7 @@ package org.karp.k4t.ui.users.user;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.users.UsersDataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -17,7 +18,7 @@ public class UserViewFooter extends HorizontalLayout {
 
     private final H2 label;
 
-    public UserViewFooter(UsersDataProvider usersViewDataProvider) {
+    public UserViewFooter(DataProvider dataProvider) {
         addClassName(ID);
 
         setWidthFull();

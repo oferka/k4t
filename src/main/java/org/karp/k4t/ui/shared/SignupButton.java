@@ -6,6 +6,7 @@ import com.vaadin.flow.component.KeyModifier;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.notification.Notification;
+import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.button.ButtonVariant.LUMO_PRIMARY;
 import static com.vaadin.flow.component.icon.VaadinIcon.SIGN_IN;
@@ -18,7 +19,7 @@ public class SignupButton extends Button {
 
     public static final String ID = "signup-button";
 
-    public SignupButton() {
+    public SignupButton(DataProvider dataProvider) {
         addClassName(ID);
         addThemeVariants(LUMO_PRIMARY);
         setIcon(SIGN_IN.create());

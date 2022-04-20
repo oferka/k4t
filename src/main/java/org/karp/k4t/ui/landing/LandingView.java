@@ -4,6 +4,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import org.karp.k4t.ui.DataProvider;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
@@ -13,7 +14,6 @@ import static org.karp.k4t.ui.landing.LandingView.ROUTE;
 @Route(value = ROUTE)
 @PageTitle(LandingView.NAME)
 @CssImport(FOLDER + LandingView.ID + CSS_FILE_EXTENSION)
-//@RouteAlias(value = EMPTY)
 public class LandingView extends VerticalLayout {
 
     public static final String ROUTE = "landing";
@@ -27,16 +27,16 @@ public class LandingView extends VerticalLayout {
     private final LandingViewBody body;
     private final LandingViewFooter footer;
 
-    public LandingView() {
+    public LandingView(DataProvider dataProvider) {
         addClassName(ID);
 
-        header = new LandingViewHeader();
+        header = new LandingViewHeader(dataProvider);
         add(header);
 
-        body = new LandingViewBody();
+        body = new LandingViewBody(dataProvider);
         addAndExpand(body);
 
-        footer = new LandingViewFooter();
+        footer = new LandingViewFooter(dataProvider);
         add(footer);
     }
 }

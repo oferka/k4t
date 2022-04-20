@@ -5,6 +5,7 @@ import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.router.PageTitle;
+import org.karp.k4t.ui.DataProvider;
 
 import static org.karp.k4t.ui.Styles.*;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
@@ -21,12 +22,12 @@ public class MainLayout extends AppLayout {
     public static final String ID = ID_PREFIX + "-layout";
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
-    public MainLayout() {
+    public MainLayout(DataProvider dataProvider) {
         setId(ID);
         setPrimarySection(Section.DRAWER);
-        header = new MainLayoutHeader();
+        header = new MainLayoutHeader(dataProvider);
         addToNavbar(true, header);
-        drawer = new MainLayoutDrawer();
+        drawer = new MainLayoutDrawer(dataProvider);
         addToDrawer(drawer);
     }
 

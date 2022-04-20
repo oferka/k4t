@@ -3,6 +3,7 @@ package org.karp.k4t.ui.shared;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.CssImport;
 import org.karp.k4t.model.SearchTerm;
+import org.karp.k4t.ui.DataProvider;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class SearchBox extends ComboBox<SearchTerm> {
 
     public static final String ID = "search-box";
 
-    public SearchBox() {
+    public SearchBox(DataProvider dataProvider) {
         addClassName(ID);
 
         getElement().setAttribute("aria-label", "search");

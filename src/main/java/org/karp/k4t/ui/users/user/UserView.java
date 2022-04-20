@@ -6,8 +6,8 @@ import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.main.MainLayout;
-import org.karp.k4t.ui.users.UsersDataProvider;
 import org.karp.k4t.ui.users.UsersView;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -30,16 +30,16 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
     private final UserViewBody userViewBody;
     private final UserViewFooter userViewFooter;
 
-    public UserView(UsersDataProvider usersViewDataProvider) {
+    public UserView(DataProvider dataProvider) {
         addClassName(ID);
 
-        userViewHeader = new UserViewHeader(usersViewDataProvider);
+        userViewHeader = new UserViewHeader(dataProvider);
         add(userViewHeader);
 
-        userViewBody = new UserViewBody(usersViewDataProvider);
+        userViewBody = new UserViewBody(dataProvider);
         addAndExpand(userViewBody);
 
-        userViewFooter = new UserViewFooter(usersViewDataProvider);
+        userViewFooter = new UserViewFooter(dataProvider);
         add(userViewFooter);
     }
 

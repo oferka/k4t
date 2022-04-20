@@ -2,7 +2,7 @@ package org.karp.k4t.ui.users.user;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import org.karp.k4t.ui.users.UsersDataProvider;
+import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -17,15 +17,15 @@ public class UserViewHeaderInfoTitle extends HorizontalLayout {
     private final UserViewHeaderInfoTitleAvatar userViewHeaderInfoTitleIcon;
     private final UserViewHeaderInfoTitleText userViewHeaderInfoTitleText;
 
-    public UserViewHeaderInfoTitle(UsersDataProvider usersDataProvider) {
+    public UserViewHeaderInfoTitle(DataProvider dataProvider) {
         addClassName(ID);
 
         setAlignItems(CENTER);
 
-        userViewHeaderInfoTitleIcon = new UserViewHeaderInfoTitleAvatar(usersDataProvider);
+        userViewHeaderInfoTitleIcon = new UserViewHeaderInfoTitleAvatar(dataProvider);
         add(userViewHeaderInfoTitleIcon);
 
-        userViewHeaderInfoTitleText = new UserViewHeaderInfoTitleText(usersDataProvider);
+        userViewHeaderInfoTitleText = new UserViewHeaderInfoTitleText(dataProvider);
         add(userViewHeaderInfoTitleText);
 
         setVerticalComponentAlignment(CENTER, userViewHeaderInfoTitleIcon, userViewHeaderInfoTitleText);

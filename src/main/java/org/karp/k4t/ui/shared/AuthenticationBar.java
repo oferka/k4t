@@ -2,6 +2,7 @@ package org.karp.k4t.ui.shared;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.karp.k4t.ui.DataProvider;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
@@ -14,13 +15,13 @@ public class AuthenticationBar extends HorizontalLayout {
     private final LoginButton loginButton;
     private final SignupButton signupButton;
 
-    public AuthenticationBar() {
+    public AuthenticationBar(DataProvider dataProvider) {
         addClassName(ID);
 
-        loginButton = new LoginButton();
+        loginButton = new LoginButton(dataProvider);
         add(loginButton);
 
-        signupButton = new SignupButton();
+        signupButton = new SignupButton(dataProvider);
         add(signupButton);
     }
 }

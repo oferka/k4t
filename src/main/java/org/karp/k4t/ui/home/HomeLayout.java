@@ -4,6 +4,7 @@ import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.router.PageTitle;
 import lombok.extern.slf4j.Slf4j;
+import org.karp.k4t.ui.DataProvider;
 
 import static java.lang.String.format;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -20,10 +21,10 @@ public class HomeLayout extends AppLayout {
 
     private final HomeLayoutHeader header;
 
-    public HomeLayout() {
+    public HomeLayout(DataProvider dataProvider) {
         setId(ID);
 
-        header = new HomeLayoutHeader();
+        header = new HomeLayoutHeader(dataProvider);
         addToNavbar(true, header);
     }
 

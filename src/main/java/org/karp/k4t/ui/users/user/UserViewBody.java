@@ -4,6 +4,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouterLink;
+import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.users.UsersDataProvider;
 import org.karp.k4t.ui.users.UsersView;
 
@@ -20,7 +21,7 @@ public class UserViewBody extends VerticalLayout {
     private final Label selectedIdLabel;
     private final RouterLink usersRouterLink;
 
-    public UserViewBody(UsersDataProvider usersViewDataProvider) {
+    public UserViewBody(DataProvider dataProvider) {
         addClassName(ID);
 
         setWidthFull();

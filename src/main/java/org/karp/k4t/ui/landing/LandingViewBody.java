@@ -4,6 +4,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouterLink;
+import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.feed.FeedView;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -15,7 +16,7 @@ public class LandingViewBody extends VerticalLayout {
 
     public static final String ID = LandingView.ID + "-body";
 
-    public LandingViewBody() {
+    public LandingViewBody(DataProvider dataProvider) {
         addClassName(ID);
 
         setAlignItems(Alignment.CENTER);

@@ -3,6 +3,7 @@ package org.karp.k4t.ui.landing;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.karp.k4t.ui.DataProvider;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
@@ -13,7 +14,7 @@ public class LandingViewFooter extends VerticalLayout {
 
     public static final String ID = LandingView.ID + "-footer";
 
-    public LandingViewFooter() {
+    public LandingViewFooter(DataProvider dataProvider) {
         addClassName(ID);
         setAlignItems(Alignment.CENTER);
 

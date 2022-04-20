@@ -6,6 +6,7 @@ import com.vaadin.flow.component.KeyModifier;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.notification.Notification;
+import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.USER_CHECK;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
@@ -17,7 +18,7 @@ public class LoginButton extends Button {
 
     public static final String ID = "login-button";
 
-    public LoginButton() {
+    public LoginButton(DataProvider dataProvider) {
         addClassName(ID);
         setIcon(USER_CHECK.create());
         setText("Log in");

@@ -2,6 +2,7 @@ package org.karp.k4t.ui.main;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H1;
+import org.karp.k4t.ui.DataProvider;
 
 import javax.validation.constraints.NotNull;
 
@@ -14,7 +15,7 @@ public class MainLayoutHeaderContentTitle extends H1 {
 
     public static final String ID = MainLayoutHeaderContent.ID + "-title";
 
-    public MainLayoutHeaderContentTitle() {
+    public MainLayoutHeaderContentTitle(DataProvider dataProvider) {
         addClassName(ID);
     }
 

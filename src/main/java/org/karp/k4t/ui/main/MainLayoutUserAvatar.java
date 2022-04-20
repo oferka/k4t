@@ -4,6 +4,7 @@ import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.dom.DomEvent;
+import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -15,7 +16,7 @@ public class MainLayoutUserAvatar extends Avatar {
 
     public static final String ID = MainLayout.ID + "-user-avatar";
 
-    public MainLayoutUserAvatar() {
+    public MainLayoutUserAvatar(DataProvider dataProvider) {
         addClassName(ID);
         setImage("images/Ofer Karp.png");
         setName("Ofer Karp");

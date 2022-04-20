@@ -5,6 +5,7 @@ import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
+import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.questions.QuestionsView;
 import org.karp.k4t.ui.quizzes.QuizzesView;
 
@@ -21,18 +22,18 @@ public class HomeLayoutTabs extends Tabs {
 
     public static final String ID = HomeLayout.ID + "-tabs";
 
-    public HomeLayoutTabs() {
+    public HomeLayoutTabs(DataProvider dataProvider) {
         addClassName(ID);
         setOrientation(HORIZONTAL);
         addThemeVariants(LUMO_CENTERED, LUMO_MINIMAL);
-        add(createTabs());
+        add(createTabs(dataProvider));
     }
 
-    private Component[] createTabs() {
+    private Component[] createTabs(DataProvider dataProvider) {
         return new Component[] {
-                new HomeLayoutTab(HomeView.NAME, HomeView.class),
-                new HomeLayoutTab(QuestionsView.NAME, QuestionsView.class),
-                new HomeLayoutTab(QuizzesView.NAME, QuizzesView.class)
+                new HomeLayoutTab(dataProvider, HomeView.NAME, HomeView.class),
+                new HomeLayoutTab(dataProvider, QuestionsView.NAME, QuestionsView.class),
+                new HomeLayoutTab(dataProvider, QuizzesView.NAME, QuizzesView.class)
         };
     }
 

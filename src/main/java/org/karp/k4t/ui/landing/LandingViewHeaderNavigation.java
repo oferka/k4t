@@ -2,6 +2,7 @@ package org.karp.k4t.ui.landing;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.shared.ApplicationImage;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
@@ -22,22 +23,14 @@ public class LandingViewHeaderNavigation extends HorizontalLayout {
 //    private final PlayMenuBar playMenuBar;
 //    private final CreateMenuBar createMenuBar;
 
-    public LandingViewHeaderNavigation() {
+    public LandingViewHeaderNavigation(DataProvider dataProvider) {
         addClassName(ID);
         setAlignItems(CENTER);
 
-        applicationImage = new ApplicationImage();
+        applicationImage = new ApplicationImage(dataProvider);
         add(applicationImage);
 
-        navigationTabs = new LandingViewHeaderNavigationTabs();
+        navigationTabs = new LandingViewHeaderNavigationTabs(dataProvider);
         add(navigationTabs);
-//        homeMenuBar = new HomeMenuBar();
-//        subjectsMenuBar = new SubjectsMenuBar();
-//        questionsMenuBar = new QuestionsMenuBar();
-//        quizzesMenuBar = new QuizzesMenuBar();
-//        playMenuBar = new PlayMenuBar();
-//        createMenuBar = new CreateMenuBar();
-//
-//        add(applicationImage, homeMenuBar, subjectsMenuBar, questionsMenuBar, quizzesMenuBar, playMenuBar, createMenuBar);
     }
 }

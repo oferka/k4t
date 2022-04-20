@@ -2,6 +2,7 @@ package org.karp.k4t.ui.main;
 
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import org.karp.k4t.ui.DataProvider;
 
 import javax.validation.constraints.NotNull;
 
@@ -18,15 +19,15 @@ public class MainLayoutHeaderContent extends HorizontalLayout {
     private final MainLayoutHeaderContentDrawerToggle drawerToggle;
     private final MainLayoutHeaderContentTitle title;
 
-    public MainLayoutHeaderContent() {
+    public MainLayoutHeaderContent(DataProvider dataProvider) {
         addClassName(ID);
         setSpacing(false);
         setAlignItems(CENTER);
 
-        drawerToggle = new MainLayoutHeaderContentDrawerToggle();
+        drawerToggle = new MainLayoutHeaderContentDrawerToggle(dataProvider);
         add(drawerToggle);
 
-        title = new MainLayoutHeaderContentTitle();
+        title = new MainLayoutHeaderContentTitle(dataProvider);
         add(title);
     }
 

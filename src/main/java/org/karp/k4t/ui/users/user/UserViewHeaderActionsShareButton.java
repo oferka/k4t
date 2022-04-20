@@ -7,6 +7,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.notification.Notification;
 import org.karp.k4t.model.User;
+import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.users.UsersDataProvider;
 
 import java.util.Optional;
@@ -22,11 +23,11 @@ public class UserViewHeaderActionsShareButton extends Button {
 
     public static final String ID = UserViewHeaderActions.ID + "-share-button";
 
-    private final UsersDataProvider usersDataProvider;
+    private final DataProvider dataProvider;
     private long selectedUserId;
 
-    public UserViewHeaderActionsShareButton(UsersDataProvider usersDataProvider) {
-        this.usersDataProvider = usersDataProvider;
+    public UserViewHeaderActionsShareButton(DataProvider dataProvider) {
+        this.dataProvider = dataProvider;
         addClassName(ID);
 
         setIcon(SHARE.create());
@@ -37,7 +38,7 @@ public class UserViewHeaderActionsShareButton extends Button {
 
     private void shareClicked(ClickEvent<Button> event) {
         String name = null;
-        Optional<User> user = usersDataProvider.findById(selectedUserId);
+        Optional<User> user = dataProvider.getUsersDataProvider().findById(selectedUserId);
         if(user.isPresent()) {
             name = user.get().getFirstName();
         }
