@@ -19,7 +19,6 @@ public class LoginButton extends Button {
 
     public LoginButton() {
         addClassName(ID);
-//        addThemeVariants(LUMO_TERTIARY_INLINE);
         setIcon(USER_CHECK.create());
         setText("Log in");
         addClickListener(this::loginClicked);

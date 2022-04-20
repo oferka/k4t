@@ -16,6 +16,7 @@ public class HomeLayoutHeader extends HorizontalLayout {
 
     private final HomeLayoutTitleBar titleBar;
     private final HomeLayoutTabs tabs;
+    private final HomeLayoutSearchBar searchBar;
     private final HomeLayoutActionsBar actionsBar;
 
     public HomeLayoutHeader() {
@@ -28,6 +29,9 @@ public class HomeLayoutHeader extends HorizontalLayout {
 
         tabs = new HomeLayoutTabs();
         addAndExpand(tabs);
+
+        searchBar = new HomeLayoutSearchBar();
+        add(searchBar);
 
         actionsBar = new HomeLayoutActionsBar();
         add(actionsBar);
