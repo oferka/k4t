@@ -13,7 +13,6 @@ public class HomeLayoutTitleBar extends HorizontalLayout {
     public static final String ID = HomeLayout.ID + "-title-bar";
 
     private final HomeLayoutTitleImage image;
-//    private final HomeLayoutTitleText text;
 
     public HomeLayoutTitleBar() {
         addClassName(ID);
@@ -21,8 +20,5 @@ public class HomeLayoutTitleBar extends HorizontalLayout {
 
         image = new HomeLayoutTitleImage();
         add(image);
-
-//        text = new HomeLayoutTitleText();
-//        add(text);
     }
 }
