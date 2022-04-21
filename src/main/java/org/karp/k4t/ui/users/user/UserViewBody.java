@@ -5,7 +5,6 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouterLink;
 import org.karp.k4t.ui.DataProvider;
-import org.karp.k4t.ui.users.UsersDataProvider;
 import org.karp.k4t.ui.users.UsersView;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;

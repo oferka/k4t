@@ -3,7 +3,6 @@ package org.karp.k4t.ui.users.user;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.karp.k4t.ui.DataProvider;
-import org.karp.k4t.ui.users.UsersDataProvider;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.FOLDER;

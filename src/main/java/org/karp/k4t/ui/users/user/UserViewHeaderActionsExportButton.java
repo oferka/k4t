@@ -9,7 +9,6 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import org.karp.k4t.model.User;
 import org.karp.k4t.ui.DataProvider;
-import org.karp.k4t.ui.users.UsersDataProvider;
 
 import java.util.Optional;
 
