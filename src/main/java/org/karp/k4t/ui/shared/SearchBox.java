@@ -2,9 +2,9 @@ package org.karp.k4t.ui.shared;
 
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.router.QueryParameters;
 import elemental.json.JsonObject;
+import lombok.extern.slf4j.Slf4j;
 import org.karp.k4t.model.SearchTerm;
 import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.SearchView;
@@ -16,11 +16,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
-import static java.lang.String.format;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
+@Slf4j
 @CssImport(SHARED_FOLDER + SearchBox.ID + CSS_FILE_EXTENSION)
 public class SearchBox extends ComboBox<SearchTerm> {
 
@@ -46,24 +45,24 @@ public class SearchBox extends ComboBox<SearchTerm> {
     private void searchTermChanged(SearchTermChangeEvent searchTermChangeEvent) {
         String oldSearchTermText = searchTermChangeEvent.getOldSearchTermText().orElse(null);
         String newSearchTermText = searchTermChangeEvent.getNewSearchTermText().orElse(null);
-        Notification.show(format("Search term changed. old search term: %s, new search term: %s", oldSearchTermText, newSearchTermText), 3000, MIDDLE);
+        log.info("Search term changed. old search term: {}, new search term: {}", oldSearchTermText, newSearchTermText);
     }
 
     private void selectedItemChanged(SelectedItemChangeEvent<ComboBox<SearchTerm>> comboBoxSelectedItemChangeEvent) {
         JsonObject selected = comboBoxSelectedItemChangeEvent.getSelectedItem();
         if(selected != null) {
-            Notification.show("Search item selected: " + selected, 3000, MIDDLE);
+            log.info("Search item selected: {}", selected);
             String label = selected.getString("label");
             navigateToSearchView(label);
         }
         else {
-            Notification.show("Search selection cleaned", 3000, MIDDLE);
+            log.info("Search selection cleaned");
         }
     }
 
     private void customValueEntered(CustomValueSetEvent<ComboBox<SearchTerm>> customValueSetEvent) {
         String customValue = customValueSetEvent.getDetail();
-        Notification.show("Search custom value entered: " + customValue, 3000, MIDDLE);
+        log.info("Search custom value entered: {}", customValue);
         navigateToSearchView(customValue);
     }
 

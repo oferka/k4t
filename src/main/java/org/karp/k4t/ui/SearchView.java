@@ -5,9 +5,11 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
 import org.karp.k4t.ui.home.HomeLayout;
+import org.karp.k4t.ui.search.terms.SearchState;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.karp.k4t.ui.SearchView.FOLDER;
 import static org.karp.k4t.ui.SearchView.ROUTE;
@@ -30,7 +32,10 @@ public class SearchView extends VerticalLayout implements BeforeEnterObserver {
     private final Span query;
     private final Span type;
 
-    public SearchView() {
+    private final SearchState searchState;
+
+    public SearchView(SearchState searchState) {
+        this.searchState = searchState;
         addClassName(ID);
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
@@ -41,7 +46,7 @@ public class SearchView extends VerticalLayout implements BeforeEnterObserver {
         viewName = new Span(NAME);
         add(viewName);
 
-        query = new Span();
+        query = new Span(searchState.getSearchTerm().isPresent()?searchState.getSearchTerm().get():null);
         add(query);
 
         type = new Span();
@@ -52,15 +57,21 @@ public class SearchView extends VerticalLayout implements BeforeEnterObserver {
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
         final QueryParameters queryParameters = beforeEnterEvent.getLocation().getQueryParameters();
         Map<String, List<String>> parameters = queryParameters.getParameters();
+
+        String queryValue = null;
         List<String> queryListValue = parameters.get("query");
         if(queryListValue != null && !queryListValue.isEmpty()) {
-            String queryValue = queryListValue.get(0);
+            queryValue = queryListValue.get(0);
             query.setText(queryValue);
         }
+
+        String typeValue;
         List<String> typeListValue = parameters.get("type");
         if(typeListValue != null && !typeListValue.isEmpty()) {
-            String typeValue = typeListValue.get(0);
+            typeValue = typeListValue.get(0);
             type.setText(typeValue);
         }
+
+        searchState.setSearchTerm((queryValue != null)?Optional.of(queryValue):Optional.empty());
     }
 }

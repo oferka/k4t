@@ -2,7 +2,6 @@ package org.karp.k4t.ui.search.terms;
 
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.spring.annotation.UIScope;
-import org.karp.k4t.model.SearchTerm;
 
 import java.util.ArrayList;
 import java.util.List;
