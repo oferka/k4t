@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
@@ -27,6 +28,8 @@ public class SearchBox extends ComboBox<SearchTerm> {
 
     private final DataProvider dataProvider;
     private final SearchState searchState;
+
+    private String currentlyPresentedSearchTermText = EMPTY;;
 
     public SearchBox(DataProvider dataProvider, SearchState searchState) {
         this.dataProvider = dataProvider;
@@ -48,17 +51,31 @@ public class SearchBox extends ComboBox<SearchTerm> {
         String oldSearchTermText = searchTermChangeEvent.getOldSearchTermText().orElse(null);
         String newSearchTermText = searchTermChangeEvent.getNewSearchTermText().orElse(null);
         log.info("Search term changed. old search term: {}, new search term: {}", oldSearchTermText, newSearchTermText);
-        if(oldSearchTermText == null) {
-            log.info("External change");
-            List<SearchTerm> searchTerms = dataProvider.getSearchTermsDataProvider().findByText(newSearchTermText);
-            if (!searchTerms.isEmpty()) {
-                log.info("Search term {} exists", newSearchTermText);
-                setValue(searchTerms.get(0));
+        ensurePresentedValueUpdated(oldSearchTermText, newSearchTermText);
+    }
+
+    private void ensurePresentedValueUpdated(String oldSearchTermText, String newSearchTermText) {
+        if(!currentlyPresentedSearchTermText.equalsIgnoreCase(newSearchTermText)) {
+            log.info("Presented search term text: '{}' is not synced with the new search term text '{}'", currentlyPresentedSearchTermText, newSearchTermText);
+            if(oldSearchTermText == null) {
+                log.info("Former search term text is empty, which means that the search term change is originated by an external source");
+                List<SearchTerm> searchTerms = dataProvider.getSearchTermsDataProvider().findByText(newSearchTermText);
+                if (!searchTerms.isEmpty()) {
+                    log.info("Search term: '{}' exists", newSearchTermText);
+                    setValue(searchTerms.get(0));
+                }
+                else {
+                    log.info("Search term: '{}' does not exist", newSearchTermText);
+//                    dataProvider.getSearchTermsDataProvider().save(new SearchTerm(newSearchTermText));
+//                    getDataProvider().refreshAll();
+                }
             }
             else {
-                log.info("Search term {} does not exist", newSearchTermText);
-                //todo - add the new search term
+                log.info("Former search term text is not empty, which means that the search term change is originated by this search box (internal)");
             }
+        }
+        else {
+            log.info("Presented search term text '{}' is synced with the new search term text: '{}'", currentlyPresentedSearchTermText, newSearchTermText);
         }
     }
 
@@ -66,19 +83,19 @@ public class SearchBox extends ComboBox<SearchTerm> {
         JsonObject selected = comboBoxSelectedItemChangeEvent.getSelectedItem();
         if(selected != null) {
             log.info("Search item selected: {}", selected);
-            String label = selected.getString("label");
-            navigateToSearchView(label);
+            currentlyPresentedSearchTermText = selected.getString("label");
+            navigateToSearchView(currentlyPresentedSearchTermText);
         }
         else {
             log.info("Search selection cleaned");
-            searchState.setSearchTerm(Optional.empty());
+            currentlyPresentedSearchTermText = EMPTY;
         }
     }
 
     private void customValueEntered(CustomValueSetEvent<ComboBox<SearchTerm>> customValueSetEvent) {
-        String customValue = customValueSetEvent.getDetail();
-        log.info("Search custom value entered: {}", customValue);
-        navigateToSearchView(customValue);
+        currentlyPresentedSearchTermText = customValueSetEvent.getDetail();
+        log.info("Search custom value entered: {}", currentlyPresentedSearchTermText);
+        navigateToSearchView(currentlyPresentedSearchTermText);
     }
 
     private void navigateToSearchView(String query) {
