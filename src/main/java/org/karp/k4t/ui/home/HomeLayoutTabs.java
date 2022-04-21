@@ -3,6 +3,7 @@ package org.karp.k4t.ui.home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import org.karp.k4t.ui.DataProvider;
@@ -11,6 +12,7 @@ import org.karp.k4t.ui.quizzes.QuizzesView;
 
 import java.util.Optional;
 
+import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static com.vaadin.flow.component.tabs.Tabs.Orientation.HORIZONTAL;
 import static com.vaadin.flow.component.tabs.TabsVariant.LUMO_CENTERED;
 import static com.vaadin.flow.component.tabs.TabsVariant.LUMO_MINIMAL;
@@ -37,8 +39,9 @@ public class HomeLayoutTabs extends Tabs {
         };
     }
 
-    public void selectTab(Component content) {
+    public void presentTab(Component content) {
         getTabForComponent(content).ifPresent(this::setSelectedTab);
+        Notification.show("Present tab: " + ((HomeLayoutTab)getSelectedTab()).getText(), 3000, MIDDLE);
     }
 
     private Optional<Tab> getTabForComponent(Component content) {

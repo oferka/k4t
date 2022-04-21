@@ -32,7 +32,7 @@ public class HomeLayout extends AppLayout {
     protected void afterNavigation() {
         super.afterNavigation();
         log.info(format("Selected view page title: %s", getCurrentPageTitle()));
-        header.selectTab(getContent());
+        header.presentTab(getContent());
     }
 
     private String getCurrentPageTitle() {

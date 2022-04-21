@@ -15,9 +15,16 @@ public class HomeLayoutTab extends Tab {
 
     public static final String ID = HomeLayout.ID + "-tab";
 
+    private final String text;
+
     public  HomeLayoutTab(DataProvider dataProvider, String text, Class<? extends Component> navigationTarget) {
+        this.text = text;
         addClassName(ID);
         add(new RouterLink(text, navigationTarget));
         ComponentUtil.setData(this, Class.class, navigationTarget);
+    }
+
+    public String getText() {
+        return text;
     }
 }

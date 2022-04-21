@@ -40,7 +40,7 @@ public class HomeLayoutHeader extends HorizontalLayout {
         setVerticalComponentAlignment(CENTER, titleBar, tabs, actionsBar);
     }
 
-    public void selectTab(Component content) {
-        tabs.selectTab(content);
+    public void presentTab(Component content) {
+        tabs.presentTab(content);
     }
 }
