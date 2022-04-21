@@ -14,7 +14,7 @@ public class SearchState {
 
     private final List<SearchTermChangeListener> searchTermChangeListeners = new ArrayList<>();
 
-    private Optional<SearchTerm> searchTerm = Optional.empty();
+    private Optional<String> searchTermText = Optional.empty();
 
     public void addSearchTermChangeListener(SearchTermChangeListener listener) {
         searchTermChangeListeners.add(listener);
@@ -24,15 +24,15 @@ public class SearchState {
         searchTermChangeListeners.remove(listener);
     }
 
-    public Optional<SearchTerm> getSearchTerm() {
-        return searchTerm;
+    public Optional<String> getSearchTerm() {
+        return searchTermText;
     }
 
-    public void setSearchTerm(Optional<SearchTerm> searchTerm) {
-        if(!searchTerm.equals(this.searchTerm)) {
-            fireSearchTermChangeEvent(new SearchTermChangeEvent(this.searchTerm, searchTerm));
+    public void setSearchTerm(Optional<String> searchTermText) {
+        if(!searchTermText.equals(this.searchTermText)) {
+            fireSearchTermChangeEvent(new SearchTermChangeEvent(this.searchTermText, searchTermText));
         }
-        this.searchTerm = searchTerm;
+        this.searchTermText = searchTermText;
     }
 
     private void fireSearchTermChangeEvent(SearchTermChangeEvent event) {

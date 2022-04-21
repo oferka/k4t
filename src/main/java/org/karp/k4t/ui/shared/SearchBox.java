@@ -26,11 +26,9 @@ public class SearchBox extends ComboBox<SearchTerm> {
 
     public static final String ID = "search-box";
 
-    private final DataProvider dataProvider;
     private final SearchState searchState;
 
     public SearchBox(DataProvider dataProvider, SearchState searchState) {
-        this.dataProvider = dataProvider;
         this.searchState = searchState;
         addClassName(ID);
 
@@ -46,10 +44,8 @@ public class SearchBox extends ComboBox<SearchTerm> {
     }
 
     private void searchTermChanged(SearchTermChangeEvent searchTermChangeEvent) {
-        Optional<SearchTerm> oldSearchTerm = searchTermChangeEvent.getOldSearchTerm();
-        Optional<SearchTerm> newSearchTerm = searchTermChangeEvent.getNewSearchTerm();
-        String oldSearchTermText = oldSearchTerm.map(SearchTerm::getText).orElse(null);
-        String newSearchTermText = newSearchTerm.map(SearchTerm::getText).orElse(null);
+        String oldSearchTermText = searchTermChangeEvent.getOldSearchTermText().orElse(null);
+        String newSearchTermText = searchTermChangeEvent.getNewSearchTermText().orElse(null);
         Notification.show(format("Search term changed. old search term: %s, new search term: %s", oldSearchTermText, newSearchTermText), 3000, MIDDLE);
     }
 
@@ -77,12 +73,6 @@ public class SearchBox extends ComboBox<SearchTerm> {
         parameters.put("type", List.of("all"));
         QueryParameters queryParameters = new QueryParameters(parameters);
         getUI().ifPresent(ui -> ui.navigate(SearchView.ROUTE, queryParameters));
-
-        List<SearchTerm> searchTermList = dataProvider.getSearchTermsDataProvider().findByText(query);
-        Optional<SearchTerm> searchTerm = Optional.empty();
-        if(!searchTermList.isEmpty()) {
-            searchTerm = Optional.of(searchTermList.get(0));
-        }
-        searchState.setSearchTerm(searchTerm);
+        searchState.setSearchTerm(Optional.of(query));
     }
 }
