@@ -26,4 +26,9 @@ public class SearchTermsMockDataProvider implements SearchTermsDataProvider {
     public Optional<SearchTerm> findById(Long id) {
         return Optional.empty();
     }
+
+    @Override
+    public List<SearchTerm> findByText(String text) {
+        return emptyList();
+    }
 }

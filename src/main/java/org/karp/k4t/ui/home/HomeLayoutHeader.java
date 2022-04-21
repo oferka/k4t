@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.karp.k4t.ui.DataProvider;
+import org.karp.k4t.ui.search.terms.SearchState;
 
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.BETWEEN;
@@ -20,7 +21,7 @@ public class HomeLayoutHeader extends HorizontalLayout {
     private final HomeLayoutSearchBar searchBar;
     private final HomeLayoutActionsBar actionsBar;
 
-    public HomeLayoutHeader(DataProvider dataProvider) {
+    public HomeLayoutHeader(DataProvider dataProvider, SearchState searchState) {
         addClassName(ID);
         setPadding(true);
         setJustifyContentMode(BETWEEN);
@@ -31,7 +32,7 @@ public class HomeLayoutHeader extends HorizontalLayout {
         tabs = new HomeLayoutTabs(dataProvider);
         addAndExpand(tabs);
 
-        searchBar = new HomeLayoutSearchBar(dataProvider);
+        searchBar = new HomeLayoutSearchBar(dataProvider, searchState);
         add(searchBar);
 
         actionsBar = new HomeLayoutActionsBar(dataProvider);

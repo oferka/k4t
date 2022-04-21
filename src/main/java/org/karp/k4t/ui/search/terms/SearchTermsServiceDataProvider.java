@@ -27,7 +27,13 @@ public class SearchTermsServiceDataProvider implements SearchTermsDataProvider {
         return searchTermService.findAll();
     }
 
+    @Override
     public @NotNull Optional<SearchTerm> findById(@NotNull Long id) {
         return searchTermService.findById(id);
+    }
+
+    @Override
+    public @NotNull List<SearchTerm> findByText(@NotNull String text) {
+        return searchTermService.findByText(text);
     }
 }
