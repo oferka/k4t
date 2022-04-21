@@ -13,13 +13,13 @@ public class HomeLayoutTitleBar extends HorizontalLayout {
 
     public static final String ID = HomeLayout.ID + "-title-bar";
 
-    private final HomeLayoutTitleImage image;
+    private final HomeLayoutTitleRouterLink image;
 
     public HomeLayoutTitleBar(DataProvider dataProvider) {
         addClassName(ID);
         setAlignItems(CENTER);
 
-        image = new HomeLayoutTitleImage(dataProvider);
+        image = new HomeLayoutTitleRouterLink(dataProvider);
         add(image);
     }
 }

@@ -1,21 +1,23 @@
 package org.karp.k4t.ui.home;
 
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.router.RouterLink;
 import org.karp.k4t.ui.DataProvider;
 import org.karp.k4t.ui.shared.ApplicationImage;
 
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
-@CssImport(FOLDER + HomeLayoutTitleImage.ID + CSS_FILE_EXTENSION)
-public class HomeLayoutTitleImage extends Div {
+@CssImport(FOLDER + HomeLayoutTitleRouterLink.ID + CSS_FILE_EXTENSION)
+public class HomeLayoutTitleRouterLink extends RouterLink {
 
-    public static final String ID = HomeLayout.ID + "-title-image";
+    public static final String ID = HomeLayout.ID + "-title-router-link";
 
     private final ApplicationImage applicationImage;
 
-    public HomeLayoutTitleImage(DataProvider dataProvider) {
+    public HomeLayoutTitleRouterLink(DataProvider dataProvider) {
+        super(EMPTY, HomeView.class);
         addClassName(ID);
 
         applicationImage = new ApplicationImage(dataProvider);
