@@ -25,9 +25,11 @@ public class SearchBox extends ComboBox<SearchTerm> {
 
     public static final String ID = "search-box";
 
+    private final DataProvider dataProvider;
     private final SearchState searchState;
 
     public SearchBox(DataProvider dataProvider, SearchState searchState) {
+        this.dataProvider = dataProvider;
         this.searchState = searchState;
         addClassName(ID);
 
@@ -46,6 +48,18 @@ public class SearchBox extends ComboBox<SearchTerm> {
         String oldSearchTermText = searchTermChangeEvent.getOldSearchTermText().orElse(null);
         String newSearchTermText = searchTermChangeEvent.getNewSearchTermText().orElse(null);
         log.info("Search term changed. old search term: {}, new search term: {}", oldSearchTermText, newSearchTermText);
+        if(oldSearchTermText == null) {
+            log.info("External change");
+            List<SearchTerm> searchTerms = dataProvider.getSearchTermsDataProvider().findByText(newSearchTermText);
+            if (!searchTerms.isEmpty()) {
+                log.info("Search term {} exists", newSearchTermText);
+                setValue(searchTerms.get(0));
+            }
+            else {
+                log.info("Search term {} does not exist", newSearchTermText);
+                //todo - add the new search term
+            }
+        }
     }
 
     private void selectedItemChanged(SelectedItemChangeEvent<ComboBox<SearchTerm>> comboBoxSelectedItemChangeEvent) {
@@ -57,6 +71,7 @@ public class SearchBox extends ComboBox<SearchTerm> {
         }
         else {
             log.info("Search selection cleaned");
+            searchState.setSearchTerm(Optional.empty());
         }
     }
 
@@ -72,6 +87,5 @@ public class SearchBox extends ComboBox<SearchTerm> {
         parameters.put("type", List.of("all"));
         QueryParameters queryParameters = new QueryParameters(parameters);
         getUI().ifPresent(ui -> ui.navigate(SearchView.ROUTE, queryParameters));
-        searchState.setSearchTerm(Optional.of(query));
     }
 }
