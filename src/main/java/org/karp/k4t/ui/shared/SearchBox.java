@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
+import static org.karp.k4t.ui.SearchView.QUERY_PARAM_NAME;
+import static org.karp.k4t.ui.SearchView.TYPE_PARAM_NAME;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
@@ -106,8 +108,8 @@ public class SearchBox extends ComboBox<SearchTerm> {
 
     private void navigateToSearchView(String query) {
         Map<String, List<String>> parameters = new HashMap<>();
-        parameters.put("query", List.of(query));
-        parameters.put("type", List.of("all"));
+        parameters.put(QUERY_PARAM_NAME, List.of(query));
+        parameters.put(TYPE_PARAM_NAME, List.of("all"));
         QueryParameters queryParameters = new QueryParameters(parameters);
         getUI().ifPresent(ui -> ui.navigate(SearchView.ROUTE, queryParameters));
     }

@@ -27,6 +27,8 @@ public class SearchView extends VerticalLayout implements BeforeEnterObserver {
     public static final String ID = ID_PREFIX + ID_SUFFIX;
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
     public static final String NAME = "Search";
+    public static final String QUERY_PARAM_NAME = "query";
+    public static final String TYPE_PARAM_NAME = "type";
 
     private final Span viewName;
     private final Span query;
@@ -59,14 +61,14 @@ public class SearchView extends VerticalLayout implements BeforeEnterObserver {
         Map<String, List<String>> parameters = queryParameters.getParameters();
 
         String queryValue = null;
-        List<String> queryListValue = parameters.get("query");
+        List<String> queryListValue = parameters.get(QUERY_PARAM_NAME);
         if(queryListValue != null && !queryListValue.isEmpty()) {
             queryValue = queryListValue.get(0);
             query.setText(queryValue);
         }
 
         String typeValue;
-        List<String> typeListValue = parameters.get("type");
+        List<String> typeListValue = parameters.get(TYPE_PARAM_NAME);
         if(typeListValue != null && !typeListValue.isEmpty()) {
             typeValue = typeListValue.get(0);
             type.setText(typeValue);
