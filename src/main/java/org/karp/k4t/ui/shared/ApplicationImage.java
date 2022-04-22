@@ -3,17 +3,17 @@ package org.karp.k4t.ui.shared;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.notification.Notification;
+import lombok.extern.slf4j.Slf4j;
 import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.Key.KEY_K;
 import static com.vaadin.flow.component.KeyModifier.ALT;
-import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.Application.APPLICATION_LOGO;
 import static org.karp.k4t.Application.APPLICATION_NAME;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
+@Slf4j
 @CssImport(SHARED_FOLDER + ApplicationImage.ID + CSS_FILE_EXTENSION)
 public class ApplicationImage extends Image {
 
@@ -28,6 +28,6 @@ public class ApplicationImage extends Image {
     }
 
     private void applicationImageClicked(ClickEvent<Image> event) {
-        Notification.show("Application Image Clicked", 3000, MIDDLE);
+        log.info("Application Image Clicked");
     }
 }

@@ -5,14 +5,14 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.KeyModifier;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.notification.Notification;
+import lombok.extern.slf4j.Slf4j;
 import org.karp.k4t.ui.DataProvider;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.USER_CHECK;
-import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
+@Slf4j
 @CssImport(SHARED_FOLDER + LoginButton.ID + CSS_FILE_EXTENSION)
 public class LoginButton extends Button {
 
@@ -27,6 +27,6 @@ public class LoginButton extends Button {
     }
 
     private void loginClicked(ClickEvent<Button> event) {
-        Notification.show("Login clicked", 3000, MIDDLE);
+        log.info("Login clicked");
     }
 }

@@ -12,14 +12,14 @@ public class AuthenticationBar extends HorizontalLayout {
 
     public static final String ID = "authentication-bar";
 
-    private final LoginButton loginButton;
+    private final LoginRouterLink loginRouterLink;
     private final SignupButton signupButton;
 
     public AuthenticationBar(DataProvider dataProvider) {
         addClassName(ID);
 
-        loginButton = new LoginButton(dataProvider);
-        add(loginButton);
+        loginRouterLink = new LoginRouterLink(dataProvider);
+        add(loginRouterLink);
 
         signupButton = new SignupButton(dataProvider);
         add(signupButton);
