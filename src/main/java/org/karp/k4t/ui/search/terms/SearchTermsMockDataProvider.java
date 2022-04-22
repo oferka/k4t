@@ -31,4 +31,9 @@ public class SearchTermsMockDataProvider implements SearchTermsDataProvider {
     public List<SearchTerm> findByText(String text) {
         return emptyList();
     }
+
+    @Override
+    public SearchTerm save(SearchTerm searchTerm) {
+        return null;
+    }
 }

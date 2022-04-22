@@ -14,7 +14,6 @@ import org.karp.k4t.ui.search.terms.SearchTermChangeEvent;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
@@ -66,8 +65,7 @@ public class SearchBox extends ComboBox<SearchTerm> {
                 }
                 else {
                     log.info("Search term: '{}' does not exist", newSearchTermText);
-//                    dataProvider.getSearchTermsDataProvider().save(new SearchTerm(newSearchTermText));
-//                    getDataProvider().refreshAll();
+                    saveNewSearchTerm(newSearchTermText);
                 }
             }
             else {
@@ -94,8 +92,16 @@ public class SearchBox extends ComboBox<SearchTerm> {
 
     private void customValueEntered(CustomValueSetEvent<ComboBox<SearchTerm>> customValueSetEvent) {
         currentlyPresentedSearchTermText = customValueSetEvent.getDetail();
-        log.info("Search custom value entered: {}", currentlyPresentedSearchTermText);
+        log.info("Search custom value entered: '{}'", currentlyPresentedSearchTermText);
+        saveNewSearchTerm(currentlyPresentedSearchTermText);
         navigateToSearchView(currentlyPresentedSearchTermText);
+    }
+
+    private void saveNewSearchTerm(String searchTermText) {
+        log.info("Saving new search term for text: {}", searchTermText);
+        SearchTerm savedSearchTerm = dataProvider.getSearchTermsDataProvider().save(new SearchTerm(searchTermText));
+        setItems(dataProvider.getSearchTermsDataProvider().findAll());
+        setValue(savedSearchTerm);
     }
 
     private void navigateToSearchView(String query) {

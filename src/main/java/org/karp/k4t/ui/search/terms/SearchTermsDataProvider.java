@@ -15,4 +15,6 @@ public interface SearchTermsDataProvider {
     @NotNull Optional<SearchTerm> findById(@NotNull Long id);
 
     @NotNull List<SearchTerm> findByText(@NotNull String text);
+
+    @NotNull SearchTerm save(@NotNull SearchTerm searchTerm);
 }

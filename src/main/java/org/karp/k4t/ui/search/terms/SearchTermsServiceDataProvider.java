@@ -36,4 +36,9 @@ public class SearchTermsServiceDataProvider implements SearchTermsDataProvider {
     public @NotNull List<SearchTerm> findByText(@NotNull String text) {
         return searchTermService.findByText(text);
     }
+
+    @Override
+    public @NotNull SearchTerm save(@NotNull SearchTerm searchTerm) {
+        return searchTermService.save(searchTerm);
+    }
 }
