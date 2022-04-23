@@ -160,4 +160,13 @@ class SearchTermServiceTest extends SearchTermTest {
         assertEquals(countBefore + getNumberOfItemsToLoad(), countAfter);
         searchTermRepository.deleteAll(saved);
     }
+
+    @Test
+    public void shouldExist() {
+        SearchTerm item = searchTermContentProvider.get();
+        SearchTerm saved = searchTermRepository.save(item);
+        boolean exists = searchTermService.exists(item);
+        assertTrue(exists);
+        searchTermRepository.delete(saved);
+    }
 }

@@ -177,4 +177,13 @@ class UserServiceTest extends UserTest {
         assertEquals(countBefore + getNumberOfItemsToLoad(), countAfter);
         userRepository.deleteAll(saved);
     }
+
+    @Test
+    public void shouldExist() {
+        User item = userContentProvider.get();
+        User saved = userRepository.save(item);
+        boolean exists = userService.exists(item);
+        assertTrue(exists);
+        userRepository.delete(saved);
+    }
 }
