@@ -1,6 +1,7 @@
 package org.karp.k4t.service;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.RandomUtils;
 import org.karp.k4t.model.User;
 import org.karp.k4t.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,24 @@ public class UserService {
 
     public @NotNull List<User> findByLastName(@NotNull String lastName) {
         return userRepository.findByLastName(lastName);
+    }
+
+    public Optional<User> findRandom() {
+        List<User> items = findAll();
+        if(items.isEmpty()) {
+            return Optional.empty();
+        }
+        User item = items.get(RandomUtils.nextInt(0, items.size()));
+        return Optional.of(item);
+    }
+
+    public Optional<Long> findRandomId() {
+        List<User> items = findAll();
+        if(items.isEmpty()) {
+            return Optional.empty();
+        }
+        User item = items.get(RandomUtils.nextInt(0, items.size()));
+        return Optional.of(item.getId());
     }
 
     public @NotNull User save(@NotNull User user) {

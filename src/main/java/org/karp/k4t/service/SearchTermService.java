@@ -1,6 +1,7 @@
 package org.karp.k4t.service;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.RandomUtils;
 import org.karp.k4t.model.SearchTerm;
 import org.karp.k4t.repository.SearchTermRepository;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,24 @@ public class SearchTermService {
 
     public @NotNull List<SearchTerm> findByText(@NotNull String text) {
         return searchTermRepository.findByText(text);
+    }
+
+    public Optional<SearchTerm> findRandom() {
+        List<SearchTerm> items = findAll();
+        if(items.isEmpty()) {
+            return Optional.empty();
+        }
+        SearchTerm item = items.get(RandomUtils.nextInt(0, items.size()));
+        return Optional.of(item);
+    }
+
+    public Optional<Long> findRandomId() {
+        List<SearchTerm> items = findAll();
+        if(items.isEmpty()) {
+            return Optional.empty();
+        }
+        SearchTerm item = items.get(RandomUtils.nextInt(0, items.size()));
+        return Optional.of(item.getId());
     }
 
     public @NotNull SearchTerm save(@NotNull SearchTerm searchTerm) {
