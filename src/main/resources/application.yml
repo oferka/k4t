@@ -56,7 +56,7 @@ logging:
     root: INFO
     org.springframework.web: INFO
     org.apache.http: INFO
-    org.karp.k4t: DEBUG
+    org.karp.k4t: INFO
     org.hibernate.SQL: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: INFO
     org.springframework.web.client.RestTemplate: INFO
