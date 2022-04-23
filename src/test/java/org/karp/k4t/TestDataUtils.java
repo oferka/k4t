@@ -4,6 +4,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 import javax.validation.constraints.NotNull;
 import java.time.ZonedDateTime;
+import java.util.UUID;
 
 public class TestDataUtils {
 
@@ -13,6 +14,10 @@ public class TestDataUtils {
 
     public static @NotNull Long getNonExistingId() {
         return RandomUtils.nextLong();
+    }
+
+    public static @NotNull String getNonExistingText() {
+        return UUID.randomUUID().toString();
     }
 
     public static @NotNull ZonedDateTime getNonExistingDate() {
