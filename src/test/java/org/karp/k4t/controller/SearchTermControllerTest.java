@@ -17,8 +17,7 @@ import static java.lang.String.format;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.karp.k4t.TestDataUtils.getNonExistingId;
-import static org.karp.k4t.integration.Paths.RANDOM_PATH;
-import static org.karp.k4t.integration.Paths.SEARCH_TERM_PATH;
+import static org.karp.k4t.integration.Paths.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -88,17 +87,17 @@ class SearchTermControllerTest extends SearchTermTest {
         assertNotNull(id);
     }
 
-//    @Test
-//    public void shouldFindRandomId() throws Exception {
-//        MvcResult mvcResult = mvc.perform(get(format("/%s/%s", ACCOUNT_PATH, RANDOM_ID_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isOk())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//    }
-//
+    @Test
+    public void shouldFindRandomId() throws Exception {
+        MvcResult mvcResult = mvc.perform(get(format("/%s/%s", SEARCH_TERM_PATH, RANDOM_ID_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isOk())
+                .andReturn();
+        assertNotNull(mvcResult);
+    }
+
 //    @Test
 //    public void shouldSave() throws Exception {
 //        Account item = contentProvider.get();

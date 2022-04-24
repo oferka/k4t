@@ -22,8 +22,7 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
 
-import static org.karp.k4t.integration.Paths.RANDOM_PATH;
-import static org.karp.k4t.integration.Paths.SEARCH_TERM_PATH;
+import static org.karp.k4t.integration.Paths.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -72,19 +71,19 @@ public class SearchTermController {
         return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-//    @GetMapping(path = RANDOM_ID_PATH)
-//    @Timed(value = "AccountController.findRandomId.timer", description = "Timer for account findRandomId endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "AccountController.findRandomId.counter", description = "Counter for account findRandomId endpoint")
-//    @Operation(summary = "Find a random account ID")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Random account ID successfully found", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = Long.class))}),
-//            @ApiResponse(responseCode = "404", description = "Random account ID was not found", content = @Content),
-//            @ApiResponse(responseCode = "400", description = "Failed to find a random account ID", content = @Content) })
-//    public @NotNull ResponseEntity<Long> findRandomId() {
-//        Optional<Long> item = accountService.findRandomId();
-//        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
+    @GetMapping(path = RANDOM_ID_PATH)
+    @Timed(value = "SearchTermController.findRandomId.timer", description = "Timer for search term findRandomId endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "SearchTermController.findRandomId.counter", description = "Counter for search term findRandomId endpoint")
+    @Operation(summary = "Find a random search term ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Random search term ID successfully found", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = Long.class))}),
+            @ApiResponse(responseCode = "404", description = "Random search term ID was not found", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Failed to find a random search term ID", content = @Content) })
+    public @NotNull ResponseEntity<Long> findRandomId() {
+        Optional<Long> item = searchTermService.findRandomId();
+        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 //    @PostMapping
 //    @Timed(value = "AccountController.save.timer", description = "Timer for account save endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
 //    @Counted(value = "AccountController.save.counter", description = "Counter for account save endpoint")
