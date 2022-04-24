@@ -12,17 +12,19 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.karp.k4t.model.User;
 import org.karp.k4t.service.UserService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import static org.karp.k4t.integration.Paths.*;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -84,67 +86,67 @@ public class UserController {
         return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-//    @PostMapping
-//    @Timed(value = "SearchTermController.save.timer", description = "Timer for search term save endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.save.counter", description = "Counter for search term save endpoint")
-//    @Operation(summary = "Create an search term")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "201", description = "Search term created successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = SearchTerm.class))}),
-//            @ApiResponse(responseCode = "400", description = "Failed to create an search term", content = @Content) })
-//    public @NotNull ResponseEntity<SearchTerm> save(@Parameter(description = "Search term to be saved") @RequestBody @Valid @NotNull SearchTerm searchTerm) {
-//        HttpHeaders httpHeaders = new HttpHeaders();
-//        URI location = linkTo(SearchTermController.class).slash(searchTerm.getId()).toUri();
-//        httpHeaders.setLocation(location);
-//        SearchTerm saved = searchTermService.save(searchTerm);
-//        return new ResponseEntity<>(saved, httpHeaders, HttpStatus.CREATED);
-//    }
-//
-//    @DeleteMapping()
-//    @Timed(value = "SearchTermController.delete.timer", description = "Timer for search term delete endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.delete.counter", description = "Counter for search term delete endpoint")
-//    @Operation(summary = "Delete a search term")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "204", description = "Search term successfully deleted"),
-//            @ApiResponse(responseCode = "400", description = "Failed to delete search term", content = @Content) })
-//    public @NotNull ResponseEntity<SearchTerm> delete(@Parameter(description = "Search term to be deleted") @RequestBody @NotNull @Valid SearchTerm searchTerm) {
-//        Optional<SearchTerm> deleted = searchTermService.delete(searchTerm);
-//        return deleted.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    @Timed(value = "SearchTermController.deleteById.timer", description = "Timer for search term deleteById endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.deleteById.counter", description = "Counter for search term deleteById endpoint")
-//    @Operation(summary = "Delete an search term by id")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "204", description = "Search term successfully deleted by id"),
-//            @ApiResponse(responseCode = "400", description = "Failed to delete search term by id", content = @Content) })
-//    public @NotNull ResponseEntity<SearchTerm> deleteById(@Parameter(description = "The id of the search term to be deleted") @PathVariable("id") @NotNull Long id) {
-//        Optional<SearchTerm> deleted = searchTermService.deleteById(id);
-//        return deleted.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
-//    @PutMapping
-//    @Timed(value = "SearchTermController.update.timer", description = "Timer for search term update endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.update.counter", description = "Counter for search term update endpoint")
-//    @Operation(summary = "Update an search term")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Search term updated successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = SearchTerm.class))}),
-//            @ApiResponse(responseCode = "404", description = "Search term not found", content = @Content),
-//            @ApiResponse(responseCode = "400", description = "Failed to update search term", content = @Content) })
-//    public @NotNull ResponseEntity<SearchTerm> update(@Parameter(description = "Search term to be updated") @RequestBody @NotNull @Valid SearchTerm searchTerm) {
-//        Optional<SearchTerm> updated = searchTermService.update(searchTerm);
-//        return updated.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
-//    @GetMapping(path = COUNT_PATH)
-//    @Timed(value = "SearchTermController.count.timer", description = "Timer for search term count endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.count.counter", description = "Counter for search term count endpoint")
-//    @Operation(summary = "Return the number of existing search terms")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Search term counted successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = Long.class))}),
-//            @ApiResponse(responseCode = "400", description = "Failed to count search terms", content = @Content) })
-//    public @NotNull ResponseEntity<Long> count() {
-//        long count = searchTermService.count();
-//        return ResponseEntity.ok(count);
-//    }
+    @PostMapping
+    @Timed(value = "UserController.save.timer", description = "Timer for user save endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.save.counter", description = "Counter for user save endpoint")
+    @Operation(summary = "Create a user")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "User created successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = User.class))}),
+            @ApiResponse(responseCode = "400", description = "Failed to create a user", content = @Content) })
+    public @NotNull ResponseEntity<User> save(@Parameter(description = "User to be saved") @RequestBody @Valid @NotNull User user) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        URI location = linkTo(SearchTermController.class).slash(user.getId()).toUri();
+        httpHeaders.setLocation(location);
+        User saved = userService.save(user);
+        return new ResponseEntity<>(saved, httpHeaders, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping()
+    @Timed(value = "UserController.delete.timer", description = "Timer for user delete endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.delete.counter", description = "Counter for user delete endpoint")
+    @Operation(summary = "Delete a user")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "User successfully deleted"),
+            @ApiResponse(responseCode = "400", description = "Failed to delete user", content = @Content) })
+    public @NotNull ResponseEntity<User> delete(@Parameter(description = "User to be deleted") @RequestBody @NotNull @Valid User user) {
+        Optional<User> deleted = userService.delete(user);
+        return deleted.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    @Timed(value = "UserController.deleteById.timer", description = "Timer for user deleteById endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.deleteById.counter", description = "Counter for user deleteById endpoint")
+    @Operation(summary = "Delete a user by id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "User successfully deleted by id"),
+            @ApiResponse(responseCode = "400", description = "Failed to delete user by id", content = @Content) })
+    public @NotNull ResponseEntity<User> deleteById(@Parameter(description = "The id of the user to be deleted") @PathVariable("id") @NotNull Long id) {
+        Optional<User> deleted = userService.deleteById(id);
+        return deleted.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PutMapping
+    @Timed(value = "UserController.update.timer", description = "Timer for user update endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.update.counter", description = "Counter for user update endpoint")
+    @Operation(summary = "Update a user")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User updated successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = User.class))}),
+            @ApiResponse(responseCode = "404", description = "User not found", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Failed to update user", content = @Content) })
+    public @NotNull ResponseEntity<User> update(@Parameter(description = "User to be updated") @RequestBody @NotNull @Valid User user) {
+        Optional<User> updated = userService.update(user);
+        return updated.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(path = COUNT_PATH)
+    @Timed(value = "UserController.count.timer", description = "Timer for user count endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.count.counter", description = "Counter for user count endpoint")
+    @Operation(summary = "Return the number of existing users")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User counted successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = Long.class))}),
+            @ApiResponse(responseCode = "400", description = "Failed to count users", content = @Content) })
+    public @NotNull ResponseEntity<Long> count() {
+        long count = userService.count();
+        return ResponseEntity.ok(count);
+    }
 }

@@ -89,10 +89,10 @@ public class SearchTermController {
     @PostMapping
     @Timed(value = "SearchTermController.save.timer", description = "Timer for search term save endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
     @Counted(value = "SearchTermController.save.counter", description = "Counter for search term save endpoint")
-    @Operation(summary = "Create an search term")
+    @Operation(summary = "Create a search term")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Search term created successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = SearchTerm.class))}),
-            @ApiResponse(responseCode = "400", description = "Failed to create an search term", content = @Content) })
+            @ApiResponse(responseCode = "400", description = "Failed to create a search term", content = @Content) })
     public @NotNull ResponseEntity<SearchTerm> save(@Parameter(description = "Search term to be saved") @RequestBody @Valid @NotNull SearchTerm searchTerm) {
         HttpHeaders httpHeaders = new HttpHeaders();
         URI location = linkTo(SearchTermController.class).slash(searchTerm.getId()).toUri();
@@ -116,7 +116,7 @@ public class SearchTermController {
     @DeleteMapping("/{id}")
     @Timed(value = "SearchTermController.deleteById.timer", description = "Timer for search term deleteById endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
     @Counted(value = "SearchTermController.deleteById.counter", description = "Counter for search term deleteById endpoint")
-    @Operation(summary = "Delete an search term by id")
+    @Operation(summary = "Delete a search term by id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Search term successfully deleted by id"),
             @ApiResponse(responseCode = "400", description = "Failed to delete search term by id", content = @Content) })
@@ -128,7 +128,7 @@ public class SearchTermController {
     @PutMapping
     @Timed(value = "SearchTermController.update.timer", description = "Timer for search term update endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
     @Counted(value = "SearchTermController.update.counter", description = "Counter for search term update endpoint")
-    @Operation(summary = "Update an search term")
+    @Operation(summary = "Update a search term")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Search term updated successfully", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = SearchTerm.class))}),
             @ApiResponse(responseCode = "404", description = "Search term not found", content = @Content),
