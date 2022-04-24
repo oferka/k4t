@@ -1,5 +1,6 @@
 package org.karp.k4t.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,13 +13,14 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
+import java.util.Optional;
 
 import static java.lang.String.format;
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.karp.k4t.TestDataUtils.getNonExistingId;
 import static org.karp.k4t.integration.Paths.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -98,122 +100,122 @@ class SearchTermControllerTest extends SearchTermTest {
         assertNotNull(mvcResult);
     }
 
-//    @Test
-//    public void shouldSave() throws Exception {
-//        Account item = contentProvider.get();
-//        MvcResult mvcResult = mvc.perform(post(format("/%s", ACCOUNT_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(new ObjectMapper().writeValueAsString(item))
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isCreated())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//        Integer id = JsonPath.read(mvcResult.getResponse().getContentAsString(), "$.id");
-//        assertNotNull(id);
-//        accountRepository.deleteById(id.longValue());
-//    }
-//
-//    @Test
-//    public void shouldDelete() throws Exception {
-//        Account item = contentProvider.get();
-//        Account saved = accountRepository.save(item);
-//        MvcResult mvcResult = mvc.perform(delete(format("/%s", ACCOUNT_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(new ObjectMapper().writeValueAsString(saved))
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isOk())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//        Integer id = JsonPath.read(mvcResult.getResponse().getContentAsString(), "$.id");
-//        assertNotNull(id);
-//    }
-//
-//    @Test
-//    public void shouldNotDelete() throws Exception {
-//        Account item = contentProvider.get();
-//        Account toBeDeleted = createAccountWithNonExistingId(item);
-//        MvcResult mvcResult = mvc.perform(delete(format("/%s", ACCOUNT_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(new ObjectMapper().writeValueAsString(toBeDeleted))
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isNotFound())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//    }
-//
-//    @Test
-//    public void shouldDeleteById() throws Exception {
-//        Account item = contentProvider.get();
-//        Account saved = accountRepository.save(item);
-//        Long id = saved.getId();
-//        MvcResult mvcResult = mvc.perform(delete(format("/%s/{id}", ACCOUNT_PATH), id)
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isOk())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//        boolean exists = accountRepository.existsById(id);
-//        assertFalse(exists);
-//    }
-//
-//    @Test
-//    public void shouldNotDeleteById() throws Exception {
-//        MvcResult mvcResult = mvc.perform(delete(format("/%s/{id}", ACCOUNT_PATH), getNonExistingId())
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isNotFound())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//    }
-//
-//    @Test
-//    public void shouldUpdate() throws Exception {
-//        Account item = contentProvider.get();
-//        Account saved = accountRepository.save(item);
-//        Long id = saved.getId();
-//        MvcResult mvcResult = mvc.perform(put(format("/%s", ACCOUNT_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(new ObjectMapper().writeValueAsString(item))
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isOk())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//        Optional<Account> updated = accountRepository.findById(id);
-//        assertTrue(updated.isPresent());
-//        accountRepository.deleteById(id);
-//    }
-//
-//    @Test
-//    public void shouldNotUpdate() throws Exception {
-//        Account item = contentProvider.get();
-//        Account toBeUpdated = createAccountWithNonExistingId(item);
-//        MvcResult mvcResult = mvc.perform(put(format("/%s", ACCOUNT_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(new ObjectMapper().writeValueAsString(toBeUpdated))
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isNotFound())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//    }
-//
-//    @Test
-//    public void shouldCount() throws Exception {
-//        List<Account> items = contentProvider.get(getNumberOfItemsToLoad());
-//        Iterable<Account> saved = accountRepository.saveAll(items);
-//        MvcResult mvcResult = mvc.perform(get(format("/%s/%s", ACCOUNT_PATH, COUNT_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isOk())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//        accountRepository.deleteAll(saved);
-//    }
+    @Test
+    public void shouldSave() throws Exception {
+        SearchTerm item = searchTermContentProvider.get();
+        MvcResult mvcResult = mvc.perform(post(format("/%s", SEARCH_TERM_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(item))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isCreated())
+                .andReturn();
+        assertNotNull(mvcResult);
+        Integer id = JsonPath.read(mvcResult.getResponse().getContentAsString(), "$.id");
+        assertNotNull(id);
+        searchTermRepository.deleteById(id.longValue());
+    }
+
+    @Test
+    public void shouldDelete() throws Exception {
+        SearchTerm item = searchTermContentProvider.get();
+        SearchTerm saved = searchTermRepository.save(item);
+        MvcResult mvcResult = mvc.perform(delete(format("/%s", SEARCH_TERM_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(saved))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isOk())
+                .andReturn();
+        assertNotNull(mvcResult);
+        Integer id = JsonPath.read(mvcResult.getResponse().getContentAsString(), "$.id");
+        assertNotNull(id);
+    }
+
+    @Test
+    public void shouldNotDelete() throws Exception {
+        SearchTerm item = searchTermContentProvider.get();
+            SearchTerm toBeDeleted = createSearchTermWithNonExistingId(item);
+        MvcResult mvcResult = mvc.perform(delete(format("/%s", SEARCH_TERM_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(toBeDeleted))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isNotFound())
+                .andReturn();
+        assertNotNull(mvcResult);
+    }
+
+    @Test
+    public void shouldDeleteById() throws Exception {
+        SearchTerm item = searchTermContentProvider.get();
+        SearchTerm saved = searchTermRepository.save(item);
+        Long id = saved.getId();
+        MvcResult mvcResult = mvc.perform(delete(format("/%s/{id}", SEARCH_TERM_PATH), id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isOk())
+                .andReturn();
+        assertNotNull(mvcResult);
+        boolean exists = searchTermRepository.existsById(id);
+        assertFalse(exists);
+    }
+
+    @Test
+    public void shouldNotDeleteById() throws Exception {
+        MvcResult mvcResult = mvc.perform(delete(format("/%s/{id}", SEARCH_TERM_PATH), getNonExistingId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isNotFound())
+                .andReturn();
+        assertNotNull(mvcResult);
+    }
+
+    @Test
+    public void shouldUpdate() throws Exception {
+        SearchTerm item = searchTermContentProvider.get();
+        SearchTerm saved = searchTermRepository.save(item);
+        Long id = saved.getId();
+        MvcResult mvcResult = mvc.perform(put(format("/%s", SEARCH_TERM_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(item))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isOk())
+                .andReturn();
+        assertNotNull(mvcResult);
+        Optional<SearchTerm> updated = searchTermRepository.findById(id);
+        assertTrue(updated.isPresent());
+        searchTermRepository.deleteById(id);
+    }
+
+    @Test
+    public void shouldNotUpdate() throws Exception {
+        SearchTerm item = searchTermContentProvider.get();
+        SearchTerm toBeUpdated = createSearchTermWithNonExistingId(item);
+        MvcResult mvcResult = mvc.perform(put(format("/%s", SEARCH_TERM_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(toBeUpdated))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isNotFound())
+                .andReturn();
+        assertNotNull(mvcResult);
+    }
+
+    @Test
+    public void shouldCount() throws Exception {
+        List<SearchTerm> items = searchTermContentProvider.get(getNumberOfItemsToLoad());
+        Iterable<SearchTerm> saved = searchTermRepository.saveAll(items);
+        MvcResult mvcResult = mvc.perform(get(format("/%s/%s", SEARCH_TERM_PATH, COUNT_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isOk())
+                .andReturn();
+        assertNotNull(mvcResult);
+        searchTermRepository.deleteAll(saved);
+    }
 }
