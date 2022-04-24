@@ -3,6 +3,7 @@ package org.karp.k4t.controller;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -13,11 +14,13 @@ import org.karp.k4t.model.SearchTerm;
 import org.karp.k4t.service.SearchTermService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Optional;
 
 import static org.karp.k4t.integration.Paths.SEARCH_TERM_PATH;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -42,19 +45,19 @@ public class SearchTermController {
         return ResponseEntity.ok(items);
     }
 
-//    @GetMapping(value = "{id}")
-//    @Timed(value = "AccountController.findById.timer", description = "Timer for account findById endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "AccountController.findById.counter", description = "Counter for account findById endpoint")
-//    @Operation(summary = "Find an account by id")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Account successfully found by id", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = Account.class))}),
-//            @ApiResponse(responseCode = "404", description = "Account with specified id was not found", content = @Content),
-//            @ApiResponse(responseCode = "400", description = "Failed to find account by id", content = @Content) })
-//    public @NotNull ResponseEntity<Account> findById(@Parameter(description = "The id of the account to be found") @PathVariable("id") @NotNull Long id) {
-//        Optional<Account> item = accountService.findById(id);
-//        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
+    @GetMapping(value = "{id}")
+    @Timed(value = "SearchTermController.findById.timer", description = "Timer for search term findById endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "SearchTermController.findById.counter", description = "Counter for search term findById endpoint")
+    @Operation(summary = "Find a search term by id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Search term successfully found by id", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = SearchTerm.class))}),
+            @ApiResponse(responseCode = "404", description = "Search term with specified id was not found", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Failed to find search term by id", content = @Content) })
+    public @NotNull ResponseEntity<SearchTerm> findById(@Parameter(description = "The id of the search term to be found") @PathVariable("id") @NotNull Long id) {
+        Optional<SearchTerm> item = searchTermService.findById(id);
+        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 //    @GetMapping(path = RANDOM_PATH)
 //    @Timed(value = "AccountController.findRandom.timer", description = "Timer for account findRandom endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
 //    @Counted(value = "AccountController.findRandom.counter", description = "Counter for account findRandom endpoint")
