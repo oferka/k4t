@@ -1,5 +1,6 @@
 package org.karp.k4t.controller;
 
+import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.karp.k4t.model.SearchTerm;
@@ -15,6 +16,8 @@ import java.util.List;
 import static java.lang.String.format;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.karp.k4t.TestDataUtils.getNonExistingId;
+import static org.karp.k4t.integration.Paths.RANDOM_PATH;
 import static org.karp.k4t.integration.Paths.SEARCH_TERM_PATH;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
@@ -61,30 +64,30 @@ class SearchTermControllerTest extends SearchTermTest {
         searchTermRepository.deleteAll(saved);
     }
 
-//    @Test
-//    public void shouldNotFindById() throws Exception {
-//        MvcResult mvcResult = mvc.perform(get(format("/%s/{id}", ACCOUNT_PATH), getNonExistingId())
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isNotFound())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//    }
-//
-//    @Test
-//    public void shouldFindRandom() throws Exception {
-//        MvcResult mvcResult = mvc.perform(get(format("/%s/%s", ACCOUNT_PATH, RANDOM_PATH))
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .accept(MediaType.APPLICATION_JSON))
-//                .andDo(log())
-//                .andExpect(status().isOk())
-//                .andReturn();
-//        assertNotNull(mvcResult);
-//        Integer id = JsonPath.read(mvcResult.getResponse().getContentAsString(), "$.id");
-//        assertNotNull(id);
-//    }
-//
+    @Test
+    public void shouldNotFindById() throws Exception {
+        MvcResult mvcResult = mvc.perform(get(format("/%s/{id}", SEARCH_TERM_PATH), getNonExistingId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isNotFound())
+                .andReturn();
+        assertNotNull(mvcResult);
+    }
+
+    @Test
+    public void shouldFindRandom() throws Exception {
+        MvcResult mvcResult = mvc.perform(get(format("/%s/%s", SEARCH_TERM_PATH, RANDOM_PATH))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(log())
+                .andExpect(status().isOk())
+                .andReturn();
+        assertNotNull(mvcResult);
+        Integer id = JsonPath.read(mvcResult.getResponse().getContentAsString(), "$.id");
+        assertNotNull(id);
+    }
+
 //    @Test
 //    public void shouldFindRandomId() throws Exception {
 //        MvcResult mvcResult = mvc.perform(get(format("/%s/%s", ACCOUNT_PATH, RANDOM_ID_PATH))

@@ -75,3 +75,4 @@ vaadin:
   # To improve the performance during development.
   # For more information https://vaadin.com/docs/flow/spring/tutorial-spring-configuration.html#special-configuration-parameters
   whitelisted-packages: com.vaadin,org.vaadin,dev.hilla,org.karp.k4t
+#  urlMapping: /ui/*
