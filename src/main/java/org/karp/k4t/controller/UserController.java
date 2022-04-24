@@ -3,6 +3,7 @@ package org.karp.k4t.controller;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -13,13 +14,15 @@ import org.karp.k4t.model.User;
 import org.karp.k4t.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Optional;
 
-import static org.karp.k4t.integration.Paths.USER_PATH;
+import static org.karp.k4t.integration.Paths.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -42,45 +45,45 @@ public class UserController {
         return ResponseEntity.ok(items);
     }
 
-//    @GetMapping(value = "{id}")
-//    @Timed(value = "SearchTermController.findById.timer", description = "Timer for search term findById endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.findById.counter", description = "Counter for search term findById endpoint")
-//    @Operation(summary = "Find a search term by id")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Search term successfully found by id", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = SearchTerm.class))}),
-//            @ApiResponse(responseCode = "404", description = "Search term with specified id was not found", content = @Content),
-//            @ApiResponse(responseCode = "400", description = "Failed to find search term by id", content = @Content) })
-//    public @NotNull ResponseEntity<SearchTerm> findById(@Parameter(description = "The id of the search term to be found") @PathVariable("id") @NotNull Long id) {
-//        Optional<SearchTerm> item = searchTermService.findById(id);
-//        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
-//    @GetMapping(path = RANDOM_PATH)
-//    @Timed(value = "SearchTermController.findRandom.timer", description = "Timer for search term findRandom endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.findRandom.counter", description = "Counter for search term findRandom endpoint")
-//    @Operation(summary = "Find a random search term")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Random search term successfully found", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = SearchTerm.class))}),
-//            @ApiResponse(responseCode = "404", description = "Random search term was not found", content = @Content),
-//            @ApiResponse(responseCode = "400", description = "Failed to find a random search term", content = @Content) })
-//    public @NotNull ResponseEntity<SearchTerm> findRandom() {
-//        Optional<SearchTerm> item = searchTermService.findRandom();
-//        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
-//    @GetMapping(path = RANDOM_ID_PATH)
-//    @Timed(value = "SearchTermController.findRandomId.timer", description = "Timer for search term findRandomId endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
-//    @Counted(value = "SearchTermController.findRandomId.counter", description = "Counter for search term findRandomId endpoint")
-//    @Operation(summary = "Find a random search term ID")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Random search term ID successfully found", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = Long.class))}),
-//            @ApiResponse(responseCode = "404", description = "Random search term ID was not found", content = @Content),
-//            @ApiResponse(responseCode = "400", description = "Failed to find a random search term ID", content = @Content) })
-//    public @NotNull ResponseEntity<Long> findRandomId() {
-//        Optional<Long> item = searchTermService.findRandomId();
-//        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
-//
+    @GetMapping(value = "{id}")
+    @Timed(value = "UserController.findById.timer", description = "Timer for user findById endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.findById.counter", description = "Counter for user findById endpoint")
+    @Operation(summary = "Find a user by id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User successfully found by id", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = User.class))}),
+            @ApiResponse(responseCode = "404", description = "User with specified id was not found", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Failed to find user by id", content = @Content) })
+    public @NotNull ResponseEntity<User> findById(@Parameter(description = "The id of the user to be found") @PathVariable("id") @NotNull Long id) {
+        Optional<User> item = userService.findById(id);
+        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(path = RANDOM_PATH)
+    @Timed(value = "UserController.findRandom.timer", description = "Timer for user findRandom endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.findRandom.counter", description = "Counter for user findRandom endpoint")
+    @Operation(summary = "Find a random user")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Random user successfully found", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = User.class))}),
+            @ApiResponse(responseCode = "404", description = "Random user was not found", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Failed to find a random user", content = @Content) })
+    public @NotNull ResponseEntity<User> findRandom() {
+        Optional<User> item = userService.findRandom();
+        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(path = RANDOM_ID_PATH)
+    @Timed(value = "UserController.findRandomId.timer", description = "Timer for user findRandomId endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
+    @Counted(value = "UserController.findRandomId.counter", description = "Counter for user findRandomId endpoint")
+    @Operation(summary = "Find a random user ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Random user ID successfully found", content = { @Content(mediaType = APPLICATION_JSON_VALUE, schema = @Schema(implementation = Long.class))}),
+            @ApiResponse(responseCode = "404", description = "Random user ID was not found", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Failed to find a random user ID", content = @Content) })
+    public @NotNull ResponseEntity<Long> findRandomId() {
+        Optional<Long> item = userService.findRandomId();
+        return item.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 //    @PostMapping
 //    @Timed(value = "SearchTermController.save.timer", description = "Timer for search term save endpoint", percentiles = { 0.01, 0.05,0.50, 0.95, 0.99})
 //    @Counted(value = "SearchTermController.save.counter", description = "Counter for search term save endpoint")
