@@ -22,7 +22,7 @@ public class BrowserProviderConfiguration {
     @NotNull
     private Browser.BrowserType type = CHROME;
 
-    private boolean maximizeWindow = true;
+    private boolean maximizeWindow = false;
 
-    private boolean headless = true;
+    private boolean headless = false;
 }
