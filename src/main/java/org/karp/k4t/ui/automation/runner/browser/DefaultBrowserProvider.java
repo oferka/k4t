@@ -19,7 +19,7 @@ import java.util.Set;
 public class DefaultBrowserProvider implements BrowserProvider {
 
     @NotNull
-    private BrowserProviderConfiguration configuration;
+    private final BrowserProviderConfiguration configuration;
 
     @Override
     public @NotNull Browser get() {
