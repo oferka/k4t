@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.karp.k4t.ui.feed.FeedView;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.util.UriComponents;
 
 import java.net.URI;
@@ -11,6 +12,7 @@ import java.net.URI;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Validated
 public class DefaultDestinationProvider implements DestinationProvider {
 
     private final UriComponentsProvider uriComponentsProvider;

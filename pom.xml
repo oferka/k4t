@@ -18,6 +18,7 @@
         <springdoc-openapi-data-rest.version>1.6.8</springdoc-openapi-data-rest.version>
         <javafaker.version>1.0.2</javafaker.version>
         <opencsv.version>5.6</opencsv.version>
+        <ashot.version>1.5.4</ashot.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -208,13 +209,14 @@
             <artifactId>micrometer-registry-prometheus</artifactId>
             <scope>runtime</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.hibernate.validator</groupId>-->
-<!--            <artifactId>hibernate-validator</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>jakarta.el</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>${ashot.version}</version>
         </dependency>
     </dependencies>
     <build>

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -14,6 +15,7 @@ import static org.karp.k4t.ui.feed.FeedView.NAME;
 
 @Service
 @Slf4j
+@Validated
 public class FeedViewRetriever {
 
     public void get(@Valid @NotNull WebDriver driver, long timeOutInSeconds) {
