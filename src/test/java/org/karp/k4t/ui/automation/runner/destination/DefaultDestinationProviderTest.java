@@ -1,6 +1,5 @@
 package org.karp.k4t.ui.automation.runner.destination;
 
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.karp.k4t.Application;
 import org.karp.k4t.ui.feed.FeedView;
@@ -9,7 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.net.URI;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(classes = Application.class)
 class DefaultDestinationProviderTest {
