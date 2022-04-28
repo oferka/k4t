@@ -1,7 +1,7 @@
 package org.karp.k4t.ui.automation.runner.browser;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -15,9 +15,9 @@ import java.util.Set;
 @Service
 @Slf4j
 @Validated
+@RequiredArgsConstructor
 public class DefaultBrowserProvider implements BrowserProvider {
 
-    @Autowired
     @NotNull
     private BrowserProviderConfiguration configuration;
 
@@ -39,33 +39,6 @@ public class DefaultBrowserProvider implements BrowserProvider {
         return browser;
     }
 
-//    @Override
-//    public Browser get(BrowserType type) {
-//        log.info("Get browser with type {} started", type.getName());
-//        Browser result = get();
-//        result.setType(type);
-//        log.info("Get browser with type {} completed", type.getName());
-//        return result;
-//    }
-//
-//    @Override
-//    public Browser get(BrowserType type, boolean maximize) {
-//        log.info("Get browser with type {} and maximize {} started", type.getName(), maximize);
-//        Browser result = get(type);
-//        result.setMaximize(maximize);
-//        log.info("Get browser with type {} and maximize {} completed", type.getName(), maximize);
-//        return result;
-//    }
-//
-//    @Override
-//    public Browser get(BrowserType type, boolean maximize, boolean headless) {
-//        log.info("Get browser with type {}, maximize {}, and headless {} started", type.getName(), maximize, headless);
-//        Browser result = get(type, maximize);
-//        result.setHeadless(headless);
-//        log.info("Get browser with type {}, maximize {}, and headless {} completed", type.getName(), maximize, headless);
-//        return result;
-//    }
-//
     private void validate(@NotNull Browser browser) {
         log.info("Validation for '{}' started", browser);
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
