@@ -53,6 +53,16 @@ class FeedViewTest {
         driver.quit();
     }
 
+    @Test
+    public void shouldDisplayInitialContent() {
+        Browser browser = browserProvider.get();
+        WebDriver driver = driverFactory.get(browser);
+        URI feedViewUri = destinationProvider.getFeedView();
+        driver.get(feedViewUri.toString());
+        feedViewRetriever.get(driver, 20);
+        driver.quit();
+    }
+
     @AfterEach
     public void stopApplication() {
         log.info("Stop application started");
