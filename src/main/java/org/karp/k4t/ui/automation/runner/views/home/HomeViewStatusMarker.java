@@ -28,9 +28,7 @@ public class HomeViewStatusMarker {
     @NotNull
     private final ElementStatusMarker elementStatusMarker;
 
-    public void mark(
-            @Valid @NotNull WebDriver driver,
-            @Valid @NotNull ElementStatus elementStatus) {
+    public void mark(@Valid @NotNull WebDriver driver, @Valid @NotNull ElementStatus elementStatus) {
         log.info("Marking status '{}' for home view started", elementStatus.getName());
         elementStatusMarker.mark(
                 driver,

@@ -22,8 +22,7 @@ public class DefaultUriComponentsProvider implements UriComponentsProvider {
     private final UriComponentsProviderConfiguration uriComponentsProviderConfiguration;
 
     @Override
-    public @NotNull
-    UriComponents get(int port, @Valid @NotNull String path) {
+    public @NotNull UriComponents get(int port, @Valid @NotNull String path) {
         log.info("Get Uri components started");
         UriComponents result = UriComponentsBuilder
                 .newInstance()
