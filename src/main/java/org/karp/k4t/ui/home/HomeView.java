@@ -1,6 +1,5 @@
 package org.karp.k4t.ui.home;
 
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -8,6 +7,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 
+import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
@@ -29,12 +29,7 @@ public class HomeView extends VerticalLayout {
 
     public HomeView() {
         addClassName(ID);
-        setSizeFull();
-        setJustifyContentMode(JustifyContentMode.CENTER);
-        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        getStyle().set("text-align", "center");
-        getStyle().set("padding", "2em");
-
+        setAlignItems(CENTER);
         Span text = new Span(NAME);
         text.addClassName(ID.concat("-text"));
         add(text);

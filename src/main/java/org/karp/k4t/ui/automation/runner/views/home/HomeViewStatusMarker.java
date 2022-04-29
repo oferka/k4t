@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.karp.k4t.ui.automation.runner.element.retrieve.ElementRetriever;
 import org.karp.k4t.ui.automation.runner.element.status.ElementStatus;
 import org.karp.k4t.ui.automation.runner.element.status.mark.ElementStatusMarker;
-import org.karp.k4t.ui.automation.runner.views.feed.FeedViewElementLocatorProvider;
 import org.openqa.selenium.WebDriver;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;

@@ -9,8 +9,6 @@ import org.karp.k4t.ui.automation.runner.browser.Browser;
 import org.karp.k4t.ui.automation.runner.browser.BrowserProvider;
 import org.karp.k4t.ui.automation.runner.destination.DestinationProvider;
 import org.karp.k4t.ui.automation.runner.driver.WebDriverProvider;
-import org.karp.k4t.ui.automation.runner.views.feed.FeedViewRetriever;
-import org.karp.k4t.ui.automation.runner.views.feed.FeedViewStatusMarker;
 import org.karp.k4t.ui.automation.runner.views.home.HomeViewRetriever;
 import org.karp.k4t.ui.automation.runner.views.home.HomeViewStatusMarker;
 import org.openqa.selenium.WebDriver;
