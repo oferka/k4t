@@ -8,4 +8,6 @@ public interface DestinationProvider {
     @NotNull URI getDefaultView();
 
     @NotNull URI getFeedView();
+
+    @NotNull URI getHomeView();
 }

@@ -2,6 +2,7 @@ package org.karp.k4t.ui.home;
 
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -34,7 +35,8 @@ public class HomeView extends VerticalLayout {
         getStyle().set("text-align", "center");
         getStyle().set("padding", "2em");
 
-        Text text = new Text(NAME);
+        Span text = new Span(NAME);
+        text.addClassName(ID.concat("-text"));
         add(text);
     }
 }
