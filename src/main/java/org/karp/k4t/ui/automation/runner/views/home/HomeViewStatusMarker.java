@@ -25,6 +25,12 @@ public class HomeViewStatusMarker {
     private final HomeViewElementLocatorProvider homeViewElementLocatorProvider;
 
     @NotNull
+    private final HomeLayoutElementLocatorProvider homeLayoutElementLocatorProvider;
+
+    @NotNull
+    private final HomeLayoutHeaderElementLocatorProvider homeLayoutHeaderElementLocatorProvider;
+
+    @NotNull
     private final ElementStatusMarker elementStatusMarker;
 
     public void mark(@Valid @NotNull WebDriver driver, @Valid @NotNull ElementStatus elementStatus) {
@@ -42,6 +48,22 @@ public class HomeViewStatusMarker {
                 elementRetriever.getByPresence(
                         driver,
                         homeViewElementLocatorProvider.getBackgroundContainer()
+                ),
+                elementStatus
+        );
+        elementStatusMarker.mark(
+                driver,
+                elementRetriever.getByPresence(
+                        driver,
+                        homeLayoutElementLocatorProvider.getBackgroundContainer()
+                ),
+                elementStatus
+        );
+        elementStatusMarker.mark(
+                driver,
+                elementRetriever.getByPresence(
+                        driver,
+                        homeLayoutHeaderElementLocatorProvider.getBackgroundContainer()
                 ),
                 elementStatus
         );
