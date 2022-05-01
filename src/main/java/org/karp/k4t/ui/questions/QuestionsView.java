@@ -1,6 +1,5 @@
 package org.karp.k4t.ui.questions;
 
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
