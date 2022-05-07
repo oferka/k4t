@@ -6,18 +6,18 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
-import static org.karp.k4t.ui.users.UsersViewBody.ID;
+import static org.karp.k4t.ui.users.UsersViewBody.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersViewBody extends VerticalLayout {
 
-    public static final String ID = UsersView.ID + "-body";
+    public static final String CLASS_NAME = UsersView.CLASS_NAME + "-body";
 
     private final UsersViewBodyListPresentation usersViewBodyCardPresentation;
     private final UsersViewBodyGridPresentation usersViewBodyGridPresentation;
 
     public UsersViewBody(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         setWidthFull();
         setAlignItems(CENTER);

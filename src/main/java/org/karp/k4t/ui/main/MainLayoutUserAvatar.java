@@ -9,15 +9,15 @@ import org.karp.k4t.ui.DataProvider;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutUserAvatar.ID;
+import static org.karp.k4t.ui.main.MainLayoutUserAvatar.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class MainLayoutUserAvatar extends Avatar {
 
-    public static final String ID = MainLayout.ID + "-user-avatar";
+    public static final String CLASS_NAME = MainLayout.ID + "-user-avatar";
 
     public MainLayoutUserAvatar(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setImage("images/Ofer Karp.png");
         setName("Ofer Karp");
         getElement().addEventListener("click", this::avatarClicked);

@@ -13,13 +13,13 @@ import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
 @Slf4j
-@CssImport(SHARED_FOLDER + LoginButton.ID + CSS_FILE_EXTENSION)
+@CssImport(SHARED_FOLDER + LoginButton.CLASS_NAME + CSS_FILE_EXTENSION)
 public class LoginButton extends Button {
 
-    public static final String ID = "login-button";
+    public static final String CLASS_NAME = "login-button";
 
     public LoginButton(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setIcon(USER_CHECK.create());
         setText("Log in");
         addClickListener(this::loginClicked);

@@ -11,15 +11,15 @@ import static com.vaadin.flow.component.icon.VaadinIcon.FILTER;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderActionsFilterButton.ID;
+import static org.karp.k4t.ui.users.UsersViewHeaderActionsFilterButton.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersViewHeaderActionsFilterButton extends Button {
 
-    public static final String ID = UsersViewHeaderActions.ID + "-filter-button";
+    public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-filter-button";
 
     public UsersViewHeaderActionsFilterButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         setIcon(FILTER.create());
         setText("Filter");

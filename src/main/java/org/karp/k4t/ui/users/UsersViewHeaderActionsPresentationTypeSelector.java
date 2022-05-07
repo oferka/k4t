@@ -5,18 +5,18 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderActionsPresentationTypeSelector.ID;
+import static org.karp.k4t.ui.users.UsersViewHeaderActionsPresentationTypeSelector.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersViewHeaderActionsPresentationTypeSelector extends HorizontalLayout {
 
-    public static final String ID = UsersViewHeaderActions.ID + "-presentation-type-selector";
+    public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-presentation-type-selector";
 
     private final UsersViewHeaderActionsTypeSelectorGridButton gridButton;
     private final UsersViewHeaderActionsTypeSelectorListButton listButton;
 
     public UsersViewHeaderActionsPresentationTypeSelector(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         setSpacing(false);
 

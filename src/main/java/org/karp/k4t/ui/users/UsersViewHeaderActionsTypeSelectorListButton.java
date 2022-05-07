@@ -9,19 +9,19 @@ import static com.vaadin.flow.component.KeyModifier.ALT;
 import static com.vaadin.flow.component.icon.VaadinIcon.BULLETS;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderActionsTypeSelectorListButton.ID;
+import static org.karp.k4t.ui.users.UsersViewHeaderActionsTypeSelectorListButton.CLASS_NAME;
 import static org.karp.k4t.ui.users.UsersViewPresentationMode.LIST;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersViewHeaderActionsTypeSelectorListButton extends Button {
 
-    public static final String ID = UsersViewHeaderActionsPresentationTypeSelector.ID + "-list-button";
+    public static final String CLASS_NAME = UsersViewHeaderActionsPresentationTypeSelector.CLASS_NAME + "-list-button";
 
     private final UsersViewState usersViewState;
 
     public UsersViewHeaderActionsTypeSelectorListButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
         this.usersViewState = usersViewState;
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setIcon(BULLETS.create());
         addClickShortcut(KEY_C, ALT);
         addClickListener(this::cardPresentationTypeClicked);

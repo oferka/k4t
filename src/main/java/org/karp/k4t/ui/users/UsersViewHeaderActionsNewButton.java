@@ -12,15 +12,15 @@ import static com.vaadin.flow.component.icon.VaadinIcon.PLUS_CIRCLE;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderActionsNewButton.ID;
+import static org.karp.k4t.ui.users.UsersViewHeaderActionsNewButton.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersViewHeaderActionsNewButton extends Button {
 
-    public static final String ID = UsersViewHeaderActions.ID + "-new-button";
+    public static final String CLASS_NAME = UsersViewHeaderActions.CLASS_NAME + "-new-button";
 
     public UsersViewHeaderActionsNewButton(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         setIcon(PLUS_CIRCLE.create());
         setText("New User");

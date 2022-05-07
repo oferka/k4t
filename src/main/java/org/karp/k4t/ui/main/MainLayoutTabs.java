@@ -15,15 +15,15 @@ import static com.vaadin.flow.component.tabs.Tabs.Orientation.VERTICAL;
 import static com.vaadin.flow.component.tabs.TabsVariant.LUMO_MINIMAL;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutTabs.ID;
+import static org.karp.k4t.ui.main.MainLayoutTabs.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class MainLayoutTabs extends Tabs {
 
-    public static final String ID = MainLayout.ID + "-tabs";
+    public static final String CLASS_NAME = MainLayout.ID + "-tabs";
 
     public MainLayoutTabs() {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setOrientation(VERTICAL);
         addThemeVariants(LUMO_MINIMAL);
         add(createTabs());
@@ -31,9 +31,9 @@ public class MainLayoutTabs extends Tabs {
 
     private Component[] createTabs() {
         return new Component[] {
-                new MainLayoutTab(FeedView.ID, FeedView.NAME, FeedView.class, FeedView.ICON),
+                new MainLayoutTab(FeedView.CLASS_NAME, FeedView.NAME, FeedView.class, FeedView.ICON),
                 new MainLayoutTab(EmptyView.ID, EmptyView.NAME, EmptyView.class, EmptyView.ICON),
-                new MainLayoutTab(UsersView.ID, UsersView.NAME, UsersView.class, UsersView.ICON)
+                new MainLayoutTab(UsersView.CLASS_NAME, UsersView.NAME, UsersView.class, UsersView.ICON)
         };
     }
 

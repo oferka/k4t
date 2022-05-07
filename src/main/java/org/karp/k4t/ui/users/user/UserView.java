@@ -13,16 +13,16 @@ import org.karp.k4t.ui.users.UsersView;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.ROUTE;
 import static org.karp.k4t.ui.users.user.UserView.FOLDER;
-import static org.karp.k4t.ui.users.user.UserView.ID;
+import static org.karp.k4t.ui.users.user.UserView.CLASS_NAME;
 
 @Route(value = ROUTE, layout = MainLayout.class)
 @PageTitle(UserView.NAME)
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
 
     public static final String ID_PREFIX = "user";
     public static final String ID_SUFFIX = "-view";
-    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String FOLDER = UsersView.FOLDER + ID_PREFIX + "/";
     public static final String NAME = "User";
 
@@ -31,7 +31,7 @@ public class UserView extends VerticalLayout implements HasUrlParameter<Long> {
     private final UserViewFooter userViewFooter;
 
     public UserView(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         userViewHeader = new UserViewHeader(dataProvider);
         add(userViewHeader);

@@ -11,15 +11,15 @@ import static com.vaadin.flow.component.icon.VaadinIcon.BELL_O;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutUserNotifications.ID;
+import static org.karp.k4t.ui.main.MainLayoutUserNotifications.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class MainLayoutUserNotifications extends Button {
 
-    public static final String ID = MainLayout.ID + "-user-notifications";
+    public static final String CLASS_NAME = MainLayout.ID + "-user-notifications";
 
     public MainLayoutUserNotifications(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         Icon notificationsIcon = BELL_O.create();
         setIcon(notificationsIcon);
         addClickListener(this::notificationsClicked);

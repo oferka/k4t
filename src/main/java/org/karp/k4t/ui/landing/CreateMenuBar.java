@@ -12,13 +12,13 @@ import static com.vaadin.flow.component.notification.Notification.Position.MIDDL
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
 
-@CssImport(FOLDER + LandingViewHeaderNavigation.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingViewHeaderNavigation.CLASS_NAME + CSS_FILE_EXTENSION)
 public class CreateMenuBar extends MenuBar {
 
-    public static final String ID = "create-menu-bar";
+    public static final String CLASS_NAME = "create-menu-bar";
 
     public CreateMenuBar() {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         addThemeVariants(LUMO_SMALL, LUMO_PRIMARY);
 
         MenuItem createMenuItem = addItem("Create");

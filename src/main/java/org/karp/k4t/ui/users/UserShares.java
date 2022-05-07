@@ -8,16 +8,16 @@ import org.karp.k4t.model.User;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.CONNECT_O;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UserShares.ID;
+import static org.karp.k4t.ui.users.UserShares.CLASS_NAME;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UserShares extends HorizontalLayout {
 
-    public static final String ID = "user-shares";
+    public static final String CLASS_NAME = "user-shares";
 
     public UserShares(User user) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         Icon sharesIcon = CONNECT_O.create();
         sharesIcon.addClassName("user-shares-icon");

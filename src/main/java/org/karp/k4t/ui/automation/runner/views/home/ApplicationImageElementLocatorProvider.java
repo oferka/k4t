@@ -5,12 +5,12 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
 
-import static org.karp.k4t.ui.shared.ApplicationImage.ID;
+import static org.karp.k4t.ui.shared.ApplicationImage.CLASS_NAME;
 
 @Service
 public class ApplicationImageElementLocatorProvider {
 
     public @NotNull By getControlsContainer() {
-        return By.className(ID);
+        return By.className(CLASS_NAME);
     }
 }

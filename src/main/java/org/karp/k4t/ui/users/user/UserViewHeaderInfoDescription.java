@@ -9,18 +9,18 @@ import java.util.Optional;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.FOLDER;
-import static org.karp.k4t.ui.users.user.UserViewHeaderInfoDescription.ID;
+import static org.karp.k4t.ui.users.user.UserViewHeaderInfoDescription.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UserViewHeaderInfoDescription extends Span {
 
-    public static final String ID = UserViewHeaderInfo.ID + "-description";
+    public static final String CLASS_NAME = UserViewHeaderInfo.CLASS_NAME + "-description";
 
     private final DataProvider dataProvider;
 
     public UserViewHeaderInfoDescription(DataProvider dataProvider) {
         this.dataProvider = dataProvider;
-        addClassName(ID);
+        addClassName(CLASS_NAME);
     }
 
     public void selectedUserChanged(long selectedUserId) {

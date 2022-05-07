@@ -9,15 +9,14 @@ import org.karp.k4t.ui.feed.FeedView;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
-import static org.karp.k4t.ui.landing.LandingView.ID;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingView.CLASS_NAME + CSS_FILE_EXTENSION)
 public class LandingViewBody extends VerticalLayout {
 
-    public static final String ID = LandingView.ID + "-body";
+    public static final String CLASS_NAME = LandingView.CLASS_NAME + "-body";
 
     public LandingViewBody(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         setAlignItems(Alignment.CENTER);
         add(new H2("Landing Page Body"));

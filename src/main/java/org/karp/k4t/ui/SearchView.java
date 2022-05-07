@@ -18,13 +18,13 @@ import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
 
 @Route(value = ROUTE, layout = HomeLayout.class)
 @PageTitle(SearchView.NAME)
-@CssImport(FOLDER + SearchView.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + SearchView.CLASS_NAME + CSS_FILE_EXTENSION)
 public class SearchView extends VerticalLayout implements BeforeEnterObserver {
 
     public static final String ROUTE = "search";
     public static final String ID_PREFIX = "search";
     public static final String ID_SUFFIX = "-view";
-    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
     public static final String NAME = "Search";
     public static final String QUERY_PARAM_NAME = "query";
@@ -38,7 +38,7 @@ public class SearchView extends VerticalLayout implements BeforeEnterObserver {
 
     public SearchView(SearchState searchState) {
         this.searchState = searchState;
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);

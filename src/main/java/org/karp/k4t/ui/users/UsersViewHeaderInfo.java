@@ -6,18 +6,18 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
-import static org.karp.k4t.ui.users.UsersViewHeaderInfo.ID;
+import static org.karp.k4t.ui.users.UsersViewHeaderInfo.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersViewHeaderInfo extends VerticalLayout {
 
-    public static final String ID= UsersViewHeader.ID + "-info";
+    public static final String CLASS_NAME = UsersViewHeader.CLASS_NAME + "-info";
 
     private final UsersViewHeaderInfoTitle usersViewHeaderInfoTitle;
     private final UsersViewHeaderInfoDescription usersViewHeaderInfoDescription;
 
     public UsersViewHeaderInfo(UsersDataProvider usersViewDataProvider, UsersViewState usersViewState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         setAlignItems(FlexComponent.Alignment.CENTER);
 

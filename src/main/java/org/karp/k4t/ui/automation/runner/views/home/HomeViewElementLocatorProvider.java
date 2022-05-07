@@ -5,16 +5,16 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
 
-import static org.karp.k4t.ui.home.HomeView.ID;
+import static org.karp.k4t.ui.home.HomeView.CLASS_NAME;
 
 @Service
 public class HomeViewElementLocatorProvider {
 
     public @NotNull By getBackgroundContainer() {
-        return By.className(ID);
+        return By.className(CLASS_NAME);
     }
 
     public @NotNull By getControlsContainer() {
-        return By.className(ID.concat("-text"));
+        return By.className(CLASS_NAME.concat("-text"));
     }
 }

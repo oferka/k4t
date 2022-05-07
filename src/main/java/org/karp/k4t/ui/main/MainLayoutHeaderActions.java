@@ -7,12 +7,12 @@ import org.karp.k4t.ui.DataProvider;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutHeaderActions.ID;
+import static org.karp.k4t.ui.main.MainLayoutHeaderActions.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class MainLayoutHeaderActions extends HorizontalLayout {
 
-    public static final String ID = MainLayoutHeader.ID + "-actions";
+    public static final String CLASS_NAME = MainLayoutHeader.CLASS_NAME + "-actions";
 
     private final MainLayoutUserHelp mainLayoutUserHelp;
     private final MainLayoutUserSettings mainLayoutUserSettings;
@@ -20,7 +20,7 @@ public class MainLayoutHeaderActions extends HorizontalLayout {
     private final MainLayoutUserAvatar mainLayoutUserAvatar;
 
     public MainLayoutHeaderActions(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         mainLayoutUserHelp = new MainLayoutUserHelp(dataProvider);
         mainLayoutUserSettings = new MainLayoutUserSettings(dataProvider);
         mainLayoutUserNotifications = new MainLayoutUserNotifications(dataProvider);

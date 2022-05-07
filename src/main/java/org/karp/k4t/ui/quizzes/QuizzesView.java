@@ -15,21 +15,21 @@ import static org.karp.k4t.ui.quizzes.QuizzesView.ROUTE;
 
 @Route(value = ROUTE, layout = HomeLayout.class)
 @PageTitle(QuizzesView.NAME)
-@CssImport(FOLDER + QuizzesView.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + QuizzesView.CLASS_NAME + CSS_FILE_EXTENSION)
 public class QuizzesView extends VerticalLayout {
 
     public static final String ROUTE = "quizzes";
     public static final String ID_PREFIX = "quizzes";
     public static final String ID_SUFFIX = "-view";
-    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Quizzes";
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public QuizzesView() {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         Span text = new Span(NAME);
-        text.addClassName(ID.concat("-text"));
+        text.addClassName(CLASS_NAME.concat("-text"));
         add(text);
     }
 }

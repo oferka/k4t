@@ -13,14 +13,14 @@ import static org.karp.k4t.ui.landing.LandingView.ROUTE;
 
 @Route(value = ROUTE)
 @PageTitle(LandingView.NAME)
-@CssImport(FOLDER + LandingView.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingView.CLASS_NAME + CSS_FILE_EXTENSION)
 public class LandingView extends VerticalLayout {
 
     public static final String ROUTE = "landing";
     public static final String ID_PREFIX = "landing";
     public static final String NAME = "Landing";
     public static final String ID_SUFFIX = "-view";
-    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     private final LandingViewHeader header;
@@ -28,7 +28,7 @@ public class LandingView extends VerticalLayout {
     private final LandingViewFooter footer;
 
     public LandingView(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         header = new LandingViewHeader(dataProvider);
         add(header);

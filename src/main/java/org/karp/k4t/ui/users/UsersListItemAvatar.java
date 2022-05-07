@@ -11,7 +11,7 @@ import static org.karp.k4t.ui.users.UsersView.FOLDER;
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UsersListItemAvatar extends Div {
 
-    public static final String ID = UsersListItem.ID + "-avatar";
+    public static final String ID = UsersListItem.CLASS_NAME + "-avatar";
 
     private final UserAvatar userAvatar;
 

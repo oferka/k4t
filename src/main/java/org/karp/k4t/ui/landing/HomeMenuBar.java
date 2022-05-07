@@ -12,13 +12,13 @@ import static com.vaadin.flow.component.notification.Notification.Position.MIDDL
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
 
-@CssImport(FOLDER + LandingViewHeaderNavigation.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingViewHeaderNavigation.CLASS_NAME + CSS_FILE_EXTENSION)
 public class HomeMenuBar extends MenuBar {
 
-    public static final String ID = "home-menu-bar";
+    public static final String CLASS_NAME = "home-menu-bar";
 
     public HomeMenuBar() {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         addThemeVariants(LUMO_SMALL, LUMO_TERTIARY);
 //        MenuItem homeMenuItem = addItem("Home", e -> homeClicked());
         RouterLink homeRouterLink = new RouterLink("Home", LandingView.class);

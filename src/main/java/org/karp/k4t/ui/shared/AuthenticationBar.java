@@ -7,16 +7,16 @@ import org.karp.k4t.ui.DataProvider;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
-@CssImport(SHARED_FOLDER + AuthenticationBar.ID + CSS_FILE_EXTENSION)
+@CssImport(SHARED_FOLDER + AuthenticationBar.CLASS_NAME + CSS_FILE_EXTENSION)
 public class AuthenticationBar extends HorizontalLayout {
 
-    public static final String ID = "authentication-bar";
+    public static final String CLASS_NAME = "authentication-bar";
 
     private final LoginRouterLink loginRouterLink;
     private final SignupRouterLink signupRouterLink;
 
     public AuthenticationBar(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         loginRouterLink = new LoginRouterLink(dataProvider);
         add(loginRouterLink);

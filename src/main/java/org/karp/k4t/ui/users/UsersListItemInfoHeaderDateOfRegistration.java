@@ -11,7 +11,7 @@ import static org.karp.k4t.ui.users.UsersView.FOLDER;
 @CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
 public class UsersListItemInfoHeaderDateOfRegistration extends Div {
 
-    public static final String ID = UsersListItemInfoHeader.ID + "-date-of-registration";
+    public static final String ID = UsersListItemInfoHeader.CLASS_NAME + "-date-of-registration";
 
     private final UserDateOfRegistration dateOfRegistration;
 

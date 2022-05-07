@@ -9,16 +9,16 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
-@CssImport(FOLDER + HomeLayoutTitleRouterLink.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + HomeLayoutTitleRouterLink.CLASS_NAME + CSS_FILE_EXTENSION)
 public class HomeLayoutTitleRouterLink extends RouterLink {
 
-    public static final String ID = HomeLayout.ID + "-title-router-link";
+    public static final String CLASS_NAME = HomeLayout.ID + "-title-router-link";
 
     private final ApplicationImage applicationImage;
 
     public HomeLayoutTitleRouterLink(DataProvider dataProvider) {
         super(EMPTY, HomeView.class);
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         applicationImage = new ApplicationImage(dataProvider);
         add(applicationImage);

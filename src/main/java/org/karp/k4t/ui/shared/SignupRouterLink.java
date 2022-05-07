@@ -9,16 +9,16 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
-@CssImport(SHARED_FOLDER + SignupRouterLink.ID + CSS_FILE_EXTENSION)
+@CssImport(SHARED_FOLDER + SignupRouterLink.CLASS_NAME + CSS_FILE_EXTENSION)
 public class SignupRouterLink extends RouterLink {
 
-    public static final String ID = "signup-router-link";
+    public static final String CLASS_NAME = "signup-router-link";
 
     private final SignupButton signupButton;
 
     public SignupRouterLink(DataProvider dataProvider) {
         super(EMPTY, SignupView.class);
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         signupButton = new SignupButton(dataProvider);
         add(signupButton);

@@ -8,15 +8,15 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
 
-@CssImport(FOLDER + LandingViewHeaderSearch.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingViewHeaderSearch.CLASS_NAME + CSS_FILE_EXTENSION)
 public class LandingViewHeaderSearch extends HorizontalLayout {
 
-    public static final String ID = LandingViewHeader.ID + "-search";
+    public static final String CLASS_NAME = LandingViewHeader.CLASS_NAME + "-search";
 
     private final LandingViewHeaderSearchBar searchBar;
 
     public LandingViewHeaderSearch(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
         searchBar = new LandingViewHeaderSearchBar(dataProvider);

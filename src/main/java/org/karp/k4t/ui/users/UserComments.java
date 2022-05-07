@@ -8,16 +8,16 @@ import org.karp.k4t.model.User;
 
 import static com.vaadin.flow.component.icon.VaadinIcon.COMMENT_O;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UserComments.ID;
+import static org.karp.k4t.ui.users.UserComments.CLASS_NAME;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UserComments extends HorizontalLayout {
 
-    public static final String ID = "user-comments";
+    public static final String CLASS_NAME = "user-comments";
 
     public UserComments(User user) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         Icon commentsIcon = COMMENT_O.create();
         commentsIcon.addClassName("user-comments-icon");

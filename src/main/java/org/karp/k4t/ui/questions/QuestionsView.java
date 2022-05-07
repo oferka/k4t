@@ -14,21 +14,21 @@ import static org.karp.k4t.ui.questions.QuestionsView.FOLDER;
 
 @Route(value = QuestionsView.ROUTE, layout = HomeLayout.class)
 @PageTitle(QuestionsView.NAME)
-@CssImport(FOLDER + QuestionsView.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + QuestionsView.CLASS_NAME + CSS_FILE_EXTENSION)
 public class QuestionsView extends VerticalLayout {
 
     public static final String ROUTE = "questions";
     public static final String ID_PREFIX = "questions";
     public static final String ID_SUFFIX = "-view";
-    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Questions";
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public QuestionsView() {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         Span text = new Span(NAME);
-        text.addClassName(ID.concat("-text"));
+        text.addClassName(CLASS_NAME.concat("-text"));
         add(text);
     }
 }

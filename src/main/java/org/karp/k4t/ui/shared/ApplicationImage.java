@@ -14,13 +14,13 @@ import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
 @Slf4j
-@CssImport(SHARED_FOLDER + ApplicationImage.ID + CSS_FILE_EXTENSION)
+@CssImport(SHARED_FOLDER + ApplicationImage.CLASS_NAME + CSS_FILE_EXTENSION)
 public class ApplicationImage extends Image {
 
-    public static final String ID = "application-image";
+    public static final String CLASS_NAME = "application-image";
 
     public ApplicationImage(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setSrc(APPLICATION_LOGO);
         setAlt(APPLICATION_NAME);
         addClickListener(this::applicationImageClicked);

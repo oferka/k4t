@@ -6,16 +6,16 @@ import com.vaadin.flow.data.renderer.ComponentRenderer;
 import org.karp.k4t.model.User;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersGrid.ID;
+import static org.karp.k4t.ui.users.UsersGrid.CLASS_NAME;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersGrid extends Grid<User> {
 
-    public static final String ID = "users-grid";
+    public static final String CLASS_NAME = "users-grid";
 
     public UsersGrid(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setWidthFull();
         addColumn(User::getId).setHeader("ID").setSortable(true);
         addColumn(new ComponentRenderer<>(UserAvatar::new)).setHeader("Picture").setComparator(User::getName);

@@ -5,20 +5,20 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.karp.k4t.model.User;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersListItemInfo.ID;
+import static org.karp.k4t.ui.users.UsersListItemInfo.CLASS_NAME;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersListItemInfo extends VerticalLayout {
 
-    public static final String ID = UsersListItem.ID + "-info";
+    public static final String CLASS_NAME = UsersListItem.CLASS_NAME + "-info";
 
     private final UsersListItemInfoHeader header;
     private final UsersListItemInfoSummary summary;
     private final UsersListItemInfoActions actions;
 
     public UsersListItemInfo(User user) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setSpacing(false);
         setPadding(false);
 

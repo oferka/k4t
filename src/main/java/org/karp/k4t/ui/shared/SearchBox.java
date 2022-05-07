@@ -22,10 +22,10 @@ import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
 @Slf4j
-@CssImport(SHARED_FOLDER + SearchBox.ID + CSS_FILE_EXTENSION)
+@CssImport(SHARED_FOLDER + SearchBox.CLASS_NAME + CSS_FILE_EXTENSION)
 public class SearchBox extends ComboBox<SearchTerm> {
 
-    public static final String ID = "search-box";
+    public static final String CLASS_NAME = "search-box";
 
     private final DataProvider dataProvider;
     private final SearchState searchState;
@@ -35,7 +35,7 @@ public class SearchBox extends ComboBox<SearchTerm> {
     public SearchBox(DataProvider dataProvider, SearchState searchState) {
         this.dataProvider = dataProvider;
         this.searchState = searchState;
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         getElement().setAttribute("aria-label", "search");
         setPlaceholder("Search");

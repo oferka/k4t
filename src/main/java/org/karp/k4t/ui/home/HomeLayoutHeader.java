@@ -11,10 +11,10 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyConte
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
-@CssImport(FOLDER + HomeLayoutHeader.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + HomeLayoutHeader.CLASS_NAME + CSS_FILE_EXTENSION)
 public class HomeLayoutHeader extends HorizontalLayout {
 
-    public static final String ID = HomeLayout.ID + "-header";
+    public static final String CLASS_NAME = HomeLayout.ID + "-header";
 
     private final HomeLayoutTitleBar titleBar;
     private final HomeLayoutTabs tabs;
@@ -22,7 +22,7 @@ public class HomeLayoutHeader extends HorizontalLayout {
     private final HomeLayoutActionsBar actionsBar;
 
     public HomeLayoutHeader(DataProvider dataProvider, SearchState searchState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setPadding(true);
         setJustifyContentMode(BETWEEN);
 

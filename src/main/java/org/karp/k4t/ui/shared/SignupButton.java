@@ -14,13 +14,13 @@ import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.SHARED_FOLDER;
 
 @Slf4j
-@CssImport(SHARED_FOLDER + SignupButton.ID + CSS_FILE_EXTENSION)
+@CssImport(SHARED_FOLDER + SignupButton.CLASS_NAME + CSS_FILE_EXTENSION)
 public class SignupButton extends Button {
 
-    public static final String ID = "signup-button";
+    public static final String CLASS_NAME = "signup-button";
 
     public SignupButton(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         addThemeVariants(LUMO_PRIMARY);
         setIcon(SIGN_IN.create());
         setText("Sign up");

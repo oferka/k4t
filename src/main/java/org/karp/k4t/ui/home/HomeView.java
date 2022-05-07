@@ -17,21 +17,21 @@ import static org.karp.k4t.ui.home.HomeView.ROUTE;
 @Route(value = ROUTE, layout = HomeLayout.class)
 @RouteAlias(value = EMPTY, layout = HomeLayout.class)
 @PageTitle(HomeView.NAME)
-@CssImport(FOLDER + HomeView.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + HomeView.CLASS_NAME + CSS_FILE_EXTENSION)
 public class HomeView extends VerticalLayout {
 
     public static final String ROUTE = "home";
     public static final String ID_PREFIX = "home";
     public static final String ID_SUFFIX = "-view";
-    public static final String ID = ID_PREFIX + ID_SUFFIX;
+    public static final String CLASS_NAME = ID_PREFIX + ID_SUFFIX;
     public static final String NAME = "Home";
     public static final String FOLDER = VIEWS_FOLDER + ID_PREFIX + "/";
 
     public HomeView() {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setAlignItems(CENTER);
         Span text = new Span(NAME);
-        text.addClassName(ID.concat("-text"));
+        text.addClassName(CLASS_NAME.concat("-text"));
         add(text);
     }
 }

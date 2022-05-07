@@ -8,13 +8,13 @@ import static com.vaadin.flow.component.icon.VaadinIcon.SEARCH;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
 
-@CssImport(FOLDER + LandingViewHeaderSearch.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingViewHeaderSearch.CLASS_NAME + CSS_FILE_EXTENSION)
 public class LandingViewHeaderSearchBar extends TextField {
 
-    public static final String ID = LandingViewHeaderSearch.ID + "-bar";
+    public static final String CLASS_NAME = LandingViewHeaderSearch.CLASS_NAME + "-bar";
 
     public LandingViewHeaderSearchBar(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         getElement().setAttribute("aria-label", "search");
         setPlaceholder("Search");

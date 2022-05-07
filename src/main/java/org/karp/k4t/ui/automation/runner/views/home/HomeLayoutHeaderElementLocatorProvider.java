@@ -5,12 +5,12 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
 
-import static org.karp.k4t.ui.home.HomeLayoutHeader.ID;
+import static org.karp.k4t.ui.home.HomeLayoutHeader.CLASS_NAME;
 
 @Service
 public class HomeLayoutHeaderElementLocatorProvider {
 
     public @NotNull By getBackgroundContainer() {
-        return By.className(ID);
+        return By.className(CLASS_NAME);
     }
 }

@@ -9,15 +9,15 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutTabRouterLinkContent.ID;
+import static org.karp.k4t.ui.main.MainLayoutTabRouterLinkContent.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class MainLayoutTabRouterLinkContent extends HorizontalLayout {
 
-    public static final String ID = MainLayoutTabRouterLink.ID + "-content";
+    public static final String CLASS_NAME = MainLayoutTabRouterLink.CLASS_NAME + "-content";
 
     public MainLayoutTabRouterLinkContent(String text, VaadinIcon vaadinIcon) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         Span span = new Span(text);
         Icon icon = new Icon(vaadinIcon);
         add(icon, span);

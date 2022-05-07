@@ -9,18 +9,18 @@ import javax.validation.constraints.NotNull;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode.BETWEEN;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
-import static org.karp.k4t.ui.main.MainLayoutHeader.ID;
+import static org.karp.k4t.ui.main.MainLayoutHeader.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class MainLayoutHeader extends HorizontalLayout {
 
-    public static final String ID = MainLayout.ID + "-header";
+    public static final String CLASS_NAME = MainLayout.ID + "-header";
 
     private final MainLayoutHeaderContent content;
     private final MainLayoutHeaderActions actions;
 
     public MainLayoutHeader(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setWidthFull();
         setPadding(true);
         setJustifyContentMode(BETWEEN);

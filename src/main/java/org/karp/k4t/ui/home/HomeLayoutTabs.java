@@ -19,13 +19,13 @@ import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
 @Slf4j
-@CssImport(FOLDER + HomeLayoutTabs.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + HomeLayoutTabs.CLASS_NAME + CSS_FILE_EXTENSION)
 public class HomeLayoutTabs extends Tabs {
 
-    public static final String ID = HomeLayout.ID + "-tabs";
+    public static final String CLASS_NAME = HomeLayout.ID + "-tabs";
 
     public HomeLayoutTabs(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setOrientation(HORIZONTAL);
         addThemeVariants(LUMO_CENTERED, LUMO_MINIMAL);
         add(createTabs(dataProvider));

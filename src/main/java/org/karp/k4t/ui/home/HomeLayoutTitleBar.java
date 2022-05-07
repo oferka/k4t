@@ -8,15 +8,15 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
-@CssImport(FOLDER + HomeLayoutTitleBar.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + HomeLayoutTitleBar.CLASS_NAME + CSS_FILE_EXTENSION)
 public class HomeLayoutTitleBar extends HorizontalLayout {
 
-    public static final String ID = HomeLayout.ID + "-title-bar";
+    public static final String CLASS_NAME = HomeLayout.ID + "-title-bar";
 
     private final HomeLayoutTitleRouterLink image;
 
     public HomeLayoutTitleBar(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
         image = new HomeLayoutTitleRouterLink(dataProvider);

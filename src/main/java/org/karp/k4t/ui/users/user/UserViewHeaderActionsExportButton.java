@@ -16,19 +16,19 @@ import static com.vaadin.flow.component.button.ButtonVariant.LUMO_PRIMARY;
 import static com.vaadin.flow.component.notification.Notification.Position.MIDDLE;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.user.UserView.FOLDER;
-import static org.karp.k4t.ui.users.user.UserViewHeaderActionsExportButton.ID;
+import static org.karp.k4t.ui.users.user.UserViewHeaderActionsExportButton.CLASS_NAME;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UserViewHeaderActionsExportButton extends Button {
 
-    public static final String ID = UserViewHeaderActions.ID + "-export-button";
+    public static final String CLASS_NAME = UserViewHeaderActions.CLASS_NAME + "-export-button";
 
     private final DataProvider dataProvider;
     private long selectedUserId;
 
     public UserViewHeaderActionsExportButton(DataProvider dataProvider) {
         this.dataProvider = dataProvider;
-        addClassName(ID);
+        addClassName(CLASS_NAME);
 
         setIcon(VaadinIcon.DOWNLOAD.create());
         setText("Export");

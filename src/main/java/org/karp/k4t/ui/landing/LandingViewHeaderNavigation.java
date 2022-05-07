@@ -9,10 +9,10 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.landing.LandingView.FOLDER;
 
-@CssImport(FOLDER + LandingViewHeaderNavigation.ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + LandingViewHeaderNavigation.CLASS_NAME + CSS_FILE_EXTENSION)
 public class LandingViewHeaderNavigation extends HorizontalLayout {
 
-    public static final String ID = LandingViewHeader.ID + "-navigation";
+    public static final String CLASS_NAME = LandingViewHeader.CLASS_NAME + "-navigation";
 
     private final ApplicationImage applicationImage;
     private final LandingViewHeaderNavigationTabs navigationTabs;
@@ -24,7 +24,7 @@ public class LandingViewHeaderNavigation extends HorizontalLayout {
 //    private final CreateMenuBar createMenuBar;
 
     public LandingViewHeaderNavigation(DataProvider dataProvider) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setAlignItems(CENTER);
 
         applicationImage = new ApplicationImage(dataProvider);

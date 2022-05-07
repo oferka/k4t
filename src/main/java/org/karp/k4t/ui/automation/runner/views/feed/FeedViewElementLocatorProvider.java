@@ -10,10 +10,10 @@ import javax.validation.constraints.NotNull;
 public class FeedViewElementLocatorProvider {
 
     public @NotNull By getBackgroundContainer() {
-        return By.className(FeedView.ID);
+        return By.className(FeedView.CLASS_NAME);
     }
 
     public @NotNull By getControlsContainer() {
-        return By.className(FeedView.ID.concat("-text"));
+        return By.className(FeedView.CLASS_NAME.concat("-text"));
     }
 }

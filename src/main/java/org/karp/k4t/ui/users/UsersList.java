@@ -8,16 +8,16 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import org.karp.k4t.model.User;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
-import static org.karp.k4t.ui.users.UsersList.ID;
+import static org.karp.k4t.ui.users.UsersList.CLASS_NAME;
 import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
-@CssImport(FOLDER + ID + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + CLASS_NAME + CSS_FILE_EXTENSION)
 public class UsersList extends Div {
 
-    public static final String ID = "users-list";
+    public static final String CLASS_NAME = "users-list";
 
     public UsersList(UsersDataProvider usersDataProvider, UsersViewState usersViewState) {
-        addClassName(ID);
+        addClassName(CLASS_NAME);
         setWidthFull();
         Grid<User> grid = new Grid<>();
         grid.addClassName("users-list-grid");
