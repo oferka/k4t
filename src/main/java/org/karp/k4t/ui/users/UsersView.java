@@ -10,8 +10,8 @@ import org.karp.k4t.ui.main.MainLayout;
 import static com.vaadin.flow.component.icon.VaadinIcon.USERS;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.users.UsersView.FOLDER;
 import static org.karp.k4t.ui.users.UsersView.CLASS_NAME;
+import static org.karp.k4t.ui.users.UsersView.FOLDER;
 
 @Route(value = UsersView.ROUTE, layout = MainLayout.class)
 @PageTitle(UsersView.NAME)

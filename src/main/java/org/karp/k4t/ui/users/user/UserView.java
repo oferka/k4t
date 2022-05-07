@@ -12,8 +12,8 @@ import org.karp.k4t.ui.users.UsersView;
 
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.users.UsersView.ROUTE;
-import static org.karp.k4t.ui.users.user.UserView.FOLDER;
 import static org.karp.k4t.ui.users.user.UserView.CLASS_NAME;
+import static org.karp.k4t.ui.users.user.UserView.FOLDER;
 
 @Route(value = ROUTE, layout = MainLayout.class)
 @PageTitle(UserView.NAME)

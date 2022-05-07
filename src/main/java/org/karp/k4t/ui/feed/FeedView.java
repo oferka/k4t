@@ -12,8 +12,8 @@ import static com.vaadin.flow.component.icon.VaadinIcon.LINES_LIST;
 import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CENTER;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.Styles.VIEWS_FOLDER;
-import static org.karp.k4t.ui.feed.FeedView.FOLDER;
 import static org.karp.k4t.ui.feed.FeedView.CLASS_NAME;
+import static org.karp.k4t.ui.feed.FeedView.FOLDER;
 
 @Route(value = FeedView.ROUTE, layout = MainLayout.class)
 @PageTitle(FeedView.NAME)
