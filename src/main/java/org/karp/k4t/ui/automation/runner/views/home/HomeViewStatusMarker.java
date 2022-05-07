@@ -39,6 +39,9 @@ public class HomeViewStatusMarker {
     private final HomeLayoutTitleBarElementLocatorProvider homeLayoutTitleBarElementLocatorProvider;
 
     @NotNull
+    private final HomeLayoutTitleRouterLinkElementLocatorProvider homeLayoutTitleRouterLinkElementLocatorProvider;
+
+    @NotNull
     private final ElementStatusMarker elementStatusMarker;
 
     public void mark(@Valid @NotNull WebDriver driver, @Valid @NotNull ElementStatus elementStatus) {
@@ -48,7 +51,8 @@ public class HomeViewStatusMarker {
                 homeViewElementLocatorProvider.getBackgroundContainer(),
                 homeLayoutElementLocatorProvider.getBackgroundContainer(),
                 homeLayoutHeaderElementLocatorProvider.getBackgroundContainer(),
-                homeLayoutTitleBarElementLocatorProvider.getBackgroundContainer()*/
+                homeLayoutTitleBarElementLocatorProvider.getBackgroundContainer()*/,
+                homeLayoutTitleRouterLinkElementLocatorProvider.getBackgroundContainer()
         );
         mark(driver, locators, elementStatus);
         log.info("Marking status '{}' for home view completed", elementStatus.getName());
