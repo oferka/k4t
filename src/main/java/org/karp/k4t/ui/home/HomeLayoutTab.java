@@ -7,6 +7,7 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.router.RouterLink;
 import org.karp.k4t.ui.DataProvider;
 
+import static java.lang.String.format;
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.home.HomeLayout.FOLDER;
 
@@ -20,6 +21,7 @@ public class HomeLayoutTab extends Tab {
     public  HomeLayoutTab(DataProvider dataProvider, String text, Class<? extends Component> navigationTarget) {
         this.text = text;
         addClassName(CLASS_NAME);
+        setId(format("%s-%s", CLASS_NAME, text));
         add(new RouterLink(text, navigationTarget));
         ComponentUtil.setData(this, Class.class, navigationTarget);
     }

@@ -60,7 +60,10 @@ public class HomeViewStatusMarker {
                 homeLayoutTitleBarElementLocatorProvider.getBackgroundContainer()*/,
                 homeLayoutTitleRouterLinkElementLocatorProvider.getBackgroundContainer(),
                 applicationImageElementLocatorProvider.getControlsContainer(),
-                homeLayoutTabsElementLocatorProvider.getBackgroundContainer()
+                homeLayoutTabsElementLocatorProvider.getBackgroundContainer(),
+                homeLayoutTabsElementLocatorProvider.getHomeTab(),
+                homeLayoutTabsElementLocatorProvider.getQuestionsTab(),
+                homeLayoutTabsElementLocatorProvider.getQuizzesTab()
         );
         mark(driver, locators, elementStatus);
         log.info("Marking status '{}' for home view completed", elementStatus.getName());
