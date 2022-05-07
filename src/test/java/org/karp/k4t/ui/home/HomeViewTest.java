@@ -61,6 +61,9 @@ public class HomeViewTest {
         homeViewStatusMarker.mark(driver, READY);
         homeViewStatusMarker.mark(driver, IN_PROGRESS);
         homeViewStatusMarker.mark(driver, PASSED);
+        homeViewStatusMarker.mark(driver, FAILED);
+        homeViewStatusMarker.mark(driver, TIMED_OUT);
+        homeViewStatusMarker.mark(driver, NO_CONTENT);
         driver.quit();
     }
 

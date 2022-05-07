@@ -61,6 +61,9 @@ class FeedViewTest {
         feedViewStatusMarker.mark(driver, READY);
         feedViewStatusMarker.mark(driver, IN_PROGRESS);
         feedViewStatusMarker.mark(driver, PASSED);
+        feedViewStatusMarker.mark(driver, FAILED);
+        feedViewStatusMarker.mark(driver, TIMED_OUT);
+        feedViewStatusMarker.mark(driver, NO_CONTENT);
         driver.quit();
     }
 

@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:element-status-marker.properties")
-@ConfigurationProperties(prefix = "element.status.marker")
+@PropertySource("classpath:element-border-marker.properties")
+@ConfigurationProperties(prefix = "element.border.marker")
 @Data
-public class ElementStatusMarkerConfiguration {
+public class ElementBorderMarkerConfiguration {
 
     private boolean enabled = true;
 
