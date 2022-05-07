@@ -24,7 +24,6 @@ public class HomeLayout extends AppLayout {
 
     public HomeLayout(DataProvider dataProvider, SearchState searchState) {
         setId(ID);
-
         header = new HomeLayoutHeader(dataProvider, searchState);
         addToNavbar(true, header);
     }
