@@ -30,4 +30,16 @@ public class HomeLayoutTabsElementLocatorProvider {
     public @NotNull By getQuizzesTab() {
         return By.id(format("%s-%s", HomeLayoutTab.CLASS_NAME, QuizzesView.NAME));
     }
+
+    public @NotNull By getHomeTabRouterLink() {
+        return By.id(format("%s-%s", HomeLayoutTabRouterLink.CLASS_NAME, HomeView.NAME));
+    }
+
+    public @NotNull By getQuestionsTabRouterLink() {
+        return By.id(format("%s-%s", HomeLayoutTabRouterLink.CLASS_NAME, QuestionsView.NAME));
+    }
+
+    public @NotNull By getQuizzesTabRouterLink() {
+        return By.id(format("%s-%s", HomeLayoutTabRouterLink.CLASS_NAME, QuizzesView.NAME));
+    }
 }
