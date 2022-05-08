@@ -54,6 +54,12 @@ public class HomeViewStatusMarker {
     private final SearchBoxElementLocatorProvider searchBoxElementLocatorProvider;
 
     @NotNull
+    private final HomeLayoutActionsBarElementLocatorProvider homeLayoutActionsBarElementLocatorProvider;
+
+    @NotNull
+    private final AuthenticationBarElementLocatorProvider authenticationBarElementLocatorProvider;
+
+    @NotNull
     private final ElementStatusMarker elementStatusMarker;
 
     public void mark(@Valid @NotNull WebDriver driver, @Valid @NotNull ElementStatus elementStatus) {
@@ -62,8 +68,8 @@ public class HomeViewStatusMarker {
                 homeViewElementLocatorProvider.getControlsContainer()/*,
                 homeViewElementLocatorProvider.getBackgroundContainer(),
                 homeLayoutElementLocatorProvider.getBackgroundContainer(),
-                homeLayoutHeaderElementLocatorProvider.getBackgroundContainer(),
-                homeLayoutTitleBarElementLocatorProvider.getBackgroundContainer()*/,
+                homeLayoutHeaderElementLocatorProvider.getBackgroundContainer()*/,
+                homeLayoutTitleBarElementLocatorProvider.getBackgroundContainer(),
                 homeLayoutTitleRouterLinkElementLocatorProvider.getBackgroundContainer(),
                 applicationImageElementLocatorProvider.getControlsContainer(),
                 homeLayoutTabsElementLocatorProvider.getBackgroundContainer(),
@@ -74,7 +80,9 @@ public class HomeViewStatusMarker {
                 homeLayoutTabsElementLocatorProvider.getQuestionsTabRouterLink(),
                 homeLayoutTabsElementLocatorProvider.getQuizzesTabRouterLink(),
                 homeLayoutSearchBarElementLocatorProvider.getBackgroundContainer(),
-                searchBoxElementLocatorProvider.getBackgroundContainer()
+                searchBoxElementLocatorProvider.getBackgroundContainer(),
+                homeLayoutActionsBarElementLocatorProvider.getBackgroundContainer(),
+                authenticationBarElementLocatorProvider.getBackgroundContainer()
         );
         mark(driver, locators, elementStatus);
         log.info("Marking status '{}' for home view completed", elementStatus.getName());
