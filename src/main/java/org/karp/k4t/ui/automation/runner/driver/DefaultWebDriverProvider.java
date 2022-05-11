@@ -32,6 +32,9 @@ public class DefaultWebDriverProvider implements WebDriverProvider {
                 driver = createFirefoxDriver(browser);
                 break;
         }
+        if(browser.isMaximize()) {
+            maximizeWindow(driver);
+        }
         validate(driver);
         log.info("Web driver creation completed");
         return driver;
@@ -55,6 +58,12 @@ public class DefaultWebDriverProvider implements WebDriverProvider {
         WebDriver result = new FirefoxDriver(firefoxOptions);
         log.info("Firefox web driver creation completed");
         return result;
+    }
+
+    private void maximizeWindow(@Valid @NotNull WebDriver driver) {
+        log.info("Browser window maximize started");
+        driver.manage().window().maximize();
+        log.info("Browser window maximize completed");
     }
 
     private void validate(@NotNull WebDriver driver) {

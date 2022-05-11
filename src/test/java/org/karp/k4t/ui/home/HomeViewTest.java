@@ -31,7 +31,7 @@ public class HomeViewTest {
     private BrowserProvider browserProvider;
 
     @Autowired
-    private WebDriverProvider driverFactory;
+    private WebDriverProvider webDriverProvider;
 
     @Autowired
     private DestinationProvider destinationProvider;
@@ -70,7 +70,7 @@ public class HomeViewTest {
     private WebDriver loadView() {
         log.info("Load home view started");
         Browser browser = browserProvider.get();
-        WebDriver driver = driverFactory.get(browser);
+        WebDriver driver = webDriverProvider.get(browser);
         URI homeViewUri = destinationProvider.getHomeView();
         driver.get(homeViewUri.toString());
         homeViewRetriever.get(driver, 30);
