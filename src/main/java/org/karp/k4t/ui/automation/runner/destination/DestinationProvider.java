@@ -10,4 +10,6 @@ public interface DestinationProvider {
     @NotNull URI getFeedView();
 
     @NotNull URI getHomeView();
+
+    @NotNull URI getQuestionsView();
 }

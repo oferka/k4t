@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.karp.k4t.ui.feed.FeedView;
 import org.karp.k4t.ui.home.HomeView;
+import org.karp.k4t.ui.questions.QuestionsView;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.util.UriComponents;
@@ -42,6 +43,15 @@ public class DefaultDestinationProvider implements DestinationProvider {
         UriComponents uriComponents = uriComponentsProvider.get(HomeView.ROUTE);
         URI result = uriComponents.toUri();
         log.info("Get URI for home view completed. Result is {}", result);
+        return result;
+    }
+
+    @Override
+    public URI getQuestionsView() {
+        log.info("Get URI for feed questions started");
+        UriComponents uriComponents = uriComponentsProvider.get(QuestionsView.ROUTE);
+        URI result = uriComponents.toUri();
+        log.info("Get URI for questions view completed. Result is {}", result);
         return result;
     }
 }
