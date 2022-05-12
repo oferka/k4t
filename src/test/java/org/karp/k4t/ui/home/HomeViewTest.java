@@ -3,20 +3,17 @@ package org.karp.k4t.ui.home;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.karp.k4t.Application;
 import org.karp.k4t.ui.ViewTest;
 import org.karp.k4t.ui.automation.runner.destination.DestinationProvider;
 import org.karp.k4t.ui.automation.runner.views.home.HomeViewRetriever;
 import org.karp.k4t.ui.automation.runner.views.home.HomeViewStatusMarker;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.net.URI;
 
 import static org.karp.k4t.ui.automation.runner.element.status.ElementStatus.*;
 
 @Slf4j
-@SpringBootTest(classes = Application.class)
 public class HomeViewTest extends ViewTest {
 
     @Autowired

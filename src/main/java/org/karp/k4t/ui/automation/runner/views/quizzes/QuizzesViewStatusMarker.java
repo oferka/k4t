@@ -1,4 +1,4 @@
-package org.karp.k4t.ui.automation.runner.views.questions;
+package org.karp.k4t.ui.automation.runner.views.quizzes;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,24 +21,24 @@ import static java.util.Arrays.asList;
 @Service
 @Slf4j
 @Validated
-public class QuestionsViewStatusMarker {
+public class QuizzesViewStatusMarker {
 
     @NotNull
     private final ElementRetriever elementRetriever;
 
     @NotNull
-    private final QuestionsViewElementLocatorProvider questionsViewElementLocatorProvider;
+    private final QuizzesViewElementLocatorProvider quizzesViewElementLocatorProvider;
 
     @NotNull
     private final ElementStatusMarker elementStatusMarker;
 
     public void mark(@Valid @NotNull WebDriver driver, @Valid @NotNull ElementStatus elementStatus) {
-        log.info("Marking status '{}' for questions view started", elementStatus.getName());
+        log.info("Marking status '{}' for quizzes view started", elementStatus.getName());
         List<By> locators = asList(
-                questionsViewElementLocatorProvider.getControlsContainer()
+                quizzesViewElementLocatorProvider.getControlsContainer()
         );
         mark(driver, locators, elementStatus);
-        log.info("Marking status '{}' for questions view completed", elementStatus.getName());
+        log.info("Marking status '{}' for quizzes view completed", elementStatus.getName());
     }
 
     private void mark(@Valid @NotNull WebDriver driver, @Valid @NotNull List<By> locators, @Valid @NotNull ElementStatus elementStatus) {

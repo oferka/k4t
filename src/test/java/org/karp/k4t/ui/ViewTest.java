@@ -11,9 +11,11 @@ import org.karp.k4t.ui.automation.runner.driver.WebDriverProvider;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
 @Slf4j
+@SpringBootTest(classes = Application.class)
 public abstract class ViewTest {
 
     @Autowired

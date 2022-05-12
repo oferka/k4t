@@ -12,4 +12,6 @@ public interface DestinationProvider {
     @NotNull URI getHomeView();
 
     @NotNull URI getQuestionsView();
+
+    @NotNull URI getQuizzesView();
 }
