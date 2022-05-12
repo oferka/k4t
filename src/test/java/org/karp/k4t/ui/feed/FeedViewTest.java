@@ -1,6 +1,7 @@
 package org.karp.k4t.ui.feed;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.karp.k4t.Application;
 import org.karp.k4t.ui.ViewTest;
@@ -27,27 +28,27 @@ class FeedViewTest extends ViewTest {
     @Autowired
     private FeedViewStatusMarker feedViewStatusMarker;
 
+    @BeforeEach
+    public void loadView() {
+        log.info("Load feed view started");
+        URI viewUri = destinationProvider.getFeedView();
+        driver.get(viewUri.toString());
+        feedViewRetriever.get(driver, 30);
+        log.info("Load feed view completed");
+    }
+
     @Test
     public void shouldLoadWhenAccessedDirectly() {
-        loadView();
+        log.info("View loaded successfully");
     }
 
     @Test
     public void shouldDisplayInitialContent() {
-        loadView();
         feedViewStatusMarker.mark(driver, READY);
         feedViewStatusMarker.mark(driver, IN_PROGRESS);
         feedViewStatusMarker.mark(driver, PASSED);
         feedViewStatusMarker.mark(driver, FAILED);
         feedViewStatusMarker.mark(driver, TIMED_OUT);
         feedViewStatusMarker.mark(driver, NO_CONTENT);
-    }
-
-    private void loadView() {
-        log.info("Load feed view started");
-        URI feedViewUri = destinationProvider.getFeedView();
-        driver.get(feedViewUri.toString());
-        feedViewRetriever.get(driver, 30);
-        log.info("Load feed view completed");
     }
 }

@@ -1,6 +1,7 @@
 package org.karp.k4t.ui.home;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.karp.k4t.Application;
 import org.karp.k4t.ui.ViewTest;
@@ -27,27 +28,27 @@ public class HomeViewTest extends ViewTest {
     @Autowired
     private HomeViewStatusMarker homeViewStatusMarker;
 
+    @BeforeEach
+    public void loadView() {
+        log.info("Load home view started");
+        URI viewUri = destinationProvider.getHomeView();
+        driver.get(viewUri.toString());
+        homeViewRetriever.get(driver, 30);
+        log.info("Load home view completed");
+    }
+
     @Test
     public void shouldLoadWhenAccessedDirectly() {
-        loadView();
+        log.info("View loaded successfully");
     }
 
     @Test
     public void shouldDisplayInitialContent() {
-        loadView();
         homeViewStatusMarker.mark(driver, READY);
         homeViewStatusMarker.mark(driver, IN_PROGRESS);
         homeViewStatusMarker.mark(driver, PASSED);
         homeViewStatusMarker.mark(driver, FAILED);
         homeViewStatusMarker.mark(driver, TIMED_OUT);
         homeViewStatusMarker.mark(driver, NO_CONTENT);
-    }
-
-    private void loadView() {
-        log.info("Load home view started");
-        URI homeViewUri = destinationProvider.getHomeView();
-        driver.get(homeViewUri.toString());
-        homeViewRetriever.get(driver, 30);
-        log.info("Load home view completed");
     }
 }
