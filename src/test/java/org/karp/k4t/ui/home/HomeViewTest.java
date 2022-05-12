@@ -38,11 +38,6 @@ public class HomeViewTest extends ViewTest {
     }
 
     @Test
-    public void shouldLoadWhenAccessedDirectly() {
-        log.info("View loaded successfully");
-    }
-
-    @Test
     public void shouldDisplayInitialContent() {
         homeViewStatusMarker.mark(driver, READY);
         homeViewStatusMarker.mark(driver, IN_PROGRESS);

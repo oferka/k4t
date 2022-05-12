@@ -3,6 +3,7 @@ package org.karp.k4t.ui;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.karp.k4t.Application;
 import org.karp.k4t.ui.automation.runner.browser.Browser;
 import org.karp.k4t.ui.automation.runner.browser.BrowserProvider;
@@ -43,6 +44,11 @@ public abstract class ViewTest {
         log.info("Initiate web driver started");
         driver = getWebDriver();
         log.info("Initiate web driver completed");
+    }
+
+    @Test
+    public void shouldLoadView() {
+        log.info("View loaded successfully");
     }
 
     @AfterEach

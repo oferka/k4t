@@ -38,11 +38,6 @@ class FeedViewTest extends ViewTest {
     }
 
     @Test
-    public void shouldLoadWhenAccessedDirectly() {
-        log.info("View loaded successfully");
-    }
-
-    @Test
     public void shouldDisplayInitialContent() {
         feedViewStatusMarker.mark(driver, READY);
         feedViewStatusMarker.mark(driver, IN_PROGRESS);
