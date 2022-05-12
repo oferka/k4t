@@ -44,9 +44,9 @@ public class HomeViewTest {
 
     @BeforeEach
     public void startApplication() {
-        log.info("Start application started");
-        applicationContext = SpringApplication.run(Application.class);
-        log.info("Start application completed. Application ID is: {}", applicationContext.getId());
+//        log.info("Start application started");
+//        applicationContext = SpringApplication.run(Application.class);
+//        log.info("Start application completed. Application ID is: {}", applicationContext.getId());
     }
 
     @Test
@@ -80,8 +80,8 @@ public class HomeViewTest {
 
     @AfterEach
     public void stopApplication() {
-        log.info("Stop application started");
-        int exitCode = SpringApplication.exit(applicationContext);
-        log.info("Stop application completed. Exit code is: {}", exitCode);
+//        log.info("Stop application started");
+//        int exitCode = SpringApplication.exit(applicationContext);
+//        log.info("Stop application completed. Exit code is: {}", exitCode);
     }
 }

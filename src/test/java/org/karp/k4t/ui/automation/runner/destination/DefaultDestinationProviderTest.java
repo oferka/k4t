@@ -3,6 +3,7 @@ package org.karp.k4t.ui.automation.runner.destination;
 import org.junit.jupiter.api.Test;
 import org.karp.k4t.Application;
 import org.karp.k4t.ui.feed.FeedView;
+import org.karp.k4t.ui.home.HomeView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -21,6 +22,13 @@ class DefaultDestinationProviderTest {
     public void shouldGetDefaultView() {
         URI uri = destinationProvider.getDefaultView();
         assertNotNull(uri);
+    }
+
+    @Test
+    public void shouldGetHomeView() {
+        URI uri = destinationProvider.getHomeView();
+        assertNotNull(uri);
+        assertTrue(uri.getPath().contains(HomeView.ROUTE));
     }
 
     @Test
