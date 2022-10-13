@@ -17,7 +17,7 @@ import static org.karp.k4t.Application.*;
 @Theme(value = THEME_NAME)
 @PWA(name = APPLICATION_NAME, shortName = APPLICATION_SHORT_NAME, offlineResources = { APPLICATION_LOGO })
 @NpmPackage(value = "line-awesome", version = "1.3.0")
-public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
+public class    Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
     public static final String THEME_NAME = "k4t";
     public static final String APPLICATION_NAME = "k4t";
