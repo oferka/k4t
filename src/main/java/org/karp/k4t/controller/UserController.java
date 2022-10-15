@@ -95,7 +95,7 @@ public class UserController {
             @ApiResponse(responseCode = "400", description = "Failed to create a user", content = @Content) })
     public @NotNull ResponseEntity<User> save(@Parameter(description = "User to be saved") @RequestBody @Valid @NotNull User user) {
         HttpHeaders httpHeaders = new HttpHeaders();
-        URI location = linkTo(SearchTermController.class).slash(user.getId()).toUri();
+        URI location = linkTo(UserController.class).slash(user.getId()).toUri();
         httpHeaders.setLocation(location);
         User saved = userService.save(user);
         return new ResponseEntity<>(saved, httpHeaders, HttpStatus.CREATED);
