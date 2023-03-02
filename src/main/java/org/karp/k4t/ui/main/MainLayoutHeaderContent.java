@@ -10,7 +10,7 @@ import static com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment.CE
 import static org.karp.k4t.ui.Styles.CSS_FILE_EXTENSION;
 import static org.karp.k4t.ui.main.MainLayout.FOLDER;
 
-@CssImport(FOLDER + MainLayoutHeaderActions.CLASS_NAME + CSS_FILE_EXTENSION)
+@CssImport(FOLDER + MainLayoutHeaderContent.CLASS_NAME + CSS_FILE_EXTENSION)
 public class MainLayoutHeaderContent extends HorizontalLayout {
 
     public static final String CLASS_NAME = MainLayoutHeader.CLASS_NAME + "-content";
